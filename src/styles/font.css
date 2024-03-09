@@ -21,3 +21,27 @@
   font-family: "Rubik";
   font-weight: 800;
 }
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../assets/fonts/Urbanist.ttf");
+  font-family: "UrbanistThin";
+  font-weight: 100;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../assets/fonts/Urbanist.ttf");
+  font-family: "UrbanistNormal";
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../assets/fonts/Urbanist.ttf");
+  font-family: "UrbanistBold";
+  font-weight: 700;
+}

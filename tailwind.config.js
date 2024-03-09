@@ -22,6 +22,9 @@ module.exports = {
         nunito: "Nunito",
         plusJakartaSans: "PlusJakartaSans",
         rubik: "Rubik",
+        urbanistThin: "UrbanistThin",
+        urbanistNormal: "UrbanistNormal",
+        urbanistBold: "UrbanistBold",
       },
       backgroundImage: {
         gradient: "linear-gradient(90deg, #ffb039,#ffb03900)",

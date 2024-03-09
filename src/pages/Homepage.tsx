@@ -1,7 +1,7 @@
 import Header from "components/Header";
 import React from "react";
 import { Helmet } from "react-helmet";
-import ProfilePic from "../assets/images/ProfilePic.png"
+import ProfilePic from "../assets/images/ProfilePic.png";
 
 export default function HomePage() {
   return (
@@ -10,7 +10,7 @@ export default function HomePage() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-col items-center justify-start w-full font-plusJakartaSans gap-[70px] bg-black">
+      <div className="flex flex-col items-center justify-start w-full font-urbanistNormal gap-[70px] bg-white">
         <Header />
         <div className="w-[80%] aspect-video flex flex-row border-2 border-white">
           <div className="flex flex-col items-start flex-1">
