@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function WavyBorder(props: any) {
+interface WavyBorderProps {
+  color?: string;
+  inverted?: boolean;
+}
+
+export default function WavyBorder(props: WavyBorderProps) {
   const { color = "white", inverted = false } = props;
   const wavyBorderSVG = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
     <path d="M0 20 Q 25 40, 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20 V 180 Q 375 160, 350 180 T 300 180 T 250 180 T 200 180 T 150 180 T 100 180 T 50 180 T 0 180 V 20 Z" fill='${color}'/>

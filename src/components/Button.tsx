@@ -4,6 +4,7 @@ const shapes = {
   circle: "rounded-[50%]",
   round: "rounded-[10px]",
 } as const;
+
 const variants = {
   fill: {
     black_900: "bg-black-900 text-white-A700",
@@ -16,7 +17,9 @@ const variants = {
   outline: {
     black_900: "border-black-900 border-[3px] border-solid text-black-900",
   },
+
 } as const;
+
 const sizes = {
   lg: "h-[68px] px-[26px]",
   sm: "h-[50px] px-[35px] text-xl",

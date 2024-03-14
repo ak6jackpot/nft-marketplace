@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ProfilePic from "../assets/images/ProfilePic.png";
 import MessageCard from "components/MessageCard";
+import ChatMessage from "components/ChatMessage";
 
 export default function Message() {
   return (
@@ -11,15 +12,30 @@ export default function Message() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row items-center justify-start w-full h-auto font-urbanistNormal gap-[70px] bg-white">
-        <SidebarPlus />
-        <div className="flex flex-col">
-          <MessageCard
-            name={"Abhyu"}
-            ProfilePic={ProfilePic}
-            lastMsg={"yooooooo"}
-            lastMsgTime={"16:00"}
-          />
+      <div className="flex flex-row w-full h-screen font-urbanistNormal bg-white">
+        <div className="flex w-[250px]">
+          <SidebarPlus />
+        </div>
+        <div className="flex flex-col flex-1">
+          <div className="flex flex-1 items-center justify-center">
+            <input
+              className="w-[80%] bg-gray-100 h-[50%] rounded-xl px-2"
+              placeholder="Search chat"
+            />
+          </div>
+          <div className="flex flex-8 items-start justify-center">
+            <MessageCard
+              name={"Abhyu"}
+              ProfilePic={ProfilePic}
+              lastMsg={"yooooooo"}
+              lastMsgTime={2}
+            />
+          </div>
+        </div>
+        <div className="flex flex-2 flex-col border-l-2">
+          <div className="flex flex-1 bg-white"></div>
+          <div className="flex flex-8 bg-gray-100">{/* <ChatMessage /> */}</div>
+          <div className="flex flex-1 bg-white"></div>
         </div>
       </div>
 

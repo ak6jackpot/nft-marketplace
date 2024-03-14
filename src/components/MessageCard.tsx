@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function MessageCard(props: any) {
+interface MessageCardProps {
+  name: string;
+  ProfilePic: string;
+  lastMsgTime: number;
+  lastMsg: string;
+}
+
+export default function MessageCard(props: MessageCardProps) {
   const { name = "", ProfilePic = "", lastMsgTime = 0, lastMsg = "" } = props;
 
   return (
@@ -13,7 +20,7 @@ export default function MessageCard(props: any) {
           />
           <div className="flex flex-col w-[200px]">
             <span>{name}</span>
-            <span>{lastMsg}</span>
+            <span className="text-sm">{lastMsg}</span>
           </div>
           <div className="opacity-40">
             <span className="w-[50px]">{lastMsgTime}</span>
