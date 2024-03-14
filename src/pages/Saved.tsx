@@ -11,17 +11,12 @@ export default function Saved() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row items-center justify-start w-full h-screen font-urbanistNormal gap-[70px] bg-white">
-      <SidebarPlus/>
+      <div className="flex flex-row items-center justify-start w-full   font-urbanistNormal gap-[70px] bg-white">
+        <SidebarPlus />
 
         <div className="flex flex-row w-[60%] items-center">
           <div className="rounded-full w-[600px] p-0.5 aspect-square bg-gradient-to-r mx-16 from-violet-900 via-blue-600 to-amber-500">
-            <div className="p-2 bg-black rounded-full">
-              <img
-                className="rounded-full w-[500px] aspect-square"
-                src={ProfilePic}
-              />
-            </div>
+            <div className="p-2 bg-black rounded-full"></div>
           </div>
           <div className="w-full aspect-video p-0.5 bg-gradient-to-r from-violet-900 via-blue-600 rounded-lg to-amber-500 my-4">
             <div className="bg-black rounded-lg aspect-video p-2 items-center justify-between">
@@ -37,9 +32,7 @@ export default function Saved() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full">
-        <Footer />
-      </div>
+      <div className="absolute bottom-0 w-full">{/* <Footer /> */}</div>
     </>
   );
 }

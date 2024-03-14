@@ -39,7 +39,7 @@ export default function Market() {
           <span className="text-2xl">Playing and watching sports →</span>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
