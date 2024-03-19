@@ -13,13 +13,13 @@ export default function HelpCenter(props: any) {
         <span className="items-center justify-center flex my-2 mt-4">
           Help Center
         </span>
-        <span className="items-center justify-center flex my-1 text-sm">
-          Having trouble in Kashti?
+        <span className="items-center justify-center flex my-1 text-xs">
+          Having trouble in AK's NFT Store?
         </span>
-        <span className="items-center justify-center align-center flex my-1 text-sm">
+        <span className="items-center justify-center align-center flex my-1 text-xs">
           Please contact us for any
         </span>
-        <span className="items-center justify-center align-center flex my-1 text-sm">
+        <span className="items-start justify-center align-center flex my-1 mb-4 text-xs">
           questions
         </span>
         <div className="bg-white text-black rounded-lg">

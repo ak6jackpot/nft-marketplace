@@ -1,6 +1,10 @@
+import ArtworkCard from "components/ArtworkCard";
+import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
 import React from "react";
 import { Helmet } from "react-helmet";
+import art from "../assets/images/art.jpg";
+import { Button } from "components/Button";
 
 export default function ActiveBid() {
   return (
@@ -9,24 +13,58 @@ export default function ActiveBid() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row items-center justify-start w-full h-auto font-urbanistNormal gap-[70px] bg-white">
-      <SidebarPlus/>
-
-        <div className="w-[50%] aspect-video border-2 border-white">
-          <div className="flex flex-col items-start text-black flex-1">
-            <span>ACTIVE BID</span>
-          </div>
-          <div className="items-start text-black flex-1">
-            <span>social media icons</span>
-            <span>lets chat button</span>
-          </div>
-        </div>
-        <div className="flex text-black flex-row">
-          <div>
-            <span>education</span>
-          </div>
-          <div>
-            <span>experience</span>
+      <div className="flex flex-row w-full font-urbanistNormal bg-white">
+        <SidebarPlus />
+        <div className="flex flex-col w-full">
+          <Header />
+          <div className="w-[80%] aspect-video flex flex-col mx-4">
+            <div className="items-start my-2">
+              <span className="text-black text-3xl">Active Bid</span>
+            </div>
+            <div className="flex flex-row my-2">
+              <Button variant="outline" className="mr-2">
+                On Going
+              </Button>
+              <Button variant="outline" className="mr-2">
+                Category
+              </Button>
+              <Button variant="outline" className="mr-2">
+                Collection
+              </Button>
+              <Button variant="outline" className="mr-2">
+                Price Range
+              </Button>
+            </div>
+            <div className="flex flex-row items-start flex-1 my-2">
+              <div className="mr-2">
+                <ArtworkCard
+                  title={"First one"}
+                  image={art}
+                  artist={"Akshat singh"}
+                />
+              </div>
+              <div className="mr-2">
+                <ArtworkCard
+                  title={"Second one"}
+                  image={art}
+                  artist={"Akshat singh"}
+                />
+              </div>
+              <div className="mr-2">
+                <ArtworkCard
+                  title={"Third one"}
+                  image={art}
+                  artist={"Akshat singh"}
+                />
+              </div>
+              <div className="mr-2">
+                <ArtworkCard
+                  title={"Fourth one"}
+                  image={art}
+                  artist={"Akshat singh"}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
