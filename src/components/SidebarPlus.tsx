@@ -12,8 +12,8 @@ export default function SidebarPlus(props: any) {
           src={Profile}
         ></img>
         <div className="flex flex-col">
-          <span>Kevin Cranel</span>
-          <span className="text-xs opacity-40">@kecrane</span>
+          <span>Robert Downey Jr</span>
+          <span className="text-xs opacity-40">@rdj</span>
         </div>
       </div>
       <Sidebar>

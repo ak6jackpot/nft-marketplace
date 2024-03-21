@@ -4,27 +4,36 @@ interface ChatMessageProps {
   message: string;
   time: number;
   incoming: boolean;
-  ticks: number;
 }
 
 export default function ChatMessage(props: ChatMessageProps) {
-  const { message = "", time = 0, incoming = false, ticks = 0 } = props;
+  const { message = "", time = 0, incoming = false } = props;
 
-  return (
-    <>
-      <div className="flex flex-col">
-        <div className="items-center justify-center text-black border-2 border-gray-200 rounded-md p-2">
-          <span>message</span>
-        </div>
-        <div className="flex flex-row w-[200px]">
-          <div className="opacity-40">
-            <span>tick</span>
+  if (!incoming) {
+    return (
+      <div className="w-full justify-end flex">
+        <div className="flex flex-col w-[50%]">
+          <div className="items-center justify-center p-2 bg-black text-gray-300 rounded-tl-xl rounded-tr-xl rounded-bl-xl p-2">
+            <span className="text-sm">{message}</span>
           </div>
-          <div className="opacity-40">
-            <span>time</span>
+          <div className="opacity-40 px-2 justify-end flex">
+            <span className="text-xs">{time}</span>
           </div>
         </div>
       </div>
-    </>
-  );
+    );
+  } else {
+    return (
+      <div className="w-full justify-start flex">
+        <div className="flex flex-col w-[50%]">
+          <div className="items-center justify-center p-2 text-black border-[1px] bg-gray-200 border-gray-400 rounded-tl-xl rounded-tr-xl rounded-br-xl p-2">
+            <span className="text-sm">{message}</span>
+          </div>
+          <div className="opacity-40 px-2">
+            <span className="text-xs">{time}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }

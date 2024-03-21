@@ -7,26 +7,35 @@ export const messagesData = [
     messages: [
       {
         text: "Hi Jay, really love your take on 'Closet Designs' collection!",
-        time: 1,
+        time: "4:32",
         incoming: false,
       },
       {
         text: "Thanks for the appreciation kid! I've been in the business for 40 years, every single design has been bestseller of their category.",
-        time: 2,
+        time: "4:32",
         incoming: true,
       },
       {
         text: "That's awesome. How much for the mandala piece?",
-        time: 2,
+        time: "4:32",
         incoming: false,
       },
-      { text: "Not for sale.", time: 2, incoming: true },
+      { text: "Not for sale.", time: "4:32", incoming: true },
       {
-        text: "Why'd you put up the collection then? Come on I'll give you a good price. ",
-        time: 2,
+        text: "Why'd you put up the collection then?",
+        time: "4:32",
         incoming: false,
       },
-      { text: "To show my art, kid. To show my art.", time: 2, incoming: true },
+      {
+        text: "Come on I'll give you a good price. ",
+        time: "4:32",
+        incoming: false,
+      },
+      {
+        text: "To show my art, kid. To show my art.",
+        time: "4:32",
+        incoming: true,
+      },
     ],
   },
   {

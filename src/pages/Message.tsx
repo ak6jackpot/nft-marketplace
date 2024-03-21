@@ -1,7 +1,7 @@
 import SidebarPlus from "components/SidebarPlus";
 import React from "react";
 import { Helmet } from "react-helmet";
-import ProfilePic from "../assets/images/ProfilePic.png";
+import Send from "../assets/images/send.png";
 import MessageCard from "components/MessageCard";
 import ChatMessage from "components/ChatMessage";
 import { messagesData } from "data/messagesData";
@@ -43,8 +43,30 @@ export default function Message() {
         </div>
         <div className="flex flex-2 flex-col border-l-2">
           <div className="flex flex-1 bg-white"></div>
-          <div className="flex flex-8 bg-gray-100">{/* <ChatMessage /> */}</div>
-          <div className="flex flex-1 bg-white"></div>
+          <div className="flex flex-8 bg-gray-100 p-4">
+            <div className="flex flex-col">
+              {messagesData[0]?.messages?.map((item) => {
+                return (
+                  <div className="my-1">
+                    <ChatMessage
+                      message={item?.text}
+                      time={item?.time}
+                      incoming={item?.incoming}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="flex flex-1 bg-white text-sm">
+            <input
+              className="w-[90%] bg-gray-100 h-[60%] rounded-xl px-4 my-4 ml-4"
+              placeholder="Write Message"
+            />
+            <div className="h-[60%] aspect-square items-center justify-center flex m-4">
+              <img src={Send} />
+            </div>
+          </div>
         </div>
       </div>
     </>
