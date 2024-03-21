@@ -3,7 +3,7 @@ import ProfilePic from "../assets/images/ProfilePic.png";
 export const messagesData = [
   {
     name: "Jay Pritchett",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       {
         text: "Hi Jay, really love your take on 'Closet Designs' collection!",
@@ -31,7 +31,7 @@ export const messagesData = [
   },
   {
     name: "Cameron Tucker",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -44,7 +44,7 @@ export const messagesData = [
   },
   {
     name: "Alex Dunphy",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -57,7 +57,7 @@ export const messagesData = [
   },
   {
     name: "Gloria Pritchett",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "Hi Akshat", time: 1, incoming: false },
       {
@@ -93,7 +93,7 @@ export const messagesData = [
   },
   {
     name: "Luke Dunphy",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       {
         text: "Hey man, can you loan me one of your Bored Monkey NFTs?",
@@ -131,7 +131,7 @@ export const messagesData = [
   },
   {
     name: "Mitchell Pritchett",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -144,7 +144,7 @@ export const messagesData = [
   },
   {
     name: "Manny Delgado",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -157,7 +157,7 @@ export const messagesData = [
   },
   {
     name: "Phil Dunphy",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       {
         text: "There was a collector who couldn'T pronounce 'Y'. What did he say the colour of the sun was?",
@@ -191,7 +191,7 @@ export const messagesData = [
   },
   {
     name: "Lily Pritchett",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -204,7 +204,7 @@ export const messagesData = [
   },
   {
     name: "Claire Dunphy",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       {
         text: "Hey, did my dad reject your offer for the mandala piece?",
@@ -242,7 +242,7 @@ export const messagesData = [
   },
   {
     name: "Joe Pritchett",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },
@@ -255,7 +255,7 @@ export const messagesData = [
   },
   {
     name: "Haley Dunphy",
-    profilePic: { ProfilePic },
+    profilePic: ProfilePic,
     messages: [
       { text: "To be edited 1 ", time: 1, incoming: false },
       { text: "To be edited 2", time: 2, incoming: true },

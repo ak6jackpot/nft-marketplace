@@ -1,7 +1,7 @@
 import React from "react";
 
 const shapes = {
-  circle: "rounded-[50%]",
+  circle: "rounded-full",
   round: "rounded-[10px]",
 } as const;
 
@@ -15,7 +15,7 @@ const variants = {
     green_600: "bg-green-600 shadow-3xl text-white-A700",
   },
   outline: {
-    black_900: "border-black-900 border-[2px] border-solid text-black-900",
+    black_900: "border-black-900 border-[1px] border-solid text-black-900",
   },
 } as const;
 
