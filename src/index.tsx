@@ -4,8 +4,13 @@ import App from "./App";
 import "./styles/tailwind.css";
 import "./styles/index.css";
 import "./styles/font.css";
+import { UserContextProvider } from "context-provider";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />);
+root.render(
+  <UserContextProvider>
+    <App />
+  </UserContextProvider>
+);
