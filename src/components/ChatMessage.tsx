@@ -12,7 +12,7 @@ export default function ChatMessage(props: ChatMessageProps) {
   if (!incoming) {
     return (
       <div className="w-full justify-end flex">
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col max-w-[50%]">
           <div className="items-center justify-center p-2 bg-black text-gray-300 rounded-tl-xl rounded-tr-xl rounded-bl-xl p-2">
             <span className="text-sm">{message}</span>
           </div>
@@ -25,7 +25,7 @@ export default function ChatMessage(props: ChatMessageProps) {
   } else {
     return (
       <div className="w-full justify-start flex">
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col max-w-[50%]">
           <div className="items-center justify-center p-2 text-black border-[1px] bg-gray-200 border-gray-400 rounded-tl-xl rounded-tr-xl rounded-br-xl p-2">
             <span className="text-sm">{message}</span>
           </div>

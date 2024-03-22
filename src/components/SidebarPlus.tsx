@@ -2,18 +2,18 @@ import React from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
-import Profile from "assets/images/profile.jpg";
+import ProfilePic from "assets/images/ProfilePic.png";
 export default function SidebarPlus(props: any) {
   return (
     <div className="flex flex-col bg-gray-100">
       <div className="flex flex-row justify-center items-center">
         <img
           className="w-[50px] rounded-full m-2 aspect-square"
-          src={Profile}
+          src={ProfilePic}
         ></img>
         <div className="flex flex-col">
-          <span>Robert Downey Jr</span>
-          <span className="text-xs opacity-40">@rdj</span>
+          <span>Akshat Singh</span>
+          <span className="text-xs opacity-40">@aksingh</span>
         </div>
       </div>
       <Sidebar>

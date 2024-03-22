@@ -56,18 +56,13 @@ export default function Message() {
               <img
                 className="h-[40px] rounded-full ml-4"
                 src={
-                  messages?.messagesData[
-                    messages?.selectedMessageIndex
-                  ]?.profilePic
+                  messages?.messagesData[messages?.selectedMessageIndex]
+                    ?.profilePic
                 }
               />
               <div className="flex flex-col justify-center mx-4">
                 <span>
-                  {
-                    messages?.messagesData[
-                      messages?.selectedMessageIndex
-                    ]?.name
-                  }
+                  {messages?.messagesData[messages?.selectedMessageIndex]?.name}
                 </span>
                 <span className="text-xs text-green-600">{"Online"}</span>
               </div>
@@ -78,7 +73,7 @@ export default function Message() {
             </div>
           </div>
           <div className="flex flex-8 bg-gray-100 p-4">
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               {messages?.messagesData[
                 messages?.selectedMessageIndex
               ]?.messages?.map((item) => {

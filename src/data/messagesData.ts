@@ -1,10 +1,20 @@
-import { truncate } from "fs";
-import ProfilePic from "../assets/images/ProfilePic.png";
+import Phil from "../assets/images/phil.jpeg";
+import Claire from "../assets/images/claire.jpeg";
+import Alex from "../assets/images/alex.jpeg";
+import Haley from "../assets/images/haley.jpeg";
+import Luke from "../assets/images/luke.jpeg";
+import Cam from "../assets/images/cam.jpeg";
+import Mitchell from "../assets/images/mitchell.jpeg";
+import Lily from "../assets/images/lily.jpeg";
+import Jay from "../assets/images/jay.jpeg";
+import Gloria from "../assets/images/gloria.jpeg";
+import Joe from "../assets/images/joe.jpeg";
+import Manny from "../assets/images/manny.jpeg";
 
 export const messagesData = [
   {
     name: "Jay Pritchett",
-    profilePic: ProfilePic,
+    profilePic: Jay,
     messages: [
       {
         text: "Hi Jay, really love your take on 'Closet Designs' collection!",
@@ -33,7 +43,7 @@ export const messagesData = [
         incoming: false,
       },
       {
-        text: "To show my art, kid. To show my art.",
+        text: "NOT FOR SALE!",
         time: "4:32",
         incoming: true,
       },
@@ -41,7 +51,7 @@ export const messagesData = [
   },
   {
     name: "Cameron Tucker",
-    profilePic: ProfilePic,
+    profilePic: Cam,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -54,7 +64,7 @@ export const messagesData = [
   },
   {
     name: "Alex Dunphy",
-    profilePic: ProfilePic,
+    profilePic: Alex,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -67,7 +77,7 @@ export const messagesData = [
   },
   {
     name: "Gloria Pritchett",
-    profilePic: ProfilePic,
+    profilePic: Gloria,
     messages: [
       { text: "Hi Akshat", time: "4:32", incoming: true },
       {
@@ -103,7 +113,7 @@ export const messagesData = [
   },
   {
     name: "Luke Dunphy",
-    profilePic: ProfilePic,
+    profilePic: Luke,
     messages: [
       {
         text: "Hey man, can you loan me one of your Bored Monkey NFTs?",
@@ -145,7 +155,7 @@ export const messagesData = [
   },
   {
     name: "Mitchell Pritchett",
-    profilePic: ProfilePic,
+    profilePic: Mitchell,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -158,7 +168,7 @@ export const messagesData = [
   },
   {
     name: "Manny Delgado",
-    profilePic: ProfilePic,
+    profilePic: Manny,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -171,10 +181,10 @@ export const messagesData = [
   },
   {
     name: "Phil Dunphy",
-    profilePic: ProfilePic,
+    profilePic: Phil,
     messages: [
       {
-        text: "There was a collector who couldn'T pronounce 'Y'. What did he say the colour of the sun was?",
+        text: "There was a collector who couldn't pronounce 'Y'. What did he say the colour of the sun was?",
         time: "4:32",
         incoming: true,
       },
@@ -205,7 +215,7 @@ export const messagesData = [
   },
   {
     name: "Lily Pritchett",
-    profilePic: ProfilePic,
+    profilePic: Lily,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -218,7 +228,7 @@ export const messagesData = [
   },
   {
     name: "Claire Dunphy",
-    profilePic: ProfilePic,
+    profilePic: Claire,
     messages: [
       {
         text: "Hey, did my dad reject your offer for the mandala piece?",
@@ -260,7 +270,7 @@ export const messagesData = [
   },
   {
     name: "Joe Pritchett",
-    profilePic: ProfilePic,
+    profilePic: Joe,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
@@ -273,7 +283,7 @@ export const messagesData = [
   },
   {
     name: "Haley Dunphy",
-    profilePic: ProfilePic,
+    profilePic: Haley,
     messages: [
       { text: "To be edited 1 ", time: "4:32", incoming: false },
       { text: "To be edited 2", time: "4:32", incoming: true },
