@@ -1,13 +1,13 @@
 import { createContext, useContext, useReducer } from "react";
-import { messagesData } from "data/messagesData";
+import { messagesData } from "data/data";
 import React from "react";
 
 // Define the initial state
 const initialState = {
   messages: {
     messagesData: messagesData,
-    selectedMessageIndex: 0
-  }
+    selectedMessageIndex: 0,
+  },
 };
 
 // Define action types

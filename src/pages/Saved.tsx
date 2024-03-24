@@ -6,6 +6,8 @@ import ProfilePic from "../assets/images/ProfilePic.png";
 import Header from "components/Header";
 import ArtworkCard from "components/ArtworkCard";
 import art from "../assets/images/art.jpg";
+import { savedData } from "data/data";
+import { MultiColumnView } from "components/MultiColumnView";
 
 export default function Saved() {
   return (
@@ -14,7 +16,7 @@ export default function Saved() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-white">
+      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
         <SidebarPlus />
         <div className="flex flex-col w-full">
           <Header />
@@ -34,27 +36,7 @@ export default function Saved() {
               </Button>
             </div>
             <div className="flex flex-row items-start flex-1 my-2">
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"First one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"Second one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"Third one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
+              <MultiColumnView components={savedData} items={4} />
             </div>
           </div>
         </div>

@@ -5,6 +5,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import art from "../assets/images/art.jpg";
 import { Button } from "components/Button";
+import { activeData } from "data/data";
+import { MultiColumnView } from "components/MultiColumnView";
 
 export default function ActiveBid() {
   return (
@@ -13,7 +15,7 @@ export default function ActiveBid() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-white">
+      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
         <SidebarPlus />
         <div className="flex flex-col w-full">
           <Header />
@@ -36,34 +38,7 @@ export default function ActiveBid() {
               </Button>
             </div>
             <div className="flex flex-row items-start flex-1 my-2">
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"First one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"Second one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"Third one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
-              <div className="mr-2">
-                <ArtworkCard
-                  title={"Fourth one"}
-                  image={art}
-                  artist={"Akshat singh"}
-                />
-              </div>
+              <MultiColumnView components={activeData} items={4} />
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import Send from "../assets/images/send.png";
 import MessageCard from "components/MessageCard";
 import ChatMessage from "components/ChatMessage";
-import { messagesData } from "data/messagesData";
 import { Button } from "components/Button";
 import Search from "assets/images/search.png";
 import ThreeDots from "assets/images/three_dots.png";
@@ -12,9 +11,6 @@ import { useUserContext } from "context-provider";
 
 export default function Message() {
   const { messages, updateState } = useUserContext();
-
-  console.log(messages?.messagesData, "messagessssssss");
-  console.log(messages?.selectedMessageIndex, "indexxxxxx");
 
   return (
     <>

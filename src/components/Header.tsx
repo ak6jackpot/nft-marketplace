@@ -10,7 +10,7 @@ export default function Header(props: any) {
     <>
       <div className="flex w-full h-[80px] border-b-[1px] justify-between bg-white items-center">
         <input
-          className="w-[50%] bg-white border-gray-100 border-[1px] h-[50%] rounded-xl px-2 ml-4"
+          className="w-[50%] bg-white border-gray-200 border-[1px] h-[50%] rounded-xl px-2 ml-4"
           placeholder="Search items, collections, and users"
         />
         <div className="flex flex-row items-center mx-8 w-[24%] justify-between">
@@ -21,7 +21,10 @@ export default function Header(props: any) {
           <Button variant="outline" shape="circle" className="mr-1">
             <img className="w-[25px]" src={Bell}></img>
           </Button>
-          <div className="flex flex-row justify-start items-center" onClick={() => {}}>
+          <div
+            className="flex flex-row justify-start items-center"
+            onClick={() => {}}
+          >
             <img
               className="w-[50px] rounded-full mr-2 aspect-square"
               src={Profile}
