@@ -2,7 +2,7 @@ import { Button } from "components/Button";
 import Header from "components/Header";
 import { MultiColumnView } from "components/MultiColumnView";
 import SidebarPlus from "components/SidebarPlus";
-import { savedData } from "data/data";
+import { savedData } from "data/itemsData";
 import React from "react";
 import { Helmet } from "react-helmet";
 

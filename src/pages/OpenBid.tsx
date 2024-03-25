@@ -1,12 +1,12 @@
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
-import { marketData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import art from "../assets/images/ProfilePic.png";
 import eth from "../assets/images/eth.png";
 import heart from "../assets/images/heart.png";
+import { marketData } from "data/itemsData";
 
 export default function OpenBid(props) {
   const params = useParams();

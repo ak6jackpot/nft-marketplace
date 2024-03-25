@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { messagesData } from "data/data";
+import { messagesData } from "data/messagesData";
 import React from "react";
 
 // Define the initial state

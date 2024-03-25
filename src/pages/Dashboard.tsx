@@ -1,11 +1,11 @@
 import ArtworkCard from "components/ArtworkCard";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
-import { trendingData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
 import dashboard from "../assets/images/dashboard2.png";
 import { Button } from "components/Button";
+import { trendingData } from "data/itemsData";
 
 export default function Dashboard() {
   return (
