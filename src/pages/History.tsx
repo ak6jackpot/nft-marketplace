@@ -1,9 +1,8 @@
-import { Button } from "components/Button";
+import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
 import React from "react";
 import { Helmet } from "react-helmet";
-import ProfilePic from "../assets/images/ProfilePic.png";
-import Header from "components/Header";
+
 export default function History() {
   return (
     <>

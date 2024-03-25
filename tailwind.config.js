@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     screens: { md: { max: "1050px" }, sm: { max: "550px" } },
     extend: {
+      colors: {
+        dashboard: "#0a4e60",
+      },
       boxShadow: {
         xs: "0px 50px  50px 0px #0000000c",
         sm: "0px 30px  50px 0px #f567677c",
@@ -30,15 +33,15 @@ module.exports = {
         gradient: "linear-gradient(90deg, #ffb039,#ffb03900)",
       },
       flex: {
-        '2': '2 2 0%',
-        '3': '3 3 0%',
-        '4': '4 4 0%',
-        '5': '5 5 0%',
-        '6': '6 6 0%',
-        '7': '7 7 0%',
-        '8': '8 8 0%',
-        '9': '9 9 0%',        
-      }
+        2: "2 2 0%",
+        3: "3 3 0%",
+        4: "4 4 0%",
+        5: "5 5 0%",
+        6: "6 6 0%",
+        7: "7 7 0%",
+        8: "8 8 0%",
+        9: "9 9 0%",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

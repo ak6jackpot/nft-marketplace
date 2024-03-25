@@ -8,7 +8,7 @@ import ArrowDown from "assets/images/arrow_down.png";
 export default function Header(props: any) {
   return (
     <>
-      <div className="flex w-full h-[80px] border-b-[1px] justify-between bg-white items-center">
+      <div className="flex w-full h-[80px] border-b-[2px] justify-between bg-white items-center">
         <input
           className="w-[50%] bg-white border-gray-200 border-[1px] h-[50%] rounded-xl px-2 ml-4"
           placeholder="Search items, collections, and users"

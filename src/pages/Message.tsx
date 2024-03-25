@@ -1,5 +1,5 @@
 import SidebarPlus from "components/SidebarPlus";
-import React, { useContext } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import Send from "../assets/images/send.png";
 import MessageCard from "components/MessageCard";

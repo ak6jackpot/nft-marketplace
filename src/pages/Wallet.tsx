@@ -1,9 +1,8 @@
-import { Button } from "components/Button";
+import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
 import React from "react";
 import { Helmet } from "react-helmet";
-import ProfilePic from "../assets/images/ProfilePic.png";
-import Header from "components/Header";
+
 export default function Wallet() {
   return (
     <>
@@ -19,7 +18,6 @@ export default function Wallet() {
             <div className="flex flex-col items-start flex-1">
               <span className="text-black">Wallet</span>
             </div>
-
           </div>
         </div>
       </div>

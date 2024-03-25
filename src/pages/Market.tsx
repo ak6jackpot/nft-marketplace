@@ -1,13 +1,10 @@
-import WavyBorder from "components/WavyBorder";
+import { Button } from "components/Button";
+import Header from "components/Header";
+import { MultiColumnView } from "components/MultiColumnView";
+import SidebarPlus from "components/SidebarPlus";
+import { marketData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
-import SidebarPlus from "components/SidebarPlus";
-import Header from "components/Header";
-import ArtworkCard from "components/ArtworkCard";
-import { Button } from "components/Button";
-import art from "../assets/images/art.jpg";
-import { marketData } from "data/data";
-import { MultiColumnView } from "components/MultiColumnView";
 
 export default function Market() {
   return (

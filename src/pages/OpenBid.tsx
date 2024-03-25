@@ -1,15 +1,12 @@
-import ArtworkCard from "components/ArtworkCard";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
+import { marketData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
 import art from "../assets/images/ProfilePic.png";
 import eth from "../assets/images/eth.png";
 import heart from "../assets/images/heart.png";
-import { Button } from "components/Button";
-import { activeData, marketData } from "data/data";
-import { MultiColumnView } from "components/MultiColumnView";
-import { useParams } from "react-router-dom";
 
 export default function OpenBid(props) {
   const params = useParams();

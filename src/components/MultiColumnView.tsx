@@ -1,6 +1,5 @@
 import React from "react";
 import ArtworkCard from "./ArtworkCard";
-import { log } from "console";
 
 export const MultiColumnView = ({ components, items = 1 }) => {
   const rows = [];
@@ -8,7 +7,7 @@ export const MultiColumnView = ({ components, items = 1 }) => {
 
   components.forEach((item, index) => {
     currentRow.push(
-      <div key={index} className="mr-2">
+      <div key={index}>
         <ArtworkCard details={item} />
       </div>
     );

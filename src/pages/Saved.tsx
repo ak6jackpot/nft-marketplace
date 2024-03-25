@@ -1,13 +1,10 @@
 import { Button } from "components/Button";
+import Header from "components/Header";
+import { MultiColumnView } from "components/MultiColumnView";
 import SidebarPlus from "components/SidebarPlus";
+import { savedData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
-import ProfilePic from "../assets/images/ProfilePic.png";
-import Header from "components/Header";
-import ArtworkCard from "components/ArtworkCard";
-import art from "../assets/images/art.jpg";
-import { savedData } from "data/data";
-import { MultiColumnView } from "components/MultiColumnView";
 
 export default function Saved() {
   return (

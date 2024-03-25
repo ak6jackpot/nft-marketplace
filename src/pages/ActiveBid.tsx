@@ -1,12 +1,10 @@
-import ArtworkCard from "components/ArtworkCard";
+import { Button } from "components/Button";
 import Header from "components/Header";
+import { MultiColumnView } from "components/MultiColumnView";
 import SidebarPlus from "components/SidebarPlus";
+import { activeData } from "data/data";
 import React from "react";
 import { Helmet } from "react-helmet";
-import art from "../assets/images/art.jpg";
-import { Button } from "components/Button";
-import { activeData } from "data/data";
-import { MultiColumnView } from "components/MultiColumnView";
 
 export default function ActiveBid() {
   return (

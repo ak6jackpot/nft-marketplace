@@ -564,3 +564,33 @@ export const savedData = [
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
   },
 ];
+
+export const trendingData = [
+  {
+    id: "Goyen",
+    artName: "Winter Landscape",
+    artistName: "Goyen",
+    bidPrice: 2.78,
+    artImage: Goyen,
+    description:
+      "Jan Josephszoon van Goyen (1596-1656) was a Dutch landscape painter who is known to have created around 1,200 paintings and over 1,000 drawings. Van Goyen often depicted genre subjects of everyday life in the tonal style of the era.",
+  },
+  {
+    id: "John_Constable",
+    artName: "Wivenhoe Park Essex",
+    artistName: "John Constable",
+    bidPrice: 2.78,
+    artImage: John_Constable,
+    description:
+      "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
+  },
+  {
+    id: "Leonardo",
+    artName: "Santa Maria della Neve",
+    artistName: "Leonardo da vinci",
+    bidPrice: 2.78,
+    artImage: Leonardo,
+    description:
+      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+  },
+];

@@ -1,9 +1,9 @@
 import { Button } from "components/Button";
-import Footer from "components/Footer";
 import SidebarPlus from "components/SidebarPlus";
 import React from "react";
 import { Helmet } from "react-helmet";
 import ProfilePic from "../assets/images/ProfilePic.png";
+
 export default function Profile() {
   return (
     <>

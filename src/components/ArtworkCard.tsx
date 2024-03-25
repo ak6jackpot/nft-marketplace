@@ -1,14 +1,12 @@
 import React from "react";
 import Eth from "assets/images/eth.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 interface ArtworkCardProps {
   details: object;
 }
 
 export default function ArtworkCard(props: ArtworkCardProps) {
   const { details = {} } = props;
-
-  const navigate = useNavigate();
 
   return (
     <div className="items-center justify-center flex flex-col align-center rounded-xl bg-white pb-1">
@@ -18,7 +16,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           src={details?.artImage}
         />
       </div>
-      <div className="flex flex-col w-[200px] pb-2">
+      <div className="flex flex-col w-full ml-4 pb-2">
         <span>{details?.artName}</span>
         <span className="text-xs opacity-30"> By {details?.artistName}</span>
       </div>

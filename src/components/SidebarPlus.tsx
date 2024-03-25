@@ -3,9 +3,10 @@ import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
 import ProfilePic from "assets/images/ProfilePic.png";
+
 export default function SidebarPlus(props: any) {
   return (
-    <div className="flex flex-col bg-gray-100">
+    <div className="flex flex-col bg-gray-100 border-r-[2px]">
       <div className="flex flex-row justify-center items-center">
         <img
           className="w-[50px] rounded-full m-2 aspect-square"
