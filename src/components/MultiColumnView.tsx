@@ -9,12 +9,7 @@ export const MultiColumnView = ({ components, items = 1 }) => {
   components.forEach((item, index) => {
     currentRow.push(
       <div key={index} className="mr-2">
-        <ArtworkCard
-          title={item?.artName}
-          image={item?.artImage}
-          artist={item?.artistName}
-          amount={item?.bidPrice}
-        />
+        <ArtworkCard details={item} />
       </div>
     );
     if (currentRow.length === items || index === components.length - 1) {
@@ -36,7 +31,7 @@ export const MultiColumnView = ({ components, items = 1 }) => {
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: "flex" }}>
           {row.map((component, colIndex) => (
-            <div key={colIndex} style={{ flex: "1", margin: "5px" }}>
+            <div key={colIndex} style={{ flex: "1", margin: "8px" }}>
               {component}
             </div>
           ))}

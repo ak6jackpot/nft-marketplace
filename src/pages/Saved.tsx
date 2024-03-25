@@ -20,7 +20,7 @@ export default function Saved() {
         <SidebarPlus />
         <div className="flex flex-col w-full">
           <Header />
-          <div className="w-[80%] aspect-video flex flex-col mx-4">
+          <div className="w-[90%] aspect-video flex flex-col mx-4">
             <div className="items-start my-2">
               <span className="text-black text-3xl">Saved</span>
             </div>

@@ -5,6 +5,8 @@ import History from "pages/History";
 import Market from "pages/Market";
 import Message from "pages/Message";
 import NotFound from "pages/NotFound";
+import OpenBid from "pages/OpenBid";
+import Profile from "pages/Profile";
 import Saved from "pages/Saved";
 import Settings from "pages/Settings";
 import Wallet from "pages/Wallet";
@@ -49,6 +51,14 @@ const ProjectRoutes = () => {
     {
       path: "history",
       element: <History />,
+    },
+    {
+      path: "profile",
+      element: <Profile />,
+    },
+    {
+      path: "open/:artId",
+      element: <OpenBid />,
     },
   ]);
 

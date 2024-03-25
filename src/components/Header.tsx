@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
-import Profile from "assets/images/profile.jpg";
+import ProfilePic from "assets/images/ProfilePic.png";
 import Bell from "assets/images/bell.png";
 import EthereumGif from "assets/images/eth_gif.gif";
 import ArrowDown from "assets/images/arrow_down.png";
@@ -27,7 +27,7 @@ export default function Header(props: any) {
           >
             <img
               className="w-[50px] rounded-full mr-2 aspect-square"
-              src={Profile}
+              src={ProfilePic}
             />
             <img className="w-[15px]" src={ArrowDown} />
           </div>
