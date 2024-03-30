@@ -24,9 +24,13 @@ export default function Message() {
         </div>
         <div className="flex flex-col flex-1">
           <div className="flex h-[90px] items-center justify-center">
+            <img
+              src={Search}
+              className="absolute h-[20px] aspect-square mr-[20%]"
+            />
             <input
-              className="w-[80%] bg-gray-100 h-[50%] rounded-xl px-2"
-              placeholder=" 🔍  Search chat"
+              className="w-[80%] bg-gray-100 h-[50%] rounded-xl pl-8 px-2"
+              placeholder="Search chat"
             />
           </div>
           <div className="flex items-start overflow-y-scroll justify-center">
