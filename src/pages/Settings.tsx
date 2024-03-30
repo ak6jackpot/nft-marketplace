@@ -1,7 +1,7 @@
 import { Button } from "components/Button";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import user from "assets/images/user.png";
 import link from "assets/images/link.png";
@@ -9,8 +9,27 @@ import email from "assets/images/email.png";
 import web from "assets/images/web.png";
 import cloud from "assets/images/cloud.png";
 import ProfilePic from "assets/images/ProfilePic.png";
+import Cookies from "universal-cookie";
 
 export default function Settings() {
+  const cookies = new Cookies();
+
+  const [firstname, setFirstname] = useState(cookies.get("firstname"));
+  const [lastname, setLastname] = useState(cookies.get("lastname"));
+  const [emailid, setEmailid] = useState(cookies.get("email"));
+  const [username, setUsername] = useState(cookies.get("username"));
+  const [website, setWebsite] = useState(cookies.get("website"));
+  const [bio, setBio] = useState(cookies.get("bio"));
+
+  const saveInfo = () => {
+    cookies.set("firstname", firstname, { path: "/" });
+    cookies.set("lastname", lastname, { path: "/" });
+    cookies.set("email", emailid, { path: "/" });
+    cookies.set("username", username, { path: "/" });
+    cookies.set("website", website, { path: "/" });
+    cookies.set("bio", bio, { path: "/" });
+  };
+
   return (
     <>
       <Helmet>
@@ -32,10 +51,23 @@ export default function Settings() {
               <span className="opacity-60 flex w-[50%] self-center justify-center ml-6">
                 Unsaved Changes
               </span>
-              <Button className="bg-black text-white flex w-[25%] mx-4">
+              <Button
+                className="bg-black text-white flex w-[25%] mx-4"
+                onClick={saveInfo}
+              >
                 Save
               </Button>
-              <Button className="bg-gray-300 text-gray-600 flex w-[25%]">
+              <Button
+                className="bg-gray-300 text-gray-600 flex w-[25%]"
+                onClick={() => {
+                  setFirstname("");
+                  setLastname("");
+                  setEmailid("");
+                  setUsername("");
+                  setWebsite("");
+                  setBio("");
+                }}
+              >
                 Discard
               </Button>
             </div>
@@ -56,6 +88,8 @@ export default function Settings() {
                   <input
                     className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
                     placeholder=""
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col flex-1 mx-4 py-2">
@@ -63,6 +97,8 @@ export default function Settings() {
                   <input
                     className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 rounded-xl px-2"
                     placeholder=""
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
                   />
                 </div>
               </div>
@@ -75,6 +111,8 @@ export default function Settings() {
                 <input
                   className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
+                  value={emailid}
+                  onChange={(e) => setEmailid(e.target.value)}
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
@@ -86,6 +124,8 @@ export default function Settings() {
                 <input
                   className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
@@ -95,6 +135,8 @@ export default function Settings() {
                   placeholder=""
                   rows={3}
                   maxLength={250}
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
@@ -106,6 +148,8 @@ export default function Settings() {
                 <input
                   className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
                 />
               </div>
             </div>
