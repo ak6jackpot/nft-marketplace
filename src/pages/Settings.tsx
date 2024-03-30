@@ -1,6 +1,7 @@
 import { Button } from "components/Button";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
+import { useSnackbar } from "react-simple-snackbar";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import user from "assets/images/user.png";
@@ -13,6 +14,7 @@ import Cookies from "universal-cookie";
 
 export default function Settings() {
   const cookies = new Cookies();
+  const [openSnackbar, closeSnackbar] = useSnackbar();
 
   const [firstname, setFirstname] = useState(cookies.get("firstname"));
   const [lastname, setLastname] = useState(cookies.get("lastname"));
@@ -28,6 +30,7 @@ export default function Settings() {
     cookies.set("username", username, { path: "/" });
     cookies.set("website", website, { path: "/" });
     cookies.set("bio", bio, { path: "/" });
+    openSnackbar("Details Saved Succesfully");
   };
 
   return (
@@ -36,7 +39,7 @@ export default function Settings() {
         <title>NFT</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-gray-100">
+      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
         <SidebarPlus />
         <div className="flex flex-col w-full">
           <Header />
@@ -47,30 +50,38 @@ export default function Settings() {
                 Update your photo and personal details here
               </span>
             </div>
-            <div className="flex flex-row flex-1 items-center justify-end">
-              <span className="opacity-60 flex w-[50%] self-center justify-center ml-6">
-                Unsaved Changes
-              </span>
-              <Button
-                className="bg-black text-white flex w-[25%] mx-4"
-                onClick={saveInfo}
-              >
-                Save
-              </Button>
-              <Button
-                className="bg-gray-300 text-gray-600 flex w-[25%]"
-                onClick={() => {
-                  setFirstname("");
-                  setLastname("");
-                  setEmailid("");
-                  setUsername("");
-                  setWebsite("");
-                  setBio("");
-                }}
-              >
-                Discard
-              </Button>
-            </div>
+            {(firstname != cookies.get("firstname") ||
+              lastname != cookies.get("lastname") ||
+              website != cookies.get("website") ||
+              bio != cookies.get("bio") ||
+              username != cookies.get("username") ||
+              emailid != cookies.get("email")) && (
+              <div className="flex flex-row flex-1 items-center justify-end">
+                <span className="opacity-60 flex w-[50%] self-center justify-center ml-6">
+                  Unsaved Changes
+                </span>
+                <Button
+                  className="bg-black text-white flex w-[25%] mx-4"
+                  onClick={saveInfo}
+                >
+                  Save
+                </Button>
+                <Button
+                  className="bg-gray-300 text-gray-600 flex w-[25%]"
+                  onClick={() => {
+                    setFirstname(cookies.get("firstname"));
+                    setLastname(cookies.get("lastname"));
+                    setEmailid(cookies.get("email"));
+                    setUsername(cookies.get("username"));
+                    setWebsite(cookies.get("website"));
+                    setBio(cookies.get("bio"));
+                    openSnackbar("Unsaved Changes Discarded");
+                  }}
+                >
+                  Discard
+                </Button>
+              </div>
+            )}
           </div>
           <div className="flex flex-row my-2">
             <div className="flex flex-col flex-7 mx-4 bg-white rounded-xl py-4 border-2">
@@ -79,23 +90,33 @@ export default function Settings() {
               </div>
               <div className="flex flex-row">
                 <div className="flex flex-col flex-1 mx-4 py-2">
-                  <span className="mb-2">First Name</span>
+                  <div className="flex flex-row">
+                    <span className="mb-2">First Name</span>
+                    {firstname != cookies.get("firstname") && (
+                      <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                    )}
+                  </div>
                   <img
                     src={user}
                     className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
                   />
 
                   <input
-                    className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                     placeholder=""
                     value={firstname}
                     onChange={(e) => setFirstname(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col flex-1 mx-4 py-2">
-                  <span className="mb-2">Last Name</span>
+                  <div className="flex flex-row">
+                    <span className="mb-2">Last Name</span>
+                    {lastname != cookies.get("lastname") && (
+                      <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                    )}
+                  </div>
                   <input
-                    className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 rounded-xl px-2"
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 rounded-xl px-2"
                     placeholder=""
                     value={lastname}
                     onChange={(e) => setLastname(e.target.value)}
@@ -103,35 +124,50 @@ export default function Settings() {
                 </div>
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
-                <span className="mb-2">Email</span>
+                <div className="flex flex-row">
+                  <span className="mb-2">Email</span>
+                  {emailid != cookies.get("email") && (
+                    <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                  )}
+                </div>
                 <img
                   src={email}
                   className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
                 />
                 <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
+                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
                   value={emailid}
                   onChange={(e) => setEmailid(e.target.value)}
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
-                <span className="mb-2">Username</span>
+                <div className="flex flex-row">
+                  <span className="mb-2">Username</span>
+                  {username != cookies.get("username") && (
+                    <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                  )}
+                </div>
                 <img
                   src={link}
                   className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
                 />
                 <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
+                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
-                <span className="mb-2">Biography</span>
+                <div className="flex flex-row">
+                  <span className="mb-2">Biography</span>
+                  {bio != cookies.get("bio") && (
+                    <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                  )}
+                </div>
                 <textarea
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 rounded-xl px-2"
+                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 rounded-xl px-2"
                   placeholder=""
                   rows={3}
                   maxLength={250}
@@ -140,13 +176,18 @@ export default function Settings() {
                 />
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
-                <span className="mb-2">Website</span>
+                <div className="flex flex-row">
+                  <span className="mb-2">Website</span>
+                  {website != cookies.get("website") && (
+                    <span className="ml-1 text-red-400 text-xl">{"*"}</span>
+                  )}
+                </div>
                 <img
                   src={web}
                   className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
                 />
                 <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] hover:border-[2px] p-2 pl-8 rounded-xl px-2"
+                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                   placeholder=""
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}

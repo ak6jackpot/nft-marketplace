@@ -3,8 +3,11 @@ import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
 import ProfilePic from "assets/images/ProfilePic.png";
+import Cookies from "universal-cookie";
 
 export default function SidebarPlus(props: any) {
+  const cookies = new Cookies();
+
   return (
     <div className="flex flex-col bg-gray-100 border-r-[2px]">
       <div className="flex flex-row justify-center items-center">
@@ -13,8 +16,12 @@ export default function SidebarPlus(props: any) {
           src={ProfilePic}
         ></img>
         <div className="flex flex-col">
-          <span>Akshat Singh</span>
-          <span className="text-xs opacity-40">@aksingh</span>
+          <span>
+            {cookies.get("firstname") + " " + cookies.get("lastname")}
+          </span>
+          <span className="text-xs opacity-40">
+            {"@" + cookies.get("username")}
+          </span>
         </div>
       </div>
       <Sidebar>
