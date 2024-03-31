@@ -249,7 +249,7 @@ export const savedData = [
   },
   {
     id: "Goyen",
-    artName: "Winter Landscape With Figures on Ice",
+    artName: "Winter Landscape",
     artistName: "Goyen",
     bidPrice: 2.78,
     artImage: Goyen,

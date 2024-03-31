@@ -5,15 +5,15 @@ import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import art from "../assets/images/ProfilePic.png";
 import eth from "../assets/images/eth.png";
-import heart from "../assets/images/heart.png";
-import { marketData } from "data/itemsData";
+import heartPink from "../assets/images/heartPink.png";
+import heartGray from "../assets/images/heartGray.png";
+import { marketData, savedData } from "data/itemsData";
 
 export default function OpenBid(props) {
   const params = useParams();
-
-  console.log(params?.artId);
-
   const selectedObj = marketData?.find((item) => item?.id === params?.artId);
+
+  const isSaved = savedData?.find((item) => item?.id == params?.artId);
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function OpenBid(props) {
                 </div>
                 <div className="flex flex-row w-[50%] my-2">
                   <div className="w-[40px] aspect-square rounded-md border-[1px] mr-4 p-2 pt-3">
-                    <img src={heart} />
+                    <img src={isSaved ? heartPink : heartGray} />
                   </div>
                   <button className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center">
                     Place a bid
