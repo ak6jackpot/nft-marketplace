@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "./Button";
-import ProfilePic from "assets/images/ProfilePic.png";
+import defaultProfile from "assets/images/defaultProfile.png";
 import Bell from "assets/images/bell.png";
 import search from "assets/images/search.png";
 import EthereumGif from "assets/images/eth_gif.gif";
 import ArrowDown from "assets/images/arrow_down.png";
 
 export default function Header(props: any) {
+  const pic = localStorage.getItem("profilePic");
+
   return (
     <>
       <div className="flex w-full h-[80px] border-b-[2px] justify-between bg-white items-center">
@@ -29,7 +31,7 @@ export default function Header(props: any) {
           >
             <img
               className="w-[50px] rounded-full mr-2 aspect-square"
-              src={ProfilePic}
+              src={pic ? pic : defaultProfile}
             />
             <img className="w-[15px]" src={ArrowDown} />
           </div>

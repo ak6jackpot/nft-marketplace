@@ -2,18 +2,24 @@ import React from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
-import ProfilePic from "assets/images/ProfilePic.png";
+import defaultProfile from "assets/images/defaultProfile.png";
 import Cookies from "universal-cookie";
 
 export default function SidebarPlus(props: any) {
   const cookies = new Cookies();
+  const pic = localStorage.getItem("profilePic");
+
+  const selectedTab =
+    window?.location?.href?.split("/")[
+      window?.location?.href?.split("/")?.length - 1
+    ];
 
   return (
     <div className="flex flex-col bg-gray-100 border-r-[2px]">
       <div className="flex flex-row justify-center items-center">
         <img
           className="w-[50px] rounded-full m-2 aspect-square"
-          src={ProfilePic}
+          src={pic ? pic : defaultProfile}
         ></img>
         <div className="flex flex-col">
           <span>
@@ -35,17 +41,33 @@ export default function SidebarPlus(props: any) {
         >
           <SubMenu label="GENERAL" defaultOpen={true} className="text-xs">
             <MenuItem component={<Link to="/" />}>
-              <div className="text-gray-400 hover:text-black text-base text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "" ? "bg-gray-300 text-black" : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Dashboard
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/message" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "message"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Message
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/settings" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "settings"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Settings
               </div>
             </MenuItem>
@@ -56,17 +78,35 @@ export default function SidebarPlus(props: any) {
             className="text-xs mt-2"
           >
             <MenuItem component={<Link to="/market" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "market"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Market
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/active" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "active"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Active Bids
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/saved" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "saved"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Saved
               </div>
             </MenuItem>
@@ -77,17 +117,35 @@ export default function SidebarPlus(props: any) {
             className="text-xs mt-2"
           >
             <MenuItem component={<Link to="/collection" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "collection"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Collection
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/wallet" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "wallet"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 Wallet
               </div>
             </MenuItem>
             <MenuItem component={<Link to="/history" />}>
-              <div className="text-gray-400 hover:text-black text-base hover:bg-gray-300 p-2 rounded-lg">
+              <div
+                className={`hover:text-black text-base hover:bg-gray-300 ${
+                  selectedTab == "history"
+                    ? "bg-gray-300 text-black"
+                    : "text-gray-400"
+                } p-2 rounded-lg`}
+              >
                 History
               </div>
             </MenuItem>

@@ -9,7 +9,7 @@ import link from "assets/images/link.png";
 import email from "assets/images/email.png";
 import web from "assets/images/web.png";
 import cloud from "assets/images/cloud.png";
-import ProfilePic from "assets/images/ProfilePic.png";
+import defaultProfile from "assets/images/defaultProfile.png";
 import Cookies from "universal-cookie";
 
 export default function Settings() {
@@ -22,6 +22,7 @@ export default function Settings() {
   const [username, setUsername] = useState(cookies.get("username"));
   const [website, setWebsite] = useState(cookies.get("website"));
   const [bio, setBio] = useState(cookies.get("bio"));
+  const [pic, setPic] = useState(localStorage.getItem("profilePic"));
 
   const saveInfo = () => {
     cookies.set("firstname", firstname, { path: "/" });
@@ -31,6 +32,23 @@ export default function Settings() {
     cookies.set("website", website, { path: "/" });
     cookies.set("bio", bio, { path: "/" });
     openSnackbar("Details Saved Succesfully");
+  };
+
+  const handleUpload = () => {
+    const file = document.querySelector("input[type=file]").files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener(
+      "load",
+      () => {
+        setPic(reader?.result);
+      },
+      true
+    );
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -201,13 +219,29 @@ export default function Settings() {
               <div className="flex flex-1 flex-row items-center mx-4">
                 <img
                   className="w-[60px] rounded-full m-2 aspect-square"
-                  src={ProfilePic}
+                  src={pic ? pic : defaultProfile}
                 />
                 <div className="flex flex-col">
                   <span className="text-sm mb-1">Edit your Photo</span>
                   <div className="flex flex-row">
-                    <button className="text-xs opacity-40 mr-2">Delete</button>
-                    <button className="text-xs opacity-40 text-red-700">
+                    {localStorage?.getItem("profilePic") && (
+                      <button
+                        className="text-xs opacity-40 mr-2"
+                        onClick={() => {
+                          setPic("");
+                          localStorage.removeItem("profilePic");
+                        }}
+                      >
+                        Delete
+                      </button>
+                    )}
+                    <button
+                      className="text-xs opacity-40 text-red-700"
+                      onClick={() => {
+                        localStorage.setItem("profilePic", pic);
+                        openSnackbar("Profile Photo Updated");
+                      }}
+                    >
                       Update
                     </button>
                   </div>
@@ -219,7 +253,12 @@ export default function Settings() {
                 </div>
                 <span>Click to Upload</span>
                 <span className="text-xs opacity-50">PNG, JPG, or GIF</span>
-                <input type="file" className="hidden" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handleUpload()}
+                  className="hidden"
+                />
               </div>
             </div>
           </div>
