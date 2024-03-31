@@ -2,11 +2,13 @@ import { Button } from "components/Button";
 import Header from "components/Header";
 import { MultiColumnView } from "components/MultiColumnView";
 import SidebarPlus from "components/SidebarPlus";
-import { savedData } from "data/itemsData";
+import { useUserContext } from "context-provider";
 import React from "react";
 import { Helmet } from "react-helmet";
 
 export default function Saved() {
+  const { globalitems } = useUserContext();
+
   return (
     <>
       <Helmet>
@@ -33,7 +35,7 @@ export default function Saved() {
               </Button>
             </div>
             <div className="flex flex-row items-start flex-1 my-2">
-              <MultiColumnView components={savedData} items={4} />
+              <MultiColumnView components={globalitems?.savedData} items={4} />
             </div>
           </div>
         </div>

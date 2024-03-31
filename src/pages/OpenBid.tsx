@@ -1,6 +1,6 @@
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import art from "../assets/images/ProfilePic.png";
@@ -8,12 +8,17 @@ import eth from "../assets/images/eth.png";
 import heartPink from "../assets/images/heartPink.png";
 import heartGray from "../assets/images/heartGray.png";
 import { marketData, savedData } from "data/itemsData";
+import { useUserContext } from "context-provider";
 
 export default function OpenBid(props) {
   const params = useParams();
   const selectedObj = marketData?.find((item) => item?.id === params?.artId);
+  const { globalitems, updateState } = useUserContext();
 
-  const isSaved = savedData?.find((item) => item?.id == params?.artId);
+  const isSaved = globalitems?.savedData?.find(
+    (item) => item?.id == params?.artId
+  );
+  const [savedNow, setsavedNow] = useState(isSaved ? true : false);
 
   return (
     <>
@@ -61,9 +66,36 @@ export default function OpenBid(props) {
                   </div>
                 </div>
                 <div className="flex flex-row w-[50%] my-2">
-                  <div className="w-[40px] aspect-square rounded-md border-[1px] mr-4 p-2 pt-3">
-                    <img src={isSaved ? heartPink : heartGray} />
-                  </div>
+                  <button
+                    onClick={() => {
+                      setsavedNow(!savedNow);
+                      if (isSaved) {
+                        updateState({
+                          globalitems: {
+                            activeData: globalitems?.activeData,
+                            marketData: globalitems?.marketData,
+                            trendingData: globalitems?.trendingData,
+                            savedData: globalitems?.savedData?.filter(
+                              (item) => item?.id != selectedObj?.id
+                            ),
+                          },
+                        });
+                      } else {
+                        updateState({
+                          globalitems: {
+                            activeData: globalitems?.activeData,
+                            marketData: globalitems?.marketData,
+                            trendingData: globalitems?.trendingData,
+                            savedData: [...globalitems?.savedData, selectedObj],
+                          },
+                        });
+                      }
+                    }}
+                  >
+                    <div className="w-[40px] aspect-square rounded-md border-[1px] mr-4 p-2 pt-3">
+                      <img src={savedNow ? heartPink : heartGray} />
+                    </div>
+                  </button>
                   <button className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center">
                     Place a bid
                   </button>

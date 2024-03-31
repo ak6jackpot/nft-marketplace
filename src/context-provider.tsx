@@ -1,12 +1,24 @@
 import { createContext, useContext, useReducer } from "react";
 import { messagesData } from "data/messagesData";
 import React from "react";
+import {
+  activeData,
+  marketData,
+  savedData,
+  trendingData,
+} from "data/itemsData";
 
 // Define the initial state
 const initialState = {
   messages: {
     messagesData: messagesData,
     selectedMessageIndex: 0,
+  },
+  globalitems: {
+    savedData: savedData,
+    activeData: activeData,
+    marketData: marketData,
+    trendingData: trendingData,
   },
 };
 

@@ -10,7 +10,7 @@ import ThreeDots from "assets/images/three_dots.png";
 import { useUserContext } from "context-provider";
 
 export default function Message() {
-  const { messages, updateState } = useUserContext();
+  const { messages } = useUserContext();
 
   return (
     <>

@@ -5,9 +5,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import dashboard from "../assets/images/dashboard2.png";
 import { Button } from "components/Button";
-import { trendingData } from "data/itemsData";
+import { useUserContext } from "context-provider";
 
 export default function Dashboard() {
+  const { globalitems } = useUserContext();
+
   return (
     <>
       <Helmet>
@@ -56,13 +58,13 @@ export default function Dashboard() {
                 </div>
                 <div className="flex flex-row items-start my-2 p-2 justify-between">
                   <div>
-                    <ArtworkCard details={trendingData[0]} />
+                    <ArtworkCard details={globalitems?.trendingData[0]} />
                   </div>
                   <div>
-                    <ArtworkCard details={trendingData[1]} />
+                    <ArtworkCard details={globalitems?.trendingData[1]} />
                   </div>
                   <div>
-                    <ArtworkCard details={trendingData[2]} />
+                    <ArtworkCard details={globalitems?.trendingData[2]} />
                   </div>
                 </div>
               </div>

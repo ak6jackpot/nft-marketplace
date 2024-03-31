@@ -1,14 +1,14 @@
 import React from "react";
 import ArtworkCard from "./ArtworkCard";
 
-export const MultiColumnView = ({ components, items = 1 }) => {
+export const MultiColumnView = ({ components, items = 1}) => {
   const rows = [];
   let currentRow = [];
 
   components.forEach((item, index) => {
     currentRow.push(
       <div key={index}>
-        <ArtworkCard details={item} />
+        <ArtworkCard details={item}/>
       </div>
     );
     if (currentRow.length === items || index === components.length - 1) {
