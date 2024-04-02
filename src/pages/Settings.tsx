@@ -247,7 +247,7 @@ export default function Settings() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-3 flex-col border-2 border-dashed rounded-xl m-4 justify-center cursor-pointer items-center">
+              <div className="flex flex-3 flex-col border-2 border-dashed rounded-xl m-4 justify-center cursor-pointer items-center relative">
                 <div className="w-[40px] aspect-square bg-gray-200 mb-4 rounded-full p-2">
                   <img src={cloud} />
                 </div>
@@ -257,7 +257,7 @@ export default function Settings() {
                   type="file"
                   accept="image/*"
                   onChange={(e) => handleUpload()}
-                  className="hidden"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 />
               </div>
             </div>

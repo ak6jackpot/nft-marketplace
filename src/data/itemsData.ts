@@ -228,6 +228,63 @@ export const activeData = [
   },
 ];
 
+export const collectionData = [
+  {
+    id: "Titian",
+    artName: "Orpheus and Eurydice",
+    artistName: "Titian",
+    bidPrice: 2.78,
+    artImage: Titian,
+    description:
+      "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
+  },
+  {
+    id: "Vassilly",
+    artName: "Two Poplars",
+    artistName: "Vassilly Kandinsky",
+    bidPrice: 2.78,
+    artImage: Vassilly,
+    description:
+      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+  },
+  {
+    id: "John_Constable",
+    artName: "Wivenhoe Park Essex",
+    artistName: "John Constable",
+    bidPrice: 2.78,
+    artImage: John_Constable,
+    description:
+      "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
+  },
+  {
+    id: "Claude_Impression",
+    artName: "Sunrise",
+    artistName: "Claude Monet",
+    bidPrice: 2.78,
+    artImage: Claude_Impression,
+    description:
+      "Monet is most famous for his beautiful portrayals of the French countryside, particularly of his own garden and the lily pad-filled pond at his home in Giverny. In fact, the term “Impressionism” as a genre of art was coined after Monet`s painting, Impression, Sunrise of 1872. ",
+  },
+  {
+    id: "Monte",
+    artName: "Monte Sainte-Victoire",
+    artistName: "Paul Cezzane",
+    bidPrice: 2.78,
+    artImage: Monte,
+    description:
+      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+  },
+  {
+    id: "Taus",
+    artName: "Taus Near Alcalde New Mexico",
+    artistName: "Georgia-O'Keeffe",
+    bidPrice: 2.78,
+    artImage: Taus,
+    description:
+      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+  },
+];
+
 export const savedData = [
   {
     id: "Claude_Landscape",

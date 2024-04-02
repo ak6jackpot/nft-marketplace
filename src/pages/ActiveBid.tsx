@@ -1,6 +1,6 @@
+import ArtworkCard from "components/ArtworkCard";
 import { Button } from "components/Button";
 import Header from "components/Header";
-import { MultiColumnView } from "components/MultiColumnView";
 import SidebarPlus from "components/SidebarPlus";
 import { useUserContext } from "context-provider";
 import React from "react";
@@ -37,8 +37,14 @@ export default function ActiveBid() {
                 Price Range
               </Button>
             </div>
-            <div className="flex flex-row items-start flex-1 my-2">
-              <MultiColumnView components={globalitems?.activeData} items={4} />
+            <div className="grid grid-cols-4 gap-4 p-2 my-2">
+              {globalitems?.activeData?.map((item) => {
+                return (
+                  <div className="flex">
+                    <ArtworkCard details={item} />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
