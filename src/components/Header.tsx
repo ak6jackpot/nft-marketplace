@@ -5,6 +5,7 @@ import Bell from "assets/images/bell.png";
 import search from "assets/images/search.png";
 import EthereumGif from "assets/images/eth_gif.gif";
 import ArrowDown from "assets/images/arrow_down.png";
+import { Link } from "react-router-dom";
 
 export default function Header(props: any) {
   const pic = localStorage.getItem("profilePic");
@@ -25,16 +26,15 @@ export default function Header(props: any) {
           <Button variant="outline" shape="circle" className="mr-1">
             <img className="w-[25px]" src={Bell}></img>
           </Button>
-          <div
-            className="flex flex-row justify-start items-center"
-            onClick={() => {}}
-          >
-            <img
-              className="w-[50px] rounded-full mr-2 aspect-square"
-              src={pic ? pic : defaultProfile}
-            />
-            <img className="w-[15px]" src={ArrowDown} />
-          </div>
+          <Link to={`/profile`}>
+            <button className="flex flex-row justify-start items-center">
+              <img
+                className="w-[50px] rounded-full mr-2 aspect-square"
+                src={pic ? pic : defaultProfile}
+              />
+              <img className="w-[15px]" src={ArrowDown} />{" "}
+            </button>
+          </Link>
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import { messagesData } from "data/messagesData";
 import React from "react";
 import {
   activeData,
+  collectionData,
   marketData,
   savedData,
   trendingData,
@@ -19,6 +20,7 @@ const initialState = {
     activeData: activeData,
     marketData: marketData,
     trendingData: trendingData,
+    collectionData: collectionData,
   },
 };
 
