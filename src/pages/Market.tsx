@@ -19,7 +19,7 @@ export default function Market() {
         <SidebarPlus />
         <div className="flex flex-col w-full">
           <Header />
-          <div className="w-[90%] aspect-video flex flex-col mx-4">
+          <div className="w-[90%] max-h-screen overflow-y-auto flex flex-col mx-4">
             <div className="items-start my-2">
               <span className="text-black text-3xl">Discover</span>
             </div>

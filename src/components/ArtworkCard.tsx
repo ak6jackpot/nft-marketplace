@@ -24,7 +24,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           src={details?.artImage}
         />
 
-        <div className="absolute flex flex-row opacity-70 -mt-[5%] -mr-[7%] rounded-3xl bg-black p-1 px-2">
+        <div className="relative h-full flex flex-row opacity-70 -mt-[50%] -mr-[10%] rounded-3xl bg-black p-1 px-6 mx-12">
           <span className="text-white text-sm">{"12h 30m"}</span>
           <button
             onClick={() => {
@@ -59,7 +59,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           </button>
         </div>
       </div>
-      <div className="flex flex-col w-full ml-4 pb-2">
+      <div className="flex flex-col w-full ml-4 mt-[35%] pb-2">
         <span>{details?.artName}</span>
         <span className="text-xs opacity-30"> By {details?.artistName}</span>
       </div>
