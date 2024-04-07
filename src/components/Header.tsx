@@ -1,8 +1,8 @@
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import defaultProfile from "assets/images/defaultProfile.png";
 import EthereumGif from "assets/images/eth_gif.gif";
+import search from "assets/images/search.png";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
@@ -12,10 +12,7 @@ export default function Header(props: any) {
   return (
     <>
       <div className="flex w-full h-[80px] border-b-[2px] justify-between bg-white items-center">
-        {/* <img src={search} className="absolute h-[20px] aspect-square ml-6" /> */}
-        <div className="absolute aspect-square ml-6">
-          <SearchOutlinedIcon color="action" />
-        </div>
+        <img src={search} className="absolute h-[20px] aspect-square ml-6" />
         <input
           className="w-[50%] bg-white border-gray-200 border-[1px] h-[50%] rounded-xl px-2 ml-4 pl-8"
           placeholder="Search items, collections, and users"

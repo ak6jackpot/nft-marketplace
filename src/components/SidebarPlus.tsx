@@ -63,7 +63,7 @@ export default function SidebarPlus(props: any) {
             >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
-                  selectedTab == "" ? "bg-gray-300 text-black" : "text-gray-500"
+                  selectedTab == "" ? "bg-gray-300 text-black" : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Dashboard
@@ -81,7 +81,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "message"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Message
@@ -99,7 +99,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "settings"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Settings
@@ -123,7 +123,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "market"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Market
@@ -141,7 +141,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "active"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Active Bids
@@ -159,7 +159,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "saved"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Saved
@@ -183,7 +183,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "collection"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Collection
@@ -201,7 +201,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "wallet"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 Wallet
@@ -219,7 +219,7 @@ export default function SidebarPlus(props: any) {
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "history"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-500"
+                    : "text-gray-400"
                 } p-2 rounded-lg`}
               >
                 History

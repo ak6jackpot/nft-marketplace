@@ -29,7 +29,7 @@ export const marketData = [
     id: "Claude_Impression",
     artName: "Sunrise",
     artistName: "Claude Monet",
-    bidPrice: 2.78,
+    bidPrice: 3.28,
     artImage: Claude_Impression,
     description:
       "Monet is most famous for his beautiful portrayals of the French countryside, particularly of his own garden and the lily pad-filled pond at his home in Giverny. In fact, the term “Impressionism” as a genre of art was coined after Monet`s painting, Impression, Sunrise of 1872. ",
@@ -38,7 +38,7 @@ export const marketData = [
     id: "Claude_Landscape",
     artName: "The Parc Monceau",
     artistName: "Claude Monet",
-    bidPrice: 2.78,
+    bidPrice: 12.43,
     artImage: Claude_Landscape,
     description:
       "Born in France, Claude Monet (1840-1926) was the founder of the French Impressionist movement. He led the movement in his expressions of one`s perceptions before nature, seen in his plein air landscape paintings.",
@@ -47,7 +47,7 @@ export const marketData = [
     id: "DavidHockneyBigger",
     artName: "Bigger Trees Near Warter",
     artistName: "David Hockney",
-    bidPrice: 2.78,
+    bidPrice: 1.12,
     artImage: DavidHockneyBigger,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -56,7 +56,7 @@ export const marketData = [
     id: "Goyen",
     artName: "Winter Landscape",
     artistName: "Goyen",
-    bidPrice: 2.78,
+    bidPrice: 4.56,
     artImage: Goyen,
     description:
       "Jan Josephszoon van Goyen (1596-1656) was a Dutch landscape painter who is known to have created around 1,200 paintings and over 1,000 drawings. Van Goyen often depicted genre subjects of everyday life in the tonal style of the era.",
@@ -65,7 +65,7 @@ export const marketData = [
     id: "John_Constable",
     artName: "Wivenhoe Park Essex",
     artistName: "John Constable",
-    bidPrice: 2.78,
+    bidPrice: 25.22,
     artImage: John_Constable,
     description:
       "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
@@ -74,7 +74,7 @@ export const marketData = [
     id: "Leonardo",
     artName: "Santa Maria della Neve",
     artistName: "Leonardo da vinci",
-    bidPrice: 2.78,
+    bidPrice: 3.86,
     artImage: Leonardo,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -83,7 +83,7 @@ export const marketData = [
     id: "Monte",
     artName: "Monte Sainte-Victoire",
     artistName: "Paul Cezanne",
-    bidPrice: 2.78,
+    bidPrice: 8.72,
     artImage: Monte,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -92,7 +92,7 @@ export const marketData = [
     id: "Pont",
     artName: "Pont-Neuf",
     artistName: "Pierre Auguste",
-    bidPrice: 2.78,
+    bidPrice: 10.34,
     artImage: Pont,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -101,7 +101,7 @@ export const marketData = [
     id: "Strolling",
     artName: "Strolling About in Spring",
     artistName: "Zhan Ziqian",
-    bidPrice: 2.78,
+    bidPrice: 1.78,
     artImage: Strolling,
     description:
       "Strolling About in Spring (c. 600) is the only painting by Zhan Ziqian that has survived. It is described as the earliest surviving work of Chinese landscape painting. It is also described as the first shan shui painting - a form of Chinese painting that depicts natural landscapes like mountains, rivers, and waterfalls in brush and ink.",
@@ -110,7 +110,7 @@ export const marketData = [
     id: "Taus",
     artName: "Taus Near Alcalde",
     artistName: "Georgia-O'Keeffe",
-    bidPrice: 2.78,
+    bidPrice: 52.46,
     artImage: Taus,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -119,7 +119,7 @@ export const marketData = [
     id: "Monk",
     artName: "The Monk by the Sea",
     artistName: "Caspar David Friedrich",
-    bidPrice: 2.78,
+    bidPrice: 3.97,
     artImage: Monk,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -128,7 +128,7 @@ export const marketData = [
     id: "Titian",
     artName: "Orpheus and Eurydice",
     artistName: "Titian",
-    bidPrice: 2.78,
+    bidPrice: 1.73,
     artImage: Titian,
     description:
       "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
@@ -137,7 +137,7 @@ export const marketData = [
     id: "Vassilly",
     artName: "Two Poplars",
     artistName: "Vassilly Kandinsky",
-    bidPrice: 2.78,
+    bidPrice: 7.56,
     artImage: Vassilly,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -146,7 +146,7 @@ export const marketData = [
     id: "VINCENT",
     artName: "Starry Night",
     artistName: "Vincent Van Gogh",
-    bidPrice: 2.78,
+    bidPrice: 49.58,
     artImage: VINCENT,
     description:
       "Van Gogh`s landscapes included scenes of the French countryside, from wheat fields to cypress trees in starry nights, to blooming orchards and farm life. His use of bold and dramatic colors, as well as his impulsive brushwork, have highly influenced modern art.",
@@ -155,7 +155,7 @@ export const marketData = [
     id: "Vue",
     artName: "Vue du port de Marseille",
     artistName: "Paul Signac",
-    bidPrice: 2.78,
+    bidPrice: 6.12,
     artImage: Vue,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -167,7 +167,7 @@ export const activeData = [
     id: "Titian",
     artName: "Orpheus and Eurydice",
     artistName: "Titian",
-    bidPrice: 2.78,
+    bidPrice: 1.73,
     artImage: Titian,
     description:
       "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
@@ -176,7 +176,7 @@ export const activeData = [
     id: "Vassilly",
     artName: "Two Poplars",
     artistName: "Vassilly Kandinsky",
-    bidPrice: 2.78,
+    bidPrice: 7.56,
     artImage: Vassilly,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -185,7 +185,7 @@ export const activeData = [
     id: "John_Constable",
     artName: "Wivenhoe Park Essex",
     artistName: "John Constable",
-    bidPrice: 2.78,
+    bidPrice: 25.22,
     artImage: John_Constable,
     description:
       "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
@@ -194,7 +194,7 @@ export const activeData = [
     id: "Claude_Impression",
     artName: "Sunrise",
     artistName: "Claude Monet",
-    bidPrice: 2.78,
+    bidPrice: 12.43,
     artImage: Claude_Impression,
     description:
       "Monet is most famous for his beautiful portrayals of the French countryside, particularly of his own garden and the lily pad-filled pond at his home in Giverny. In fact, the term “Impressionism” as a genre of art was coined after Monet`s painting, Impression, Sunrise of 1872. ",
@@ -203,7 +203,7 @@ export const activeData = [
     id: "Monte",
     artName: "Monte Sainte-Victoire",
     artistName: "Paul Cezzane",
-    bidPrice: 2.78,
+    bidPrice: 8.72,
     artImage: Monte,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -212,7 +212,7 @@ export const activeData = [
     id: "Taus",
     artName: "Taus Near Alcalde New Mexico",
     artistName: "Georgia-O'Keeffe",
-    bidPrice: 2.78,
+    bidPrice: 52.46,
     artImage: Taus,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -221,7 +221,7 @@ export const activeData = [
     id: "Strolling",
     artName: "Strolling About in Spring",
     artistName: "Zhan Ziqian",
-    bidPrice: 2.78,
+    bidPrice: 1.78,
     artImage: Strolling,
     description:
       "Strolling About in Spring (c. 600) is the only painting by Zhan Ziqian that has survived. It is described as the earliest surviving work of Chinese landscape painting. It is also described as the first shan shui painting - a form of Chinese painting that depicts natural landscapes like mountains, rivers, and waterfalls in brush and ink.",
@@ -233,7 +233,7 @@ export const collectionData = [
     id: "Titian",
     artName: "Orpheus and Eurydice",
     artistName: "Titian",
-    bidPrice: 2.78,
+    bidPrice: 1.73,
     artImage: Titian,
     description:
       "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
@@ -242,7 +242,7 @@ export const collectionData = [
     id: "Vassilly",
     artName: "Two Poplars",
     artistName: "Vassilly Kandinsky",
-    bidPrice: 2.78,
+    bidPrice: 7.56,
     artImage: Vassilly,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -251,7 +251,7 @@ export const collectionData = [
     id: "John_Constable",
     artName: "Wivenhoe Park Essex",
     artistName: "John Constable",
-    bidPrice: 2.78,
+    bidPrice: 25.22,
     artImage: John_Constable,
     description:
       "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
@@ -260,7 +260,7 @@ export const collectionData = [
     id: "Claude_Impression",
     artName: "Sunrise",
     artistName: "Claude Monet",
-    bidPrice: 2.78,
+    bidPrice: 12.43,
     artImage: Claude_Impression,
     description:
       "Monet is most famous for his beautiful portrayals of the French countryside, particularly of his own garden and the lily pad-filled pond at his home in Giverny. In fact, the term “Impressionism” as a genre of art was coined after Monet`s painting, Impression, Sunrise of 1872. ",
@@ -269,7 +269,7 @@ export const collectionData = [
     id: "Monte",
     artName: "Monte Sainte-Victoire",
     artistName: "Paul Cezzane",
-    bidPrice: 2.78,
+    bidPrice: 8.72,
     artImage: Monte,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -278,7 +278,7 @@ export const collectionData = [
     id: "Taus",
     artName: "Taus Near Alcalde New Mexico",
     artistName: "Georgia-O'Keeffe",
-    bidPrice: 2.78,
+    bidPrice: 52.46,
     artImage: Taus,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -289,26 +289,26 @@ export const savedData = [
   {
     id: "Claude_Landscape",
     artName: "The Parc Monceau",
-    artistName: "Claue Monet",
-    bidPrice: 2.78,
+    artistName: "Claude Monet",
+    bidPrice: 12.43,
     artImage: Claude_Landscape,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+    "Born in France, Claude Monet (1840-1926) was the founder of the French Impressionist movement. He led the movement in his expressions of one`s perceptions before nature, seen in his plein air landscape paintings.",
   },
   {
     id: "John_Constable",
     artName: "Wivenhoe Park Essex",
     artistName: "John Constable",
-    bidPrice: 2.78,
+    bidPrice: 25.22,
     artImage: John_Constable,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+    "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
   },
   {
     id: "Goyen",
     artName: "Winter Landscape",
     artistName: "Goyen",
-    bidPrice: 2.78,
+    bidPrice: 4.56,
     artImage: Goyen,
     description:
       "Jan Josephszoon van Goyen (1596-1656) was a Dutch landscape painter who is known to have created around 1,200 paintings and over 1,000 drawings. Van Goyen often depicted genre subjects of everyday life in the tonal style of the era.",
@@ -317,7 +317,7 @@ export const savedData = [
     id: "Vue",
     artName: "Vue du port de Marseille",
     artistName: "Paul Signac",
-    bidPrice: 2.78,
+    bidPrice: 6.12,
     artImage: Vue,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
@@ -329,7 +329,7 @@ export const trendingData = [
     id: "Goyen",
     artName: "Winter Landscape",
     artistName: "Goyen",
-    bidPrice: 2.78,
+    bidPrice: 4.56,
     artImage: Goyen,
     description:
       "Jan Josephszoon van Goyen (1596-1656) was a Dutch landscape painter who is known to have created around 1,200 paintings and over 1,000 drawings. Van Goyen often depicted genre subjects of everyday life in the tonal style of the era.",
@@ -338,7 +338,7 @@ export const trendingData = [
     id: "John_Constable",
     artName: "Wivenhoe Park Essex",
     artistName: "John Constable",
-    bidPrice: 2.78,
+    bidPrice: 25.22,
     artImage: John_Constable,
     description:
       "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
@@ -347,7 +347,7 @@ export const trendingData = [
     id: "Leonardo",
     artName: "Santa Maria della Neve",
     artistName: "Leonardo da vinci",
-    bidPrice: 2.78,
+    bidPrice: 3.86,
     artImage: Leonardo,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
