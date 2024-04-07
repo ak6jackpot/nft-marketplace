@@ -1,13 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { messagesData } from "data/messagesData";
 import React from "react";
-import {
-  activeData,
-  collectionData,
-  marketData,
-  savedData,
-  trendingData,
-} from "data/itemsData";
+import { collectionData, marketData } from "data/itemsData";
 
 // Define the initial state
 const initialState = {
@@ -16,10 +10,10 @@ const initialState = {
     selectedMessageIndex: 0,
   },
   globalitems: {
-    savedData: savedData,
-    activeData: activeData,
+    savedData: marketData?.filter((item) => item?.saved == true),
+    activeData: marketData?.filter((item) => item?.active == true),
     marketData: marketData,
-    trendingData: trendingData,
+    trendingData: marketData?.filter((item) => item?.trending == true),
     collectionData: collectionData,
   },
 };

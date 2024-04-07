@@ -7,8 +7,10 @@ import art from "../assets/images/ProfilePic.png";
 import eth from "../assets/images/eth.png";
 import heartPink from "../assets/images/heartPink.png";
 import heartGray from "../assets/images/heartGray.png";
-import { marketData, savedData } from "data/itemsData";
+import { marketData } from "data/itemsData";
 import { useUserContext } from "context-provider";
+import Countdown from "react-countdown";
+import { CounterBig } from "components/Counter";
 
 export default function OpenBid(props) {
   const params = useParams();
@@ -49,19 +51,21 @@ export default function OpenBid(props) {
                     <span className="">{selectedObj?.artistName}</span>
                   </div>
                 </div>
-                <div className="flex flex-row">
-                  <div className="flex flex-row items-center">
-                    <img src={eth} className="flex h-[28px] rounded-full" />
-                    <div className="flex flex-col my-2">
-                      <span className="opacity-40">{"Current Bid"}</span>
-                      <span className="">{selectedObj?.bidPrice}</span>
-                    </div>
+                <div className="flex flex-row w-[50%] justify-between">
+                  <div className="flex flex-col my-2">
+                    {!Date.now() > selectedObj?.timeLeft && (
+                      <span className="opacity-40">{"Auction End in"}</span>
+                    )}
+                    <Countdown
+                      date={selectedObj?.timeLeft}
+                      renderer={CounterBig}
+                    />
                   </div>
-                  <div className="flex flex-row items-center">
-                    <img src={eth} className="flex h-[28px] rounded-full" />
-                    <div className="flex flex-col my-2">
-                      <span className="opacity-40">{"Current Bid"}</span>
-                      <span className="">{selectedObj?.bidPrice}</span>
+                  <div className="flex flex-col my-2 ">
+                    <span className="opacity-40">{"Current Bid"}</span>
+                    <div className="flex flex-row items-center justify-between px-2">
+                      <img src={eth} className="flex h-[20px]" />
+                      <span className="text-xl">{selectedObj?.bidPrice}</span>
                     </div>
                   </div>
                 </div>

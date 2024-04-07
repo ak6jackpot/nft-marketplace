@@ -4,6 +4,8 @@ import heartPink from "assets/images/heartPink.png";
 import heartGray from "assets/images/heartGray.png";
 import { Link } from "react-router-dom";
 import { useUserContext } from "context-provider";
+import Countdown from "react-countdown";
+import { CounterSmall } from "./Counter";
 interface ArtworkCardProps {
   details: object;
 }
@@ -24,8 +26,13 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           src={details?.artImage}
         />
 
-        <div className="relative h-full flex flex-row opacity-70 -mt-[50%] -mr-[10%] rounded-3xl bg-black p-1 px-6 mx-12">
-          <span className="text-white text-sm">{"12h 30m"}</span>
+        <div
+          className={`relative h-full flex flex-row opacity-70 -mt-[50%] -mr-[10%] rounded-3xl bg-black p-1 ${
+            Date.now() > details?.timeLeft ? "px-2" : "px-6"
+          } px-2 mx-20`}
+        >
+          <Countdown date={details?.timeLeft} renderer={CounterSmall} />
+
           <button
             onClick={() => {
               setsavedNow(!savedNow);
@@ -53,7 +60,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
             }}
           >
             <img
-              className="w-[16px] aspect-square ml-1"
+              className="w-[16px] aspect-square"
               src={savedNow ? heartPink : heartGray}
             />
           </button>
