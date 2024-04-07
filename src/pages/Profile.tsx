@@ -47,10 +47,12 @@ export default function Profile() {
                   <span className="text-sm opacity-50 mx-10 my-4 text-center">
                     {bio}
                   </span>
-                  <div className="flex flex-row items-center">
-                    <img className="w-[16px] mr-2" src={web} />
-                    <span className="text-xs">{website}</span>
-                  </div>
+                  {cookies.get("website") && (
+                    <div className="flex flex-row items-center">
+                      <img className="w-[16px] mr-2" src={web} />
+                      <span className="text-xs">{website}</span>
+                    </div>
+                  )}
                   <div className="flex flex-row items-center border-b-[1px] my-4 w-[70%] justify-center pb-6">
                     <Link to={`/settings`}>
                       <button className="mr-2 bg-black text-white rounded-md text-xs p-[6px]">

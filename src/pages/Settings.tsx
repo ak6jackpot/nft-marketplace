@@ -16,12 +16,22 @@ export default function Settings() {
   const cookies = new Cookies();
   const [openSnackbar, closeSnackbar] = useSnackbar();
 
-  const [firstname, setFirstname] = useState(cookies.get("firstname"));
-  const [lastname, setLastname] = useState(cookies.get("lastname"));
-  const [emailid, setEmailid] = useState(cookies.get("email"));
-  const [username, setUsername] = useState(cookies.get("username"));
-  const [website, setWebsite] = useState(cookies.get("website"));
-  const [bio, setBio] = useState(cookies.get("bio"));
+  const [firstname, setFirstname] = useState(
+    cookies.get("firstname") ? cookies.get("firstname") : ""
+  );
+  const [lastname, setLastname] = useState(
+    cookies.get("lastname") ? cookies.get("lastname") : ""
+  );
+  const [emailid, setEmailid] = useState(
+    cookies.get("email") ? cookies.get("email") : ""
+  );
+  const [username, setUsername] = useState(
+    cookies.get("username") ? cookies.get("username") : ""
+  );
+  const [website, setWebsite] = useState(
+    cookies.get("website") ? cookies.get("website") : ""
+  );
+  const [bio, setBio] = useState(cookies.get("bio") ? cookies.get("bio") : "");
   const [pic, setPic] = useState(localStorage.getItem("profilePic"));
 
   const saveInfo = () => {
@@ -33,6 +43,8 @@ export default function Settings() {
     cookies.set("bio", bio, { path: "/" });
     openSnackbar("Details Saved Succesfully");
   };
+
+  console.log(lastname, cookies.get("lastname"));
 
   const handleUpload = () => {
     const file = document.querySelector("input[type=file]").files[0];

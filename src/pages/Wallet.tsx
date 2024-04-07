@@ -1,7 +1,7 @@
-import ArtworkCard from "components/ArtworkCard";
 import Header from "components/Header";
 import HistoryItemSmall from "components/HistoryItemSmall";
 import SidebarPlus from "components/SidebarPlus";
+import WalletCard from "components/WalletCard";
 import { useUserContext } from "context-provider";
 import { ordersData } from "data/ordersData";
 import React from "react";
@@ -27,15 +27,15 @@ export default function Wallet() {
                 <div className="items-start m-2">
                   <span className="text-black text-3xl">Wallet</span>
                 </div>
-                <div className="flex flex-row items-start my-2 p-2 justify-between">
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[0]} />
+                <div className="flex flex-row items-start my-2 p-2">
+                  <div className="flex flex-1 justify-center">
+                    <WalletCard variant={"Spending"} />
                   </div>
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[1]} />
+                  <div className="flex flex-1 justify-center">
+                    <WalletCard variant={"Income"} />
                   </div>
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[2]} />
+                  <div className="flex flex-1 justify-center">
+                    <WalletCard variant={"Saving"} />
                   </div>
                 </div>
               </div>

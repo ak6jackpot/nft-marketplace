@@ -24,7 +24,7 @@ export default function Header(props: any) {
             <span className="text-sm">3.421 ETH</span>
           </Button>
           <Button variant="outline" shape="circle" className="mr-1">
-            <img className="w-[25px]" src={Bell}></img>
+            <img className="w-[20px]" src={Bell}></img>
           </Button>
           <Link to={`/profile`}>
             <button className="flex flex-row justify-start items-center">

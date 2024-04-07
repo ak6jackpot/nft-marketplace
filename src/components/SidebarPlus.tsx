@@ -20,14 +20,18 @@ export default function SidebarPlus(props: any) {
         <img
           className="w-[50px] rounded-full m-2 aspect-square"
           src={pic ? pic : defaultProfile}
-        ></img>
+        />
         <div className="flex flex-col">
-          <span>
-            {cookies.get("firstname") + " " + cookies.get("lastname")}
-          </span>
-          <span className="text-xs opacity-40">
-            {"@" + cookies.get("username")}
-          </span>
+          {cookies.get("firstname") && (
+            <span>
+              {cookies.get("firstname") + " " + cookies.get("lastname")}
+            </span>
+          )}
+          {cookies.get("username") && (
+            <span className="text-xs opacity-40">
+              {"@" + cookies.get("username")}
+            </span>
+          )}
         </div>
       </div>
       <Sidebar>
