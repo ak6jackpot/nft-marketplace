@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
 import defaultProfile from "assets/images/defaultProfile.png";
 import Cookies from "universal-cookie";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
+import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
+import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
+import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import WalletOutlinedIcon from "@mui/icons-material/WalletOutlined";
+import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 
 export default function SidebarPlus(props: any) {
   const cookies = new Cookies();
@@ -44,32 +53,53 @@ export default function SidebarPlus(props: any) {
           }}
         >
           <SubMenu label="GENERAL" defaultOpen={true} className="text-xs">
-            <MenuItem component={<Link to="/" />}>
+            <MenuItem
+              component={<Link to="/" />}
+              icon={
+                <ExploreOutlinedIcon
+                  color={selectedTab == "" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
-                  selectedTab == "" ? "bg-gray-300 text-black" : "text-gray-400"
+                  selectedTab == "" ? "bg-gray-300 text-black" : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Dashboard
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/message" />}>
+            <MenuItem
+              component={<Link to="/message" />}
+              icon={
+                <TextsmsOutlinedIcon
+                  color={selectedTab == "message" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "message"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Message
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/settings" />}>
+            <MenuItem
+              component={<Link to="/settings" />}
+              icon={
+                <SettingsOutlinedIcon
+                  color={selectedTab == "settings" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "settings"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Settings
@@ -81,34 +111,55 @@ export default function SidebarPlus(props: any) {
             defaultOpen={true}
             className="text-xs mt-2"
           >
-            <MenuItem component={<Link to="/market" />}>
+            <MenuItem
+              component={<Link to="/market" />}
+              icon={
+                <StorefrontOutlinedIcon
+                  color={selectedTab == "market" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "market"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Market
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/active" />}>
+            <MenuItem
+              component={<Link to="/active" />}
+              icon={
+                <GavelOutlinedIcon
+                  color={selectedTab == "active" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "active"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Active Bids
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/saved" />}>
+            <MenuItem
+              component={<Link to="/saved" />}
+              icon={
+                <FavoriteBorderOutlinedIcon
+                  color={selectedTab == "saved" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "saved"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Saved
@@ -120,34 +171,55 @@ export default function SidebarPlus(props: any) {
             defaultOpen={true}
             className="text-xs mt-2"
           >
-            <MenuItem component={<Link to="/collection" />}>
+            <MenuItem
+              component={<Link to="/collection" />}
+              icon={
+                <WidgetsOutlinedIcon
+                  color={selectedTab == "collection" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "collection"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Collection
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/wallet" />}>
+            <MenuItem
+              component={<Link to="/wallet" />}
+              icon={
+                <WalletOutlinedIcon
+                  color={selectedTab == "wallet" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "wallet"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 Wallet
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/history" />}>
+            <MenuItem
+              component={<Link to="/history" />}
+              icon={
+                <AccessTimeIcon
+                  color={selectedTab == "history" ? "inherit" : "action"}
+                />
+              }
+            >
               <div
                 className={`hover:text-black text-base hover:bg-gray-300 ${
                   selectedTab == "history"
                     ? "bg-gray-300 text-black"
-                    : "text-gray-400"
+                    : "text-gray-500"
                 } p-2 rounded-lg`}
               >
                 History

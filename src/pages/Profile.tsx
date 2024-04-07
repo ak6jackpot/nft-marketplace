@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Art from "assets/images/art.jpg";
 import web from "assets/images/web.png";
 import share from "assets/images/share.png";
+import defaultProfile from "assets/images/defaultProfile.png";
 import Cookies from "universal-cookie";
 import { Link } from "react-router-dom";
 
@@ -40,7 +41,7 @@ export default function Profile() {
             <div className="flex flex-row">
               <div className="flex flex-1 px-8">
                 <div className="flex flex-col h-[500px] rounded-3xl bg-white items-center -mt-24">
-                  <img className="w-[40%] rounded-full mt-8 mb-4" src={pic} />
+                  <img className="w-[40%] rounded-full mt-8 mb-4" src={pic ? pic : defaultProfile} />
                   <span className="font-urbanistBold text-lg">
                     {firstname} {lastname}
                   </span>
