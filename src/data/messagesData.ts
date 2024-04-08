@@ -190,7 +190,7 @@ export const messagesData = [
       },
       { text: " 'ELLO ", time: "4:32", incoming: true },
       {
-        text: "I want to buy your NFT collection of real restate projects.",
+        text: "I want to buy your NFT collection of real estate projects.",
         time: "4:32",
         incoming: true,
       },

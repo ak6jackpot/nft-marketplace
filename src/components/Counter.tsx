@@ -31,7 +31,7 @@ export const CounterSmall = ({ hours, minutes, seconds, completed }) => {
     return <span className="text-lg text-white mr-1">{""}</span>;
   } else {
     return (
-      <span className="text-white text-sm mr-1">{`${hours}h ${minutes}m`}</span>
+      <span className="text-white text-xs opacity-80 mr-1">{`${hours}h ${minutes}m`}</span>
     );
   }
 };

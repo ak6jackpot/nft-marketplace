@@ -27,9 +27,9 @@ export default function ArtworkCard(props: ArtworkCardProps) {
         />
 
         <div
-          className={`relative h-full flex flex-row opacity-70 -mt-[50%] -mr-[10%] rounded-3xl bg-black p-1 ${
+          className={`relative h-full flex flex-row opacity-70 -mt-[53%] items-center justify-center -mr-[40%] rounded-3xl bg-black p-1 ${
             Date.now() > details?.timeLeft ? "px-2" : "px-6"
-          } px-2 mx-20`}
+          }`}
         >
           <Countdown date={details?.timeLeft} renderer={CounterSmall} />
 

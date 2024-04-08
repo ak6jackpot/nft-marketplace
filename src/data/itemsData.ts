@@ -150,7 +150,7 @@ export const marketData = [
     artImage: Strolling,
     description:
       "Strolling About in Spring (c. 600) is the only painting by Zhan Ziqian that has survived. It is described as the earliest surviving work of Chinese landscape painting. It is also described as the first shan shui painting - a form of Chinese painting that depicts natural landscapes like mountains, rivers, and waterfalls in brush and ink.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(21, 19, 0, 0),
     active: true,
     saved: false,
     trending: false,
@@ -164,7 +164,7 @@ export const marketData = [
     artImage: Taus,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(15, 30, 0, 0),
     active: true,
     saved: false,
     trending: false,
@@ -178,7 +178,7 @@ export const marketData = [
     artImage: Monk,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(22, 0, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -192,7 +192,7 @@ export const marketData = [
     artImage: Titian,
     description:
       "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(19, 41, 0, 0),
     active: true,
     saved: false,
     trending: false,
@@ -206,7 +206,7 @@ export const marketData = [
     artImage: Vassilly,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(14, 5, 0, 0),
     active: true,
     saved: false,
     trending: false,
@@ -220,7 +220,7 @@ export const marketData = [
     artImage: VINCENT,
     description:
       "Van Gogh`s landscapes included scenes of the French countryside, from wheat fields to cypress trees in starry nights, to blooming orchards and farm life. His use of bold and dramatic colors, as well as his impulsive brushwork, have highly influenced modern art.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(19, 15, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -234,7 +234,7 @@ export const marketData = [
     artImage: Vue,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(23, 45, 0, 0),
     active: false,
     saved: true,
     trending: false,
@@ -250,7 +250,7 @@ export const collectionData = [
     artImage: Titian,
     description:
       "Titian introduced a new concept to landscape painting - he brought natural landscapes to life with light and color, so they no longer served as simple backgrounds for main characters. In a sense, he turned landscapes into protagonists themselves.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(19, 41, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -264,7 +264,7 @@ export const collectionData = [
     artImage: Vassilly,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(14, 5, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -278,7 +278,7 @@ export const collectionData = [
     artImage: John_Constable,
     description:
       "English landscape painter John Constable (1776-1837) followed a Romantic tradition, emphasizing emotion, individualism, and the glorification of nature in his works. His most famous paintings are now some of the most highly valued in British art, such as Wivenhoe Park (shown above).",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(20, 0, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -292,7 +292,7 @@ export const collectionData = [
     artImage: Claude_Impression,
     description:
       "Monet is most famous for his beautiful portrayals of the French countryside, particularly of his own garden and the lily pad-filled pond at his home in Giverny. In fact, the term “Impressionism” as a genre of art was coined after Monet`s painting, Impression, Sunrise of 1872. ",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(23, 30, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -306,7 +306,7 @@ export const collectionData = [
     artImage: Monte,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(23, 21, 0, 0),
     active: false,
     saved: false,
     trending: false,
@@ -320,7 +320,7 @@ export const collectionData = [
     artImage: Taus,
     description:
       "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
-    timeLeft: new Date().setHours(24, 0, 0, 0),
+    timeLeft: new Date().setHours(15, 30, 0, 0),
     active: false,
     saved: false,
     trending: false,

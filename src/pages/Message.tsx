@@ -8,10 +8,16 @@ import { Button } from "components/Button";
 import Search from "assets/images/search.png";
 import ThreeDots from "assets/images/three_dots.png";
 import { useUserContext } from "context-provider";
+import Fuse from "fuse.js";
 
 export default function Message() {
   const { messages } = useUserContext();
   const [msgText, setMsgText] = useState("");
+  const options = {
+    includeScore: true,
+    threshold: 0.6,
+    keys: ["text"],
+  };
 
   return (
     <>
@@ -28,11 +34,19 @@ export default function Message() {
             <div className="flex h-[90px] items-center justify-center">
               <img
                 src={Search}
-                className="absolute h-[20px] aspect-square mr-[20%]"
+                className="absolute h-[20px] aspect-square mr-[19%]"
               />
               <input
                 className="w-[80%] bg-gray-100 h-[50%] rounded-xl pl-8 px-2"
                 placeholder="Search chat"
+                onChange={(e) => {
+                  messages?.messagesData?.map((item) => {
+                    // console.log(item?.name);
+                    console.log(
+                      new Fuse(item?.messages, options).search(e?.target?.value)
+                    );
+                  });
+                }}
               />
             </div>
             <div className="flex items-start overflow-y-scroll justify-center">
