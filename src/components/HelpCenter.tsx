@@ -3,7 +3,7 @@ import { Button } from "./Button";
 
 export default function HelpCenter(props: any) {
   return (
-    <div className="justify-center items-center flex flex-col mx-2">
+    <div className="justify-center items-center flex flex-col mx-4">
       <div className="items-center justify-center flex w-[40px] z-10 aspect-square rounded-full bg-white">
         <div className="items-center justify-center flex w-[20px] aspect-square rounded-full bg-black">
           <span className="items-center justify-center text-white">?</span>
@@ -19,7 +19,7 @@ export default function HelpCenter(props: any) {
         <span className="items-center opacity-60 justify-center align-center text-center flex my-1 text-xs">
           Please contact us for any
         </span>
-        <span className="items-start opacity-60 justify-center align-center text-center flex my-1 mb-4 text-xs">
+        <span className="items-start opacity-60 justify-center align-center text-center flex mb-4 text-xs">
           questions
         </span>
         <div className="bg-white text-black rounded-lg justify-center flex w-full">

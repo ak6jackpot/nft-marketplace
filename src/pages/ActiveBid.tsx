@@ -16,8 +16,10 @@ export default function ActiveBid() {
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
-        <SidebarPlus />
-        <div className="flex flex-col w-full">
+        <div className="flex flex-1">
+          <SidebarPlus />
+        </div>
+        <div className="flex flex-col flex-4">
           <Header />
           <div className="w-[90%] aspect-video flex flex-col mx-4">
             <div className="items-start my-2">

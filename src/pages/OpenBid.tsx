@@ -29,8 +29,10 @@ export default function OpenBid(props) {
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal">
-        <SidebarPlus />
-        <div className="flex flex-col w-full">
+        <div className="flex flex-1">
+          <SidebarPlus />
+        </div>
+        <div className="flex flex-col flex-4">
           <Header />
           <div className="w-[80%] aspect-video flex flex-col mx-4">
             <div className="flex flex-row w-full m-4 h-[60%]">

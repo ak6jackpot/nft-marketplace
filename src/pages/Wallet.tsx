@@ -18,8 +18,10 @@ export default function Wallet() {
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
-        <SidebarPlus />
-        <div className="flex flex-col w-full">
+        <div className="flex flex-1">
+          <SidebarPlus />
+        </div>
+        <div className="flex flex-col flex-4">
           <Header />
           <div className="w-full flex flex-row">
             <div className="flex flex-col items-center max-h-screen overflow-y-scroll flex-2 border-r-[2px] p-4 border-gray-200">

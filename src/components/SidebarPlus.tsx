@@ -24,7 +24,7 @@ export default function SidebarPlus(props: any) {
     ];
 
   return (
-    <div className="flex flex-col bg-gray-100 h-auto border-r-[2px]">
+    <div className="flex flex-col bg-gray-100 h-screen w-[20%] fixed border-r-[2px]">
       <div className="flex flex-row justify-center items-center">
         <img
           className="w-[50px] rounded-full m-2 aspect-square"
@@ -47,7 +47,7 @@ export default function SidebarPlus(props: any) {
         <Menu
           menuItemStyles={{
             button: {
-              marginBlock: -7,
+              marginBlock: -8,
               backgroundColor: "#f3f4f6",
             },
           }}

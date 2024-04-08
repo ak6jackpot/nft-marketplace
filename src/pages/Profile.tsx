@@ -31,8 +31,10 @@ export default function Profile() {
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
-        <SidebarPlus />
-        <div className="flex flex-col w-full">
+        <div className="flex flex-1">
+          <SidebarPlus />
+        </div>
+        <div className="flex flex-col flex-4">
           <Header />
           <div className="w-full aspect-video flex flex-col">
             <div className="aspect-[5] w-full flex bg-gray-200 items-center overflow-hidden justify-center">
@@ -41,7 +43,10 @@ export default function Profile() {
             <div className="flex flex-row">
               <div className="flex flex-1 px-8">
                 <div className="flex flex-col h-[500px] rounded-3xl bg-white items-center -mt-24">
-                  <img className="w-[40%] rounded-full mt-8 mb-4" src={pic ? pic : defaultProfile} />
+                  <img
+                    className="w-[40%] rounded-full mt-8 mb-4"
+                    src={pic ? pic : defaultProfile}
+                  />
                   <span className="font-urbanistBold text-lg">
                     {firstname} {lastname}
                   </span>
