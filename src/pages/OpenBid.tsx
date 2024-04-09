@@ -55,9 +55,6 @@ export default function OpenBid(props) {
                 </div>
                 <div className="flex flex-row w-[50%] justify-between">
                   <div className="flex flex-col my-2">
-                    {!Date.now() > selectedObj?.timeLeft && (
-                      <span className="opacity-40">{"Auction End in"}</span>
-                    )}
                     <Countdown
                       date={selectedObj?.timeLeft}
                       renderer={CounterBig}

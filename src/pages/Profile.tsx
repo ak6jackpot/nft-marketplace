@@ -1,14 +1,13 @@
 import ArtworkCard from "components/ArtworkCard";
-import { Button } from "components/Button";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
 import { useUserContext } from "context-provider";
 import React from "react";
 import { Helmet } from "react-helmet";
 import Art from "assets/images/art.jpg";
-import web from "assets/images/web.png";
-import share from "assets/images/share.png";
-import defaultProfile from "assets/images/defaultProfile.png";
+import web from "assets/icons/web.png";
+import share from "assets/icons/share.png";
+import defaultProfile from "assets/icons/defaultProfile.png";
 import Cookies from "universal-cookie";
 import { Link } from "react-router-dom";
 

@@ -7,21 +7,24 @@ export const CounterBig = ({ hours, minutes, seconds, completed }) => {
     );
   } else {
     return (
-      <div className="flex flex-row items-center justify-between">
-        <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
-          <span className="text-lg">{hours}</span>
-        </div>
-        <span className="text-2xl mx-1">:</span>
+      <>
+        <span className="opacity-40">{"Auction End in"}</span>
+        <div className="flex flex-row items-center justify-between">
+          <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
+            <span className="text-lg">{hours}</span>
+          </div>
+          <span className="text-2xl mx-1">:</span>
 
-        <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
-          <span className="text-lg">{minutes}</span>
-        </div>
-        <span className="text-2xl mx-1">:</span>
+          <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
+            <span className="text-lg">{minutes}</span>
+          </div>
+          <span className="text-2xl mx-1">:</span>
 
-        <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
-          <span className="text-lg">{seconds}</span>
+          <div className="bg-gray-100 rounded-md aspect-square items-center justify-center flex w-[30px]">
+            <span className="text-lg">{seconds}</span>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 };
