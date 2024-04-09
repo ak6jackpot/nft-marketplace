@@ -23,7 +23,7 @@ export const marketData = [
     bidPrice: 2.78,
     artImage: Autumn,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Guo Xi's work demonstrates his innovative techniques for producing multiple perspectives which he called 'the angle of totality.' This type of visual representation is also called 'Floating Perspective' - 'Autumn in the River Valley' being a prime example of the same.",
     timeLeft: new Date().setHours(24, 0, 0, 0),
     active: false,
     saved: false,
@@ -65,7 +65,7 @@ export const marketData = [
     bidPrice: 1.12,
     artImage: DavidHockneyBigger,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Hockney’s landscapes, as well as his still lifes and portraits, have varied greatly over the course of his career. Hockney's largest painting is a landscape titled Bigger Trees Near Warter, which measures 15 feet by 40 feet. ",
     timeLeft: new Date().setHours(18, 46, 0, 0),
     active: false,
     saved: false,
@@ -121,7 +121,7 @@ export const marketData = [
     bidPrice: 8.72,
     artImage: Monte,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "This famous landscape painting propelled Paul Cézanne (1839-1906) into the spotlight, bringing him well-deserved fame. It depicts the Mont Sainte-Victoire in Provence, France. This mountain became one of Cézanne's most repeated and varied themes.",
     timeLeft: new Date().setHours(23, 21, 0, 0),
     active: true,
     saved: false,
@@ -135,7 +135,7 @@ export const marketData = [
     bidPrice: 10.34,
     artImage: Pont,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Pierre-Auguste Renoir (1841-1919) is one of the many Impressionist painters who celebrated the city of Paris in his work. The famous landscape painting Pont-Neuf immortalizes what life must have been like in this Parisian arrondissement in the 19th century.",
     timeLeft: new Date().setHours(24, 0, 0, 0),
     active: false,
     saved: false,
@@ -163,7 +163,7 @@ export const marketData = [
     bidPrice: 52.46,
     artImage: Taus,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "American artist Georgia Totto O'Keeffe (1887-1986) is well-known for her paintings of New Mexico landscapes, as well as her works depicting large flowers and New York high rises. She is considered the Mother of American Modernism.",
     timeLeft: new Date().setHours(15, 30, 0, 0),
     active: true,
     saved: false,
@@ -177,7 +177,7 @@ export const marketData = [
     bidPrice: 3.97,
     artImage: Monk,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "When looking at this famous landscape painting depicting the North Sea, one immediately asks oneself what time of day it is portraying - morning or evening? This aura of mystery has made this piece stand out in the history of art as a truly unique landscape.",
     timeLeft: new Date().setHours(22, 0, 0, 0),
     active: false,
     saved: false,
@@ -205,7 +205,7 @@ export const marketData = [
     bidPrice: 7.56,
     artImage: Vassilly,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Most of Kandinsky's existing paintings date to the beginning of the 20th century, during which he painted landscapes and towns using a wide range of colors. He did not typically include human figures in his paintings. ",
     timeLeft: new Date().setHours(14, 5, 0, 0),
     active: true,
     saved: false,
@@ -233,7 +233,7 @@ export const marketData = [
     bidPrice: 6.12,
     artImage: Vue,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Vue du port de Marseille is a famous landscape painting by the artist Paul Signac (1863-1935). This painting depicts the city and port of Marseille, which are delicately rendered using the pointillist technique. Signac is known to be one of the masters of this style of painting.",
     timeLeft: new Date().setHours(23, 45, 0, 0),
     active: false,
     saved: true,
@@ -263,7 +263,7 @@ export const collectionData = [
     bidPrice: 7.56,
     artImage: Vassilly,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "Most of Kandinsky's existing paintings date to the beginning of the 20th century, during which he painted landscapes and towns using a wide range of colors. He did not typically include human figures in his paintings. ",
     timeLeft: new Date().setHours(14, 5, 0, 0),
     active: false,
     saved: false,
@@ -305,7 +305,7 @@ export const collectionData = [
     bidPrice: 8.72,
     artImage: Monte,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "This famous landscape painting propelled Paul Cézanne (1839-1906) into the spotlight, bringing him well-deserved fame. It depicts the Mont Sainte-Victoire in Provence, France. This mountain became one of Cézanne's most repeated and varied themes.",
     timeLeft: new Date().setHours(23, 21, 0, 0),
     active: false,
     saved: false,
@@ -319,7 +319,7 @@ export const collectionData = [
     bidPrice: 52.46,
     artImage: Taus,
     description:
-      "The earliest known drawing by Leonardo da Vinci, a landscape drawing of the valley of Arno and Montelupo castle. Today, this landscape drawing for Santa Maria Della Neve can be seen in the Uffizi Gallery in Florence.",
+      "American artist Georgia Totto O'Keeffe (1887-1986) is well-known for her paintings of New Mexico landscapes, as well as her works depicting large flowers and New York high rises. She is considered the Mother of American Modernism.",
     timeLeft: new Date().setHours(15, 30, 0, 0),
     active: false,
     saved: false,

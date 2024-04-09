@@ -12,7 +12,7 @@ export default function Market() {
   return (
     <>
       <Helmet>
-        <title>NFT</title>
+        <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">

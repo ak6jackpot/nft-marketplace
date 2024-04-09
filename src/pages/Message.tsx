@@ -18,11 +18,15 @@ export default function Message() {
     threshold: 0.6,
     keys: ["text"],
   };
+  const timeToMinutes = (timeStr) => {
+    const [hours, minutes] = timeStr.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
 
   return (
     <>
       <Helmet>
-        <title>NFT</title>
+        <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full h-screen font-urbanistNormal bg-white">
@@ -51,18 +55,30 @@ export default function Message() {
             </div>
             <div className="flex items-start overflow-y-scroll justify-center">
               <div className="flex flex-col w-full">
-                {messages?.messagesData?.map((item) => {
-                  return (
-                    <div className="">
-                      <MessageCard
-                        name={item?.name}
-                        ProfilePic={item?.profilePic}
-                        lastMsg={item?.messages[0]?.text?.slice(0, 30) + "..."}
-                        lastMsgTime={item?.messages[0]?.time}
-                      />
-                    </div>
-                  );
-                })}
+                {messages?.messagesData
+                  ?.sort(
+                    (a, b) =>
+                      timeToMinutes(a.messages[a.messages.length - 1]?.time) -
+                      timeToMinutes(b.messages[b.messages.length - 1]?.time)
+                  )
+                  ?.map((item) => {
+                    return (
+                      <div className="">
+                        <MessageCard
+                          name={item?.name}
+                          ProfilePic={item?.profilePic}
+                          lastMsg={
+                            item?.messages[
+                              item.messages.length - 1
+                            ]?.text?.slice(0, 30) + "..."
+                          }
+                          lastMsgTime={
+                            item?.messages[item.messages.length - 1]?.time
+                          }
+                        />
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </div>
@@ -124,7 +140,7 @@ export default function Message() {
                     messages?.selectedMessageIndex
                   ]?.messages?.push({
                     text: msgText,
-                    time: "4:32",
+                    time: `${new Date().getHours()}:${new Date().getMinutes()}`,
                     incoming: false,
                   });
                   setMsgText("");

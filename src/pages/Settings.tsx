@@ -2,7 +2,7 @@ import { Button } from "components/Button";
 import Header from "components/Header";
 import SidebarPlus from "components/SidebarPlus";
 import { useSnackbar } from "react-simple-snackbar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import user from "assets/images/user.png";
 import link from "assets/images/link.png";
@@ -16,23 +16,25 @@ export default function Settings() {
   const cookies = new Cookies();
   const [openSnackbar, closeSnackbar] = useSnackbar();
 
-  const [firstname, setFirstname] = useState(
-    cookies.get("firstname") ? cookies.get("firstname") : ""
-  );
-  const [lastname, setLastname] = useState(
-    cookies.get("lastname") ? cookies.get("lastname") : ""
-  );
-  const [emailid, setEmailid] = useState(
-    cookies.get("email") ? cookies.get("email") : ""
-  );
-  const [username, setUsername] = useState(
-    cookies.get("username") ? cookies.get("username") : ""
-  );
-  const [website, setWebsite] = useState(
-    cookies.get("website") ? cookies.get("website") : ""
-  );
-  const [bio, setBio] = useState(cookies.get("bio") ? cookies.get("bio") : "");
+  useEffect(() => {
+    cookies.get("firstname")
+      ? null
+      : cookies.set("firstname", "", { path: "/" });
+    cookies.get("lastname") ? null : cookies.set("lastname", "", { path: "/" });
+    cookies.get("email") ? null : cookies.set("email", "", { path: "/" });
+    cookies.get("username") ? null : cookies.set("username", "", { path: "/" });
+    cookies.get("website") ? null : cookies.set("website", "", { path: "/" });
+    cookies.get("bio") ? null : cookies.set("bio", "", { path: "/" });
+  }, []);
+
+  const [firstname, setFirstname] = useState(cookies.get("firstname"));
+  const [lastname, setLastname] = useState(cookies.get("lastname"));
+  const [emailid, setEmailid] = useState(cookies.get("email"));
+  const [username, setUsername] = useState(cookies.get("username"));
+  const [website, setWebsite] = useState(cookies.get("website"));
+  const [bio, setBio] = useState(cookies.get("bio"));
   const [pic, setPic] = useState(localStorage.getItem("profilePic"));
+  const [picUploaded, setPicUploaded] = useState(false);
 
   const saveInfo = () => {
     cookies.set("firstname", firstname, { path: "/" });
@@ -44,8 +46,6 @@ export default function Settings() {
     openSnackbar("Details Saved Succesfully");
   };
 
-  console.log(lastname, cookies.get("lastname"));
-
   const handleUpload = () => {
     const file = document.querySelector("input[type=file]").files[0];
     const reader = new FileReader();
@@ -54,6 +54,7 @@ export default function Settings() {
       "load",
       () => {
         setPic(reader?.result);
+        setPicUploaded(true);
       },
       true
     );
@@ -66,7 +67,7 @@ export default function Settings() {
   return (
     <>
       <Helmet>
-        <title>NFT</title>
+        <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
       <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
@@ -244,20 +245,24 @@ export default function Settings() {
                         onClick={() => {
                           setPic("");
                           localStorage.removeItem("profilePic");
+                          setPicUploaded(false);
                         }}
                       >
                         Delete
                       </button>
                     )}
-                    <button
-                      className="text-xs opacity-40 text-red-700"
-                      onClick={() => {
-                        localStorage.setItem("profilePic", pic);
-                        openSnackbar("Profile Photo Updated");
-                      }}
-                    >
-                      Update
-                    </button>
+                    {picUploaded && (
+                      <button
+                        className="text-xs opacity-40 text-red-700"
+                        onClick={() => {
+                          localStorage.setItem("profilePic", pic);
+                          openSnackbar("Profile Photo Updated");
+                          setPicUploaded(false);
+                        }}
+                      >
+                        Update
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
