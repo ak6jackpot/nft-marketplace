@@ -15,6 +15,17 @@ import Vassilly from "../assets/images/Vassilly_Kandinsky_1912_Landscape_With_Tw
 import VINCENT from "../assets/images/VINCENT-VAN-GOGH-STARRY-NIGHT.jpg";
 import Vue from "../assets/images/Vue du port de Marseille by Paul Signac.jpeg";
 
+import Alex from "../assets/images/alex.jpeg";
+import Cam from "../assets/images/cam.jpeg";
+import Claire from "../assets/images/claire.jpeg";
+import Gloria from "../assets/images/gloria.jpeg";
+import Haley from "../assets/images/haley.jpeg";
+import Jay from "../assets/images/jay.jpeg";
+import Luke from "../assets/images/luke.jpeg";
+import Manny from "../assets/images/manny.jpeg";
+import Mitchell from "../assets/images/mitchell.jpeg";
+import Phil from "../assets/images/phil.jpeg";
+
 export const marketData = [
   {
     id: "Autumn",
@@ -27,6 +38,8 @@ export const marketData = [
     timeLeft: new Date().setHours(24, 0, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Jay Pritchett",
+    ownerPic: Jay,
   },
 
   {
@@ -40,6 +53,8 @@ export const marketData = [
     timeLeft: new Date().setHours(23, 30, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Cameron Tucker",
+    ownerPic: Cam,
   },
 
   {
@@ -53,6 +68,8 @@ export const marketData = [
     timeLeft: new Date().setHours(22, 26, 0, 0),
     saved: true,
     trending: false,
+    ownerName: "Phil Dunphy",
+    ownerPic: Phil,
   },
 
   {
@@ -66,6 +83,8 @@ export const marketData = [
     timeLeft: new Date().setHours(18, 46, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Jay Pritchett",
+    ownerPic: Jay,
   },
 
   {
@@ -79,6 +98,8 @@ export const marketData = [
     timeLeft: new Date().setHours(23, 12, 0, 0),
     saved: true,
     trending: true,
+    ownerName: "Manny Delgado",
+    ownerPic: Manny,
   },
 
   {
@@ -92,6 +113,8 @@ export const marketData = [
     timeLeft: new Date().setHours(20, 0, 0, 0),
     saved: true,
     trending: true,
+    ownerName: "Haley Dunphy",
+    ownerPic: Haley,
   },
 
   {
@@ -105,6 +128,8 @@ export const marketData = [
     timeLeft: new Date().setHours(19, 51, 0, 0),
     saved: false,
     trending: true,
+    ownerName: "Mitchell Pritchett",
+    ownerPic: Mitchell,
   },
 
   {
@@ -118,6 +143,8 @@ export const marketData = [
     timeLeft: new Date().setHours(23, 21, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Luke Dunphy",
+    ownerPic: Luke,
   },
 
   {
@@ -131,6 +158,8 @@ export const marketData = [
     timeLeft: new Date().setHours(24, 0, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Cameron Tucker",
+    ownerPic: Cam,
   },
 
   {
@@ -144,6 +173,8 @@ export const marketData = [
     timeLeft: new Date().setHours(21, 19, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Gloria Pritchett",
+    ownerPic: Gloria,
   },
 
   {
@@ -157,6 +188,8 @@ export const marketData = [
     timeLeft: new Date().setHours(15, 30, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Alex Dunphy",
+    ownerPic: Alex,
   },
 
   {
@@ -170,6 +203,8 @@ export const marketData = [
     timeLeft: new Date().setHours(22, 0, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Phil Dunphy",
+    ownerPic: Phil,
   },
 
   {
@@ -183,6 +218,8 @@ export const marketData = [
     timeLeft: new Date().setHours(19, 41, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Claire Dunphy",
+    ownerPic: Claire,
   },
 
   {
@@ -196,6 +233,8 @@ export const marketData = [
     timeLeft: new Date().setHours(14, 5, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Haley Dunphy",
+    ownerPic: Haley,
   },
 
   {
@@ -209,6 +248,8 @@ export const marketData = [
     timeLeft: new Date().setHours(19, 15, 0, 0),
     saved: false,
     trending: false,
+    ownerName: "Claire Dunphy",
+    ownerPic: Claire,
   },
 
   {
@@ -222,6 +263,8 @@ export const marketData = [
     timeLeft: new Date().setHours(23, 45, 0, 0),
     saved: true,
     trending: false,
+    ownerName: "Gloria Pritchett",
+    ownerPic: Gloria,
   },
 ];
 

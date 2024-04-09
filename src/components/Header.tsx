@@ -34,17 +34,17 @@ export default function Header(props: any) {
             );
           }}
         />
-        <div className="flex flex-row items-center mx-8 w-[24%] justify-between">
+        <div className="flex flex-row items-center mx-8 w-[20%] justify-between">
           <Link to={`/wallet`}>
             <Button variant="outline" className="mr-1">
               <img className="w-[30px] aspect-square" src={EthereumGif} />
               <span className="text-sm">3.421 ETH</span>
             </Button>
           </Link>
-          <Button variant="outline" shape="circle" className="mr-1">
-            {/* <img className="w-[20px]" src={Bell}></img> */}
+          {/* <Button variant="outline" shape="circle" className="mr-1">
+            <img className="w-[20px]" src={Bell}></img>
             <NotificationsNoneOutlinedIcon color="action" />
-          </Button>
+          </Button> */}
           <Link to={`/profile`}>
             <button className="flex flex-row justify-start items-center">
               <img
