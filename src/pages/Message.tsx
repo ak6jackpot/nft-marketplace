@@ -1,12 +1,12 @@
 import SidebarPlus from "components/SidebarPlus";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import Send from "../assets/images/send.png";
+import Send from "../assets/icons/send.png";
 import MessageCard from "components/MessageCard";
 import ChatMessage from "components/ChatMessage";
 import { Button } from "components/Button";
-import Search from "assets/images/search.png";
-import ThreeDots from "assets/images/three_dots.png";
+import Search from "assets/icons/search.png";
+import ThreeDots from "assets/icons/three_dots.png";
 import { useUserContext } from "context-provider";
 import Fuse from "fuse.js";
 

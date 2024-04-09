@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Eth from "assets/images/eth.png";
-import heartPink from "assets/images/heartPink.png";
-import heartGray from "assets/images/heartGray.png";
+import Eth from "assets/icons/eth.png";
+import heartPink from "assets/icons/heartPink.png";
+import heartGray from "assets/icons/heartGray.png";
 import { Link } from "react-router-dom";
 import { useUserContext } from "context-provider";
 import Countdown from "react-countdown";
@@ -60,7 +60,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
             }}
           >
             <img
-              className="w-[16px] aspect-square"
+              className="w-[16px] aspect-square mr-1"
               src={savedNow ? heartPink : heartGray}
             />
           </button>

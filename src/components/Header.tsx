@@ -1,8 +1,8 @@
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import defaultProfile from "assets/images/defaultProfile.png";
+import defaultProfile from "assets/icons/defaultProfile.png";
 import EthereumGif from "assets/images/eth_gif.gif";
-import search from "assets/images/search.png";
+import search from "assets/icons/search.png";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";

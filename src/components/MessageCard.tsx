@@ -1,5 +1,5 @@
 import { useUserContext } from "context-provider";
-import React, { useContext } from "react";
+import React from "react";
 
 interface MessageCardProps {
   name: string;

@@ -4,12 +4,12 @@ import SidebarPlus from "components/SidebarPlus";
 import { useSnackbar } from "react-simple-snackbar";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import user from "assets/images/user.png";
-import link from "assets/images/link.png";
-import email from "assets/images/email.png";
-import web from "assets/images/web.png";
-import cloud from "assets/images/cloud.png";
-import defaultProfile from "assets/images/defaultProfile.png";
+import user from "assets/icons/user.png";
+import link from "assets/icons/link.png";
+import email from "assets/icons/email.png";
+import web from "assets/icons/web.png";
+import cloud from "assets/icons/cloud.png";
+import defaultProfile from "assets/icons/defaultProfile.png";
 import Cookies from "universal-cookie";
 
 export default function Settings() {

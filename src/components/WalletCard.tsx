@@ -1,6 +1,6 @@
-import income from "assets/images/income.png";
-import saving from "assets/images/saving.png";
-import spending from "assets/images/spending.png";
+import income from "assets/icons/income.png";
+import saving from "assets/icons/saving.png";
+import spending from "assets/icons/spending.png";
 import React from "react";
 interface WalletCardProps {
   variant: string;

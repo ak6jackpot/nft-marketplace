@@ -1,5 +1,5 @@
 import React from "react";
-import eth from "assets/images/eth.png";
+import eth from "assets/icons/eth.png";
 interface ChatMessageProps {
   item: {};
 }

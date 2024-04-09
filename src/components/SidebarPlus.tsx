@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import HelpCenter from "./HelpCenter";
-import defaultProfile from "assets/images/defaultProfile.png";
+import defaultProfile from "assets/icons/defaultProfile.png";
 import Cookies from "universal-cookie";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
