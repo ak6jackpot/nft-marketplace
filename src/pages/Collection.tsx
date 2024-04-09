@@ -37,7 +37,7 @@ export default function ActiveBid() {
               </Button>
             </div>
             <div className="grid grid-cols-4 gap-4 p-2 my-2">
-              {globalitems?.activeData?.map((item) => {
+              {globalitems?.collectionData?.map((item) => {
                 return (
                   <div className="flex">
                     <ArtworkCard details={item} />

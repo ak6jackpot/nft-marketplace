@@ -11,7 +11,7 @@ const initialState = {
   },
   globalitems: {
     savedData: marketData?.filter((item) => item?.saved == true),
-    activeData: marketData?.filter((item) => item?.active == true),
+    activeData: marketData?.filter((item) => Date.now() <  item?.timeLeft),
     marketData: marketData,
     trendingData: marketData?.filter((item) => item?.trending == true),
     collectionData: collectionData,

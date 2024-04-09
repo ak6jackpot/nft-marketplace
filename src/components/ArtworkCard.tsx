@@ -70,17 +70,23 @@ export default function ArtworkCard(props: ArtworkCardProps) {
         <span>{details?.artName}</span>
         <span className="text-xs opacity-30"> By {details?.artistName}</span>
       </div>
-      <div className="flex flex-row w-full px-2">
+      <div className="flex flex-row w-full px-2 items-center">
         <div className="flex flex-col flex-3">
-          <span className="text-xs opacity-40">{"Current Bid"}</span>
-          <div className="flex flex-row">
-            <img className="h-[12px] self-center" src={Eth}></img>
-            <span className="text-sm ml-1">{details?.bidPrice + " ETH"}</span>
-          </div>
+          {Date.now() < details?.timeLeft && (
+            <div>
+              <span className="text-xs opacity-40">{"Current Bid"}</span>
+              <div className="flex flex-row">
+                <img className="h-[12px] self-center" src={Eth}></img>
+                <span className="text-sm ml-1">
+                  {details?.bidPrice + " ETH"}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
         <Link to={`/open/${details?.id}`}>
           <button className="bg-black text-white items-center text-xs justify-center p-[6px] flex-2 rounded-lg self-center">
-            Place a bid
+            {Date.now() < details?.timeLeft ? "Place a bid" : "View Details"}
           </button>
         </Link>
       </div>

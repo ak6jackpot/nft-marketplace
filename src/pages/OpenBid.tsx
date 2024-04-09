@@ -60,13 +60,13 @@ export default function OpenBid(props) {
                       renderer={CounterBig}
                     />
                   </div>
-                  <div className="flex flex-col my-2 ">
+                  {Date.now() < selectedObj?.timeLeft && <div className="flex flex-col my-2 ">
                     <span className="opacity-40">{"Current Bid"}</span>
                     <div className="flex flex-row items-center justify-between px-2">
                       <img src={eth} className="flex h-[20px]" />
                       <span className="text-xl">{selectedObj?.bidPrice}</span>
                     </div>
-                  </div>
+                  </div>}
                 </div>
                 <div className="flex flex-row w-[50%] my-2">
                   <button
@@ -99,9 +99,9 @@ export default function OpenBid(props) {
                       <img src={savedNow ? heartPink : heartGray} />
                     </div>
                   </button>
-                  <button className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center">
+                  {Date.now() < selectedObj?.timeLeft && <button className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center">
                     Place a bid
-                  </button>
+                  </button>}
                 </div>
               </div>
             </div>
