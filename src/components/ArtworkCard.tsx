@@ -66,7 +66,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           </button>
         </div>
       </div>
-      <div className="flex flex-col w-full ml-4 mt-[35%] pb-2">
+      <div className="flex flex-col w-full ml-4 mt-[40%] pb-2">
         <span>{details?.artName}</span>
         <span className="text-xs opacity-30"> By {details?.artistName}</span>
       </div>

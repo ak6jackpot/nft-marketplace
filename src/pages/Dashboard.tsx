@@ -21,7 +21,7 @@ export default function Dashboard() {
     cookies.get("loggedIn") != true
   );
   const [secondDialogVisible, setSecondDialogVisible] = useState(false);
-  
+
   useEffect(() => {
     cookies.get("firstname")
       ? null
@@ -33,13 +33,23 @@ export default function Dashboard() {
     cookies.get("bio") ? null : cookies.set("bio", "", { path: "/" });
   }, []);
 
-  const [firstname, setFirstname] = useState(cookies.get("firstname"));
-  const [lastname, setLastname] = useState(cookies.get("lastname") ? cookies.get("lastname") : "");
-  const [emailid, setEmailid] = useState(cookies.get("email"));
-  const [username, setUsername] = useState(cookies.get("username"));
-  const [website, setWebsite] = useState(cookies.get("website") ? cookies.get("website") : "");
+  const [firstname, setFirstname] = useState(
+    cookies.get("firstname") ? cookies.get("firstname") : ""
+  );
+  const [lastname, setLastname] = useState(
+    cookies.get("lastname") ? cookies.get("lastname") : ""
+  );
+  const [emailid, setEmailid] = useState(
+    cookies.get("email") ? cookies.get("email") : ""
+  );
+  const [username, setUsername] = useState(
+    cookies.get("username") ? cookies.get("username") : ""
+  );
+  const [website, setWebsite] = useState(
+    cookies.get("website") ? cookies.get("website") : ""
+  );
   const [bio, setBio] = useState(cookies.get("bio") ? cookies.get("bio") : "");
-  
+
   const saveInfo = () => {
     cookies.set("firstname", firstname, { path: "/" });
     cookies.set("lastname", lastname, { path: "/" });
