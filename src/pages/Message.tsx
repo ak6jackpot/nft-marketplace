@@ -1,5 +1,5 @@
 import SidebarPlus from "components/SidebarPlus";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Send from "../assets/icons/send.png";
 import MessageCard from "components/MessageCard";
@@ -9,11 +9,13 @@ import Search from "assets/icons/search.png";
 import ThreeDots from "assets/icons/three_dots.png";
 import { useUserContext } from "context-provider";
 import Fuse from "fuse.js";
+import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 
 export default function Message() {
-  const { messages } = useUserContext();
+  const { messages, updateState } = useUserContext();
   const [msgText, setMsgText] = useState("");
   const [searched, setSearched] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   const options = {
     includeScore: true,
@@ -34,6 +36,7 @@ export default function Message() {
           time: message.time,
           incoming: message.incoming,
           conversationName: conversation.name,
+          conversationPic: conversation.profilePic,
         });
       });
     });
@@ -42,6 +45,7 @@ export default function Message() {
 
     const matchedMessages = results.map((result) => ({
       conversationName: result.item.conversationName,
+      conversationPic: result.item.conversationPic,
       sender: result.item.incoming ? "Incoming" : "Outgoing",
       text: result.item.text,
       time: result.item.time,
@@ -50,6 +54,10 @@ export default function Message() {
     setSearched(matchedMessages);
     return matchedMessages;
   };
+
+  useEffect(() => {
+    searchMessages(searchText);
+  }, [searchText]);
 
   return (
     <>
@@ -71,23 +79,50 @@ export default function Message() {
               <input
                 className="w-[80%] bg-gray-100 h-[50%] rounded-xl pl-8 px-2"
                 placeholder="Search chat"
+                value={searchText}
                 onChange={(e) => {
-                  searchMessages(e?.target?.value);
+                  setSearchText(e?.target?.value);
                 }}
               />
+              {searched?.length > 0 && (
+                <button onClick={() => setSearchText("")} className="-ml-[8%]">
+                  <CancelOutlinedIcon color="disabled" />
+                </button>
+              )}
             </div>
             {searched?.length > 0 && (
-              <div className="absolute mt-[5%] w-[40%] bg-white rounded-2xl mx-4 z-30">
-                <div className="grid grid-cols-2 gap-2 p-2">
-                  {searched?.map((item) => {
+              <div className="absolute mt-[5%] w-[30%] bg-gray-200 rounded-2xl mx-4 z-30">
+                <div className="grid grid-cols-1 gap-2 p-2">
+                  {searched?.slice(0, 10)?.map((item) => {
                     return (
-                      <div className="flex">
-                        {/* <ArtworkCard details={item?.item} /> */}
-                        <span>
-                          {item?.conversationName}
-                          {item?.text}
-                          {item?.time}
-                        </span>
+                      <div
+                        className="items-center justify-center flex flex-col hover:bg-white rounded-2xl"
+                        onClick={() => {
+                          updateState({
+                            messages: {
+                              selectedMessageIndex:
+                                messages?.messagesData?.findIndex(
+                                  (x) => x?.name == item?.conversationName
+                                ),
+                              messagesData: messages?.messagesData,
+                            },
+                          });
+                          setSearchText("");
+                        }}
+                      >
+                        <div className="items-center justify-center text-black flex flex-row rounded-md px-2 mr-4 ml-2 py-3">
+                          <img
+                            className="h-15 rounded-full w-[50px] mx-2 px-1"
+                            src={item?.conversationPic}
+                          />
+                          <div className="flex flex-col w-[270px]">
+                            <span>{item?.conversationName}</span>
+                            <span className="text-sm">{item?.text}</span>
+                          </div>
+                          <div className="opacity-40">
+                            <span className="w-[50px]">{item?.time}</span>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}
