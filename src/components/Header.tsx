@@ -35,9 +35,11 @@ export default function Header(props: any) {
             setSearchText(e?.target?.value);
           }}
         />
-        <button onClick={() => setSearchText("")} className="-ml-[28%]">
-          <CancelOutlinedIcon color="disabled"/>
-        </button>
+        {fuse?.length > 0 && (
+          <button onClick={() => setSearchText("")} className="-ml-[28%]">
+            <CancelOutlinedIcon color="disabled" />
+          </button>
+        )}
         <div className="flex flex-row items-center mx-8 w-[20%] justify-between">
           <Link to={`/wallet`}>
             <Button variant="outline" className="mr-1">
@@ -62,7 +64,7 @@ export default function Header(props: any) {
         </div>
       </div>
       {fuse?.length > 0 && (
-        <div className="absolute mt-[5%] w-[40%] bg-yellow-200 rounded-2xl mx-4 z-30">
+        <div className="absolute mt-[5%] w-[40%] bg-white rounded-2xl mx-4 z-30">
           <div className="grid grid-cols-2 gap-2 p-2">
             {fuse?.slice(0, 6)?.map((item) => {
               return (
