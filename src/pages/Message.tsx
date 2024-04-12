@@ -13,6 +13,8 @@ import Fuse from "fuse.js";
 export default function Message() {
   const { messages } = useUserContext();
   const [msgText, setMsgText] = useState("");
+  const [searched, setSearched] = useState([]);
+
   const options = {
     includeScore: true,
     threshold: 0.6,
@@ -21,6 +23,32 @@ export default function Message() {
   const timeToMinutes = (timeStr) => {
     const [hours, minutes] = timeStr.split(":").map(Number);
     return hours * 60 + minutes;
+  };
+
+  const searchMessages = (searchQuery) => {
+    let allMessages = [];
+    messages?.messagesData?.forEach((conversation) => {
+      conversation.messages.forEach((message) => {
+        allMessages.push({
+          text: message.text,
+          time: message.time,
+          incoming: message.incoming,
+          conversationName: conversation.name,
+        });
+      });
+    });
+
+    const results = new Fuse(allMessages, options).search(searchQuery);
+
+    const matchedMessages = results.map((result) => ({
+      conversationName: result.item.conversationName,
+      sender: result.item.incoming ? "Incoming" : "Outgoing",
+      text: result.item.text,
+      time: result.item.time,
+    }));
+
+    setSearched(matchedMessages);
+    return matchedMessages;
   };
 
   return (
@@ -44,15 +72,28 @@ export default function Message() {
                 className="w-[80%] bg-gray-100 h-[50%] rounded-xl pl-8 px-2"
                 placeholder="Search chat"
                 onChange={(e) => {
-                  messages?.messagesData?.map((item) => {
-                    // console.log(item?.name);
-                    console.log(
-                      new Fuse(item?.messages, options).search(e?.target?.value)
-                    );
-                  });
+                  searchMessages(e?.target?.value);
                 }}
               />
             </div>
+            {searched?.length > 0 && (
+              <div className="absolute mt-[5%] w-[40%] bg-white rounded-2xl mx-4 z-30">
+                <div className="grid grid-cols-2 gap-2 p-2">
+                  {searched?.map((item) => {
+                    return (
+                      <div className="flex">
+                        {/* <ArtworkCard details={item?.item} /> */}
+                        <span>
+                          {item?.conversationName}
+                          {item?.text}
+                          {item?.time}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             <div className="flex items-start overflow-y-scroll justify-center">
               <div className="flex flex-col w-full">
                 {messages?.messagesData
