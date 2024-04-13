@@ -178,10 +178,6 @@ export default function Message() {
                   <span className="text-xs text-green-600">{"Online"}</span>
                 </div>
               </div>
-              <div className="flex flex-row items-center mx-4 flex-1 justify-between">
-                <img className="h-[40%] mx-2" src={Search} />
-                <img className="h-[35%] mx-2" src={ThreeDots} />
-              </div>
             </div>
             <div className="flex flex-8 bg-gray-100 p-4 overflow-y-scroll">
               <div className="flex flex-col w-full">

@@ -36,7 +36,7 @@ export default function Market() {
                 Price Range
               </Button>
             </div>
-            <div className="grid grid-cols-4 gap-2 p-2 my-2">
+            <div className="grid grid-cols-4 gap-4 p-2 my-2">
               {globalitems?.marketData?.map((item) => {
                 return (
                   <div className="flex">
