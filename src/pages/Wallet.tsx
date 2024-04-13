@@ -17,14 +17,14 @@ export default function Wallet() {
         <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
+      <div className="flex flex-row w-screen h-full font-urbanistNormal bg-gray-50">
         <div className="flex flex-1">
           <SidebarPlus />
         </div>
         <div className="flex flex-col flex-4">
           <Header />
           <div className="w-full flex flex-row">
-            <div className="flex flex-col items-center max-h-screen overflow-y-scroll flex-2 border-r-[2px] p-4 border-gray-200">
+            <div className="flex flex-col items-center flex-2 border-r-[2px] overflow-y-scroll p-4 border-gray-200">
               <div className="flex flex-1 flex-col w-full">
                 <div className="items-start m-2">
                   <span className="text-black text-3xl">Wallet</span>

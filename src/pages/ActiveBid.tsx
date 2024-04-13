@@ -15,16 +15,14 @@ export default function ActiveBid() {
         <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
+      <div className="flex flex-row w-screen h-screen font-urbanistNormal bg-gray-50">
         <div className="flex flex-1">
           <SidebarPlus />
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-[90%] aspect-video flex flex-col mx-4">
-            <div className="items-start my-2">
-              <span className="text-black text-3xl">Active Bid</span>
-            </div>
+          <div className="w-[90%] aspect-video flex flex-col px-4">
+            <span className="text-black text-3xl my-2">Active Bid</span>
             <div className="flex flex-row my-2">
               <Button variant="outline" className="mr-2">
                 On Going

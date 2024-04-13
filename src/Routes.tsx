@@ -1,6 +1,7 @@
 import ActiveBid from "pages/ActiveBid";
 import Collection from "pages/Collection";
 import Dashboard from "pages/Dashboard";
+import Help from "pages/Help";
 import History from "pages/History";
 import Market from "pages/Market";
 import Message from "pages/Message";
@@ -55,6 +56,10 @@ const ProjectRoutes = () => {
     {
       path: "profile",
       element: <Profile />,
+    },
+    {
+      path: "help",
+      element: <Help />,
     },
     {
       path: "open/:artId",

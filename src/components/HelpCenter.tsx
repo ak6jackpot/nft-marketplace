@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
+import { Link } from "react-router-dom";
 
 export default function HelpCenter(props: any) {
   return (
@@ -22,9 +23,11 @@ export default function HelpCenter(props: any) {
         <span className="items-start opacity-60 justify-center align-center text-center flex mb-4 text-xs">
           questions
         </span>
-        <div className="bg-white text-black rounded-lg justify-center flex w-full">
-          <Button>Go to Help Center</Button>
-        </div>
+        <Link to={`/help`}>
+          <div className="bg-white text-black rounded-lg justify-center flex w-full">
+            <Button>Go to Help Center</Button>
+          </div>
+        </Link>
       </div>
     </div>
   );
