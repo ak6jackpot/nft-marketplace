@@ -23,7 +23,7 @@ export default function Wallet() {
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-full flex flex-row">
+          <div className="w-full flex flex-row h-screen pt-[80px]">
             <div className="flex flex-col items-center flex-2 border-r-[2px] overflow-y-scroll p-4 border-gray-200">
               <div className="flex flex-1 flex-col w-full">
                 <div className="items-start m-2">

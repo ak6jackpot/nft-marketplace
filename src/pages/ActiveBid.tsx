@@ -21,7 +21,7 @@ export default function ActiveBid() {
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-[90%] aspect-video flex flex-col px-4">
+          <div className="w-full overflow-y-auto pr-[10%] pt-[80px] h-screen flex flex-col px-4">
             <span className="text-black text-3xl my-2">Active Bid</span>
             <div className="flex flex-row my-2">
               <Button variant="outline" className="mr-2">

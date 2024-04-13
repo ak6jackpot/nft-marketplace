@@ -74,7 +74,7 @@ export default function Dashboard() {
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-full flex flex-row">
+          <div className="w-full flex flex-row  pt-[80px] h-screen">
             <div className="flex flex-col items-center flex-2 border-r-[2px] p-4 border-gray-200">
               <div className="relative w-full flex p-2 mb-2">
                 <div className="rounded-3xl overflow-hidden relative w-full h-[300px]">

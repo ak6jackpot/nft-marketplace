@@ -17,14 +17,17 @@ export default function FaqItem(props: FaqItemProps) {
   };
 
   return (
-    <div className="flex flex-col border-b-[1px] py-2 m-2 justify-center">
-      <div onClick={toggleVisibility} className="flex flex-row items-center">
+    <button
+      onClick={toggleVisibility}
+      className="flex flex-col border-b-[1px] py-3 mx-3 justify-center"
+    >
+      <div className="flex flex-row items-center">
         <AddSharpIcon />
         <span className="text-black text-lg ml-2">{question}</span>
       </div>
       {isVisible && (
-        <span className="text-black opacity-60 ml-8">{answer}</span>
+        <span className="text-black text-left opacity-60 ml-8">{answer}</span>
       )}
-    </div>
+    </button>
   );
 }

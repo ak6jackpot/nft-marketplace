@@ -21,7 +21,7 @@ export default function Market() {
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-full max-h-screen overflow-y-auto pr-[10%] flex flex-col px-4">
+          <div className="w-full overflow-y-auto pr-[10%] pt-[80px] h-screen flex flex-col px-4">
             <div className="items-start my-2">
               <span className="text-black text-3xl">Discover</span>
             </div>

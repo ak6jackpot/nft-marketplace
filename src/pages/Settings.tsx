@@ -76,7 +76,7 @@ export default function Settings() {
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="flex flex-row my-6 mx-6">
+          <div className="flex flex-row my-6 mx-6 pt-[80px]">
             <div className="items-start flex flex-col flex-2">
               <span className="text-black text-3xl">General Settings</span>
               <span className="opacity-40 mt-2">

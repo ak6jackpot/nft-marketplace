@@ -29,13 +29,13 @@ export default function Profile() {
         <title>AK's NFT Store</title>
         <meta name="Akshat Singh" content="Marketplace for NFTs" />
       </Helmet>
-      <div className="flex flex-row w-full font-urbanistNormal bg-gray-50">
+      <div className="flex flex-row w-screen h-screen font-urbanistNormal bg-gray-50">
         <div className="flex flex-1">
           <SidebarPlus />
         </div>
         <div className="flex flex-col flex-4">
           <Header />
-          <div className="w-full aspect-video flex flex-col">
+          <div className="w-full overflow-y-auto pt-[80px] h-screen flex flex-col">
             <div className="aspect-[5] w-full flex bg-gray-200 items-center overflow-hidden justify-center">
               <img className="w-full" src={Art} />
             </div>
@@ -71,7 +71,7 @@ export default function Profile() {
                   <span className="opacity-30 mt-2">Joined March 2024</span>
                 </div>
               </div>
-              <div className="grid grid-cols-3 flex-3 gap-4 p-2 my-2">
+              <div className="grid grid-cols-2 flex-3 gap-2 p-2 my-2">
                 {globalitems?.collectionData?.map((item) => {
                   return (
                     <div className="flex">
