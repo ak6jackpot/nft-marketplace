@@ -32,12 +32,12 @@ export default function WalletCard(props: WalletCardProps) {
         <span className="text-lg">
           {" "}
           {variant == "Spending"
-            ? "$ 432,215.32"
+            ? "$ 82,215.32"
             : variant == "Income"
             ? "$ 21,579.22"
             : variant == "Saving"
             ? "$ 68,483.16"
-            : "$ 432,215.32"}
+            : "$ 82,215.32"}
         </span>
       </div>
       <div className="flex flex-1 flex-row w-full items-center">

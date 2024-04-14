@@ -12,6 +12,8 @@ import { useUserContext } from "context-provider";
 import Countdown from "react-countdown";
 import { CounterBig } from "components/Counter";
 import Cookies from "universal-cookie";
+import Dialog from "@mui/material/Dialog";
+import { Button } from "components/Button";
 
 export default function OpenBid(props) {
   const params = useParams();
@@ -27,6 +29,8 @@ export default function OpenBid(props) {
   const isInCollection = globalitems?.collectionData?.filter(
     (item) => item?.id == params?.artId
   );
+  const [dialogVisible, setDialogVisible] = useState(false);
+
   return (
     <>
       <Helmet>
@@ -88,7 +92,7 @@ export default function OpenBid(props) {
                   )}
                 </div>
                 <div className="flex flex-row w-[50%] justify-between">
-                  {!isInCollection?.length > 0 && (
+                  {!(isInCollection?.length > 0) && (
                     <div className="flex flex-col my-2">
                       <Countdown
                         date={selectedObj?.timeLeft}
@@ -138,7 +142,10 @@ export default function OpenBid(props) {
                     </div>
                   </button>
                   {Date.now() < selectedObj?.timeLeft && (
-                    <button className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center">
+                    <button
+                      onClick={() => setDialogVisible(true)}
+                      className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center"
+                    >
                       Place a bid
                     </button>
                   )}
@@ -146,6 +153,22 @@ export default function OpenBid(props) {
               </div>
             </div>
           </div>
+          <Dialog onClose={() => setDialogVisible(false)} open={dialogVisible}>
+            <div className="flex flex-col font-urbanistNormal items-center bg-white justify-center flex-1 px-4 py-2">
+              <span className="mb-2">
+                Your Details have been saved succesfully!
+              </span>
+              <span className="mb-2 text-sm">
+                You can update them in the Settings tab later.
+              </span>
+              <Button
+                className="bg-black text-white flex-1 flex mx-4 w-[25%] py-2"
+                onClick={() => setDialogVisible(false)}
+              >
+                OK
+              </Button>
+            </div>
+          </Dialog>
         </div>
       </div>
     </>

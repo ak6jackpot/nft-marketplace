@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { messagesData } from "data/messagesData";
 import React from "react";
 import { collectionData, marketData } from "data/itemsData";
+import { walletData } from "data/walletData";
 
 // Define the initial state
 const initialState = {
@@ -11,10 +12,11 @@ const initialState = {
   },
   globalitems: {
     savedData: marketData?.filter((item) => item?.saved == true),
-    activeData: marketData?.filter((item) => Date.now() <  item?.timeLeft),
+    activeData: marketData?.filter((item) => Date.now() < item?.timeLeft),
     marketData: marketData,
     trendingData: marketData?.filter((item) => item?.trending == true),
     collectionData: collectionData,
+    walletData: walletData,
   },
 };
 
