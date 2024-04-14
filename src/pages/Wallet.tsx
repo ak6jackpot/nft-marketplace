@@ -5,7 +5,7 @@ import SidebarPlus from "components/SidebarPlus";
 import WalletCard from "components/WalletCard";
 import { useUserContext } from "context-provider";
 import { ordersData } from "data/ordersData";
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Eth from "assets/icons/eth.png";
@@ -14,10 +14,13 @@ import AddCardIcon from "@mui/icons-material/AddCard";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import GavelRoundedIcon from "@mui/icons-material/GavelRounded";
 import Cookies from "universal-cookie";
+import EthColor from "assets/icons/eth_color.png";
+import { Dialog } from "@mui/material";
 
 export default function Wallet() {
   const { globalitems } = useUserContext();
   const cookies = new Cookies();
+  const [dialogVisible, setDialogVisible] = useState(false);
 
   return (
     <>
@@ -56,7 +59,7 @@ export default function Wallet() {
                     <span className="text-sm opacity-60">View All</span>
                   </Link>
                 </div>
-                <div className="flex flex-col m-2 bg-white rounded-lg py-4 border-2">
+                <div className="flex flex-col m-2 bg-white rounded-lg pt-4 border-2">
                   <div className="flex flex-row pb-4 px-8 border-b-[1px]">
                     <span className="flex flex-3 opacity-50 text-sm">
                       Item List
@@ -85,25 +88,32 @@ export default function Wallet() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center bg-white flex-3">
+            <div className="flex flex-col items-center overflow-y-scroll bg-white flex-3">
               <div className="flex flex-col border-b-[2px] border-gray-200 w-[90%] py-2">
                 <span className="text-lg">Wallet</span>
-                <div className="flex flex-col w-full justify-between rounded-xl aspect-video bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500 mt-2 p-4">
-                  <span className="text-white text-sm">ETF Wallet Card</span>
-                  <span className="text-white text-sm">
-                    {"**** **** **** 5356"}
-                  </span>
-                  <span className="text-white text-sm">
-                    {cookies.get("firstname") ? cookies.get("firstname") : ""}{" "}
-                    {cookies.get("lastname") ? cookies.get("lastname") : ""}
-                  </span>
+                <div className="flex flex-col w-full justify-between rounded-xl aspect-video bg-gradient-to-tr from-green-500 via-indigo-500 to-black mt-2 p-4">
+                  <div className="flex flex-row justify-between items-center">
+                    <span className="text-white">ETF Wallet Card</span>
+                    <img className="h-[24px] self-center mr-2" src={EthColor} />
+                  </div>
+                  <span className="text-white">{"**** **** **** 5356"}</span>
+                  <div className="flex flex-row justify-between items-center">
+                    <span className="text-white">
+                      {cookies.get("firstname") ? cookies.get("firstname") : ""}{" "}
+                      {cookies.get("lastname") ? cookies.get("lastname") : ""}
+                    </span>
+                    <span className="text-white text-xl">3.421 ETH</span>
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col items-center border-b-[2px] border-gray-200 w-[90%] py-2">
                 <span className="text-lg opacity-50">Your Balance</span>
                 <span className="text-2xl">{"$ 85,424.52"}</span>
                 <div className="flex flex-row w-full mt-2">
-                  <Button className="bg-black text-white flex-1 flex mx-2 flex-4 py-2">
+                  <Button
+                    onClick={() => setDialogVisible(true)}
+                    className="bg-black text-white flex-1 flex mx-2 flex-4 py-2"
+                  >
                     Top up Your Wallet
                   </Button>
                   <Button className="bg-gray-300 text-white flex-1 flex mx-2">
@@ -194,7 +204,7 @@ export default function Wallet() {
                           <img
                             className="h-[12px] self-center mr-2"
                             src={Eth}
-                          ></img>
+                          />
                           <span className="text-sm">
                             {item?.amount + " ETH"}
                           </span>
@@ -205,6 +215,25 @@ export default function Wallet() {
                 </div>
               </div>
             </div>
+            <Dialog
+              onClose={() => setDialogVisible(false)}
+              open={dialogVisible}
+            >
+              <div className="flex flex-col font-urbanistNormal items-center bg-white justify-center flex-1 px-4 py-2">
+                <span className="mb-2">
+                  Your Details have been saved succesfully!
+                </span>
+                <span className="mb-2 text-sm">
+                  You can update them in the Settings tab later.
+                </span>
+                <Button
+                  className="bg-black text-white flex-1 flex mx-4 w-[25%] py-2"
+                  onClick={() => setDialogVisible(false)}
+                >
+                  OK
+                </Button>
+              </div>
+            </Dialog>
           </div>
         </div>
       </div>

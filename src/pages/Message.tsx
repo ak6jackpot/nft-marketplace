@@ -19,7 +19,7 @@ export default function Message() {
 
   const options = {
     includeScore: true,
-    threshold: 0.6,
+    threshold: 0.5,
     keys: ["text"],
   };
   const timeToMinutes = (timeStr) => {
@@ -216,6 +216,13 @@ export default function Message() {
                     incoming: false,
                   });
                   setMsgText("");
+
+                  // updateState({
+                  //   messages: {
+                  //     selectedMessageIndex: "", //ye karna hai
+                  //     messagesData: messages?.messagesData,
+                  //   },
+                  // });
                 }}
               >
                 <img src={Send} />

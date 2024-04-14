@@ -34,7 +34,7 @@ export default function History() {
                 Price Range
               </Button>
             </div>
-            <div className="flex flex-col my-2 bg-white rounded-lg py-4 border-2">
+            <div className="flex flex-col my-2 bg-white rounded-lg pt-4 border-2">
               {ordersData.map((item) => {
                 return (
                   <div className="px-6">

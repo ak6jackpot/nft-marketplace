@@ -13,8 +13,10 @@ import link from "assets/icons/link.png";
 import email from "assets/icons/email.png";
 import web from "assets/icons/web.png";
 import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 export default function Dashboard() {
   const cookies = new Cookies();
+  const navigate = useNavigate();
 
   const { globalitems } = useUserContext();
   const [mainDialogVisible, setMainDialogVisible] = useState(
@@ -86,20 +88,29 @@ export default function Dashboard() {
                   />
                   <div className="flex flex-col ml-8 mt-20">
                     <span className="text-white text-2xl z-20">
-                      Create and Sell Extraordiary NFTs
+                      Browse and Buy Extraordiary NFTs
                     </span>
                     <span className="text-white text-sm z-20 mt-4">
                       The world's first and largest Crypto Marketplace
                     </span>
-                    <div className="flex flex-row mt-8 w-[30%] justify-between">
-                      <Button variant="fill" className="z-20 text-sm bg-white">
-                        Explore More
+                    <div className="flex flex-row mt-8 w-[33%] justify-between">
+                      <Button
+                        onClick={() => {
+                          navigate("/market");
+                        }}
+                        variant="fill"
+                        className="z-10 text-sm bg-white"
+                      >
+                        Buy NFTs Now
                       </Button>
                       <Button
+                        onClick={() => {
+                          navigate("/help");
+                        }}
                         variant="outline"
-                        className="z-20 text-sm text-white"
+                        className="z-10 text-sm text-white"
                       >
-                        Sell Artwork
+                        Explore More
                       </Button>
                     </div>
                   </div>
@@ -108,7 +119,7 @@ export default function Dashboard() {
               <div className="flex flex-1 flex-col w-full">
                 <div className="flex flex-row justify-between items-center px-2">
                   <span className="text-2xl">Trending Auction</span>
-                  <span className="text-sm opacity-60">View All</span>
+                  <button onClick={() => {navigate("/market")}} className="text-sm opacity-60">View All</button>
                 </div>
                 <div className="flex flex-row items-start my-2 p-2 justify-between">
                   <div>
@@ -122,15 +133,10 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col w-full">
-                <div className="flex flex-row justify-between items-center px-2">
-                  <span className="text-2xl">Top Collection</span>
-                  <span className="text-sm opacity-60">View All</span>
-                </div>
-              </div>
             </div>
             <div className="flex flex-col items-center flex-1"></div>
           </div>
+
           <Dialog
             onClose={() => setMainDialogVisible(true)}
             open={mainDialogVisible}

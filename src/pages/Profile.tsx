@@ -71,7 +71,7 @@ export default function Profile() {
                   <span className="opacity-30 mt-2">Joined March 2024</span>
                 </div>
               </div>
-              <div className="grid grid-cols-2 flex-3 gap-2 p-2 my-2">
+              <div className="grid grid-cols-3 h-[50%] flex-3 gap-2 p-2 my-2">
                 {globalitems?.collectionData?.map((item) => {
                   return (
                     <div className="flex">

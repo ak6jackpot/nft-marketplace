@@ -45,6 +45,8 @@ export default function ArtworkCard(props: ArtworkCardProps) {
                     savedData: globalitems?.savedData?.filter(
                       (item) => item?.id != details?.id
                     ),
+                    collectionData: globalitems?.collectionData,
+                    walletData: globalitems?.walletData,
                   },
                 });
               } else {
@@ -54,6 +56,8 @@ export default function ArtworkCard(props: ArtworkCardProps) {
                     marketData: globalitems?.marketData,
                     trendingData: globalitems?.trendingData,
                     savedData: [...globalitems?.savedData, details],
+                    collectionData: globalitems?.collectionData,
+                    walletData: globalitems?.walletData,
                   },
                 });
               }
@@ -72,20 +76,33 @@ export default function ArtworkCard(props: ArtworkCardProps) {
       </div>
       <div className="flex flex-row w-full px-2 items-center">
         <div className="flex flex-col flex-3">
-          {Date.now() < details?.timeLeft && (
-            <div>
-              <span className="text-xs opacity-40">{"Current Bid"}</span>
-              <div className="flex flex-row">
-                <img className="h-[12px] self-center" src={Eth}></img>
-                <span className="text-sm ml-1">
-                  {details?.bidPrice + " ETH"}
-                </span>
-              </div>
+          <div>
+            <span
+              className={`text-xs ${
+                Date.now() < details?.timeLeft ? "opacity-40" : "opacity-0"
+              }`}
+            >
+              {"Current Bid"}
+            </span>
+            <div className="flex flex-row">
+              <img
+                className={`h-[14px] self-center ${
+                  Date.now() < details?.timeLeft ? "opacity-100" : "opacity-0"
+                }`}
+                src={Eth}
+              ></img>
+              <span
+                className={`text-sm ml-1 ${
+                  Date.now() < details?.timeLeft ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {details?.bidPrice + " ETH"}
+              </span>
             </div>
-          )}
+          </div>
         </div>
         <Link to={`/open/${details?.id}`}>
-          <button className="bg-black text-white items-center text-xs justify-center p-[6px] flex-2 rounded-lg self-center">
+          <button className="bg-black text-white items-center text-xs justify-center p-[8px] flex-2 rounded-lg self-center">
             {Date.now() < details?.timeLeft ? "Place a bid" : "View Details"}
           </button>
         </Link>

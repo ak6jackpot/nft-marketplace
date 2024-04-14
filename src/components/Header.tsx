@@ -24,7 +24,7 @@ export default function Header(props: any) {
   const fuse = new Fuse(globalitems?.marketData, options).search(searchText);
 
   return (
-    <div className="flex flex-col fixed w-[80%]">
+    <div className="flex flex-col fixed w-[80%] z-20">
       <div className="flex w-full h-[80px] border-b-[2px] justify-between bg-white items-center">
         <img src={search} className="absolute h-[20px] aspect-square ml-6" />
         <input

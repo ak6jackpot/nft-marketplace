@@ -215,7 +215,7 @@ export const messagesData = [
         incoming: false,
       },
       {
-        text: "You need a lawayer nonetheless.",
+        text: "You need a lawyer nonetheless.",
         time: "15:57",
         incoming: true,
       },
