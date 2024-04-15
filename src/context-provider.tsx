@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { messagesData } from "data/messagesData";
 import React from "react";
 import { collectionData, marketData } from "data/itemsData";
-import { walletData } from "data/walletData";
+import { generalData, walletData } from "data/walletData";
 
 // Define the initial state
 const initialState = {
@@ -18,6 +18,10 @@ const initialState = {
     collectionData: collectionData,
     walletData: walletData,
   },
+
+  globalData : {
+    generalData: generalData
+  }
 };
 
 // Define action types

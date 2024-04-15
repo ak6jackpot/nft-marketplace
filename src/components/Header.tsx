@@ -13,7 +13,7 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 
 export default function Header(props: any) {
   const pic = localStorage.getItem("profilePic");
-  const { globalitems } = useUserContext();
+  const { globalitems, globalData } = useUserContext();
   const [searchText, setSearchText] = useState("");
   const options = {
     includeScore: true,
@@ -44,7 +44,9 @@ export default function Header(props: any) {
           <Link to={`/wallet`}>
             <Button variant="outline" className="mr-1">
               <img className="w-[30px] aspect-square" src={EthereumGif} />
-              <span className="text-sm">3.421 ETH</span>
+              <span className="text-sm">
+                {globalData?.generalData?.cardBalance + " ETH"}
+              </span>
             </Button>
           </Link>
           {/* <Button variant="outline" shape="circle" className="mr-1">

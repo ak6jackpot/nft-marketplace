@@ -1,4 +1,3 @@
-
 export const walletData = [
   {
     type: "conversion",
@@ -26,3 +25,8 @@ export const walletData = [
     time: "03:12",
   },
 ];
+
+export const generalData = {
+  walletBalance: 85242.6,
+  cardBalance: 3.421,
+};
