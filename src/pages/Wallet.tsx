@@ -20,6 +20,7 @@ import RightArrowWhite from "assets/icons/rightArrowWhite.png";
 import { Dialog } from "@mui/material";
 import { BallTriangle } from "react-loader-spinner";
 import { useSnackbar } from "react-simple-snackbar";
+import EthereumGif from "assets/images/eth_gif_fast.gif";
 
 export default function Wallet() {
   const { globalitems, globalData, updateState } = useUserContext();
@@ -30,7 +31,10 @@ export default function Wallet() {
   const [amountToCard, setAmountToCard] = useState("");
   const [loaderVisible, setLoaderVisible] = useState(false);
   const [openSnackbar, closeSnackbar] = useSnackbar();
-
+  const timeToMinutes = (timeStr) => {
+    const [hours, minutes] = timeStr.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
   const INRtoWallet = () => {
     setLoaderVisible(true);
 
@@ -44,6 +48,16 @@ export default function Wallet() {
               Number((Number(amountToWallet) * 0.95).toFixed(2)),
           },
         },
+      });
+
+      globalitems?.walletData
+        ?.sort((a, b) => timeToMinutes(a?.time) - timeToMinutes(b?.time))
+        ?.shift();
+
+      globalitems?.walletData?.push({
+        type: "topup",
+        amount: (Number(amountToWallet) * 0.95).toFixed(2),
+        time: `${new Date().getHours()}:${new Date().getMinutes()}`,
       });
     }, 1500);
 
@@ -72,6 +86,16 @@ export default function Wallet() {
               Number(amountToCard),
           },
         },
+      });
+
+      globalitems?.walletData
+        ?.sort((a, b) => timeToMinutes(a?.time) - timeToMinutes(b?.time))
+        ?.shift();
+
+      globalitems?.walletData?.push({
+        type: "conversion",
+        amount: (Number(amountToCard) / 300).toFixed(3),
+        time: `${new Date().getHours()}:${new Date().getMinutes()}`,
       });
     }, 1500);
 
@@ -175,7 +199,7 @@ export default function Wallet() {
               <div className="flex flex-col items-center border-b-[2px] border-gray-200 w-[90%] py-2">
                 <span className="text-lg opacity-50">Your Balance</span>
                 <span className="text-2xl">
-                  {"₹ " + globalData?.generalData?.walletBalance}
+                  {"₹ " + globalData?.generalData?.walletBalance?.toFixed(2)}
                 </span>
                 <div className="flex flex-row w-full mt-2">
                   <Button
@@ -198,88 +222,94 @@ export default function Wallet() {
               <div className="flex flex-col w-[90%] pt-2">
                 <span className="text-lg">Transaction History</span>
                 <div className="flex flex-col w-full">
-                  {globalitems?.walletData?.map((item) => {
-                    return (
-                      <div className="flex flex-row items-center py-3 border-b-[1px]">
-                        {item?.type == "conversion" ? (
-                          <div className="flex flex-1 w-[150%] aspect-square">
-                            <CreditScoreIcon
-                              style={{
-                                backgroundColor: "#e5e7eb",
-                                color: "black",
-                                borderRadius: 1000,
-                                padding: 4,
-                                height: "100%",
-                                width: "100%",
-                              }}
-                            />
+                  {globalitems?.walletData
+                    ?.sort(
+                      (a, b) => timeToMinutes(b?.time) - timeToMinutes(a?.time)
+                    )
+                    ?.map((item) => {
+                      return (
+                        <div className="flex flex-row items-center py-3 border-b-[1px]">
+                          {item?.type == "conversion" ? (
+                            <div className="flex flex-1 w-[150%] aspect-square">
+                              <CreditScoreIcon
+                                style={{
+                                  backgroundColor: "#e5e7eb",
+                                  color: "black",
+                                  borderRadius: 1000,
+                                  padding: 4,
+                                  height: "100%",
+                                  width: "100%",
+                                }}
+                              />
+                            </div>
+                          ) : item?.type == "topup" ? (
+                            <div className="flex flex-1 w-[150%] aspect-square">
+                              <AddCardIcon
+                                style={{
+                                  backgroundColor: "#e5e7eb",
+                                  color: "black",
+                                  borderRadius: 1000,
+                                  padding: 4,
+                                  height: "100%",
+                                  width: "100%",
+                                }}
+                              />
+                            </div>
+                          ) : item?.type == "bid" ? (
+                            <div className="flex flex-1 w-[150%] aspect-square">
+                              <GavelRoundedIcon
+                                style={{
+                                  backgroundColor: "#e5e7eb",
+                                  color: "black",
+                                  borderRadius: 1000,
+                                  padding: 4,
+                                  height: "100%",
+                                  width: "100%",
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            <div className="flex flex-1 w-[150%] aspect-square">
+                              <GavelRoundedIcon
+                                style={{
+                                  backgroundColor: "#e5e7eb",
+                                  color: "black",
+                                  borderRadius: 1000,
+                                  padding: 4,
+                                  height: "100%",
+                                  width: "100%",
+                                }}
+                              />
+                            </div>
+                          )}
+                          <div className="flex flex-col flex-4 pl-4">
+                            <span className="text-sm font-urbanistBold">
+                              {item?.type == "conversion"
+                                ? "Exchange to ETH"
+                                : item?.type == "topup"
+                                ? "Wallet Topup"
+                                : item?.type == "bid"
+                                ? "Open Bid Successful"
+                                : ""}
+                            </span>
+                            <span className="text-xs opacity-40">
+                              {"Today at " + item?.time}
+                            </span>
                           </div>
-                        ) : item?.type == "topup" ? (
-                          <div className="flex flex-1 w-[150%] aspect-square">
-                            <AddCardIcon
-                              style={{
-                                backgroundColor: "#e5e7eb",
-                                color: "black",
-                                borderRadius: 1000,
-                                padding: 4,
-                                height: "100%",
-                                width: "100%",
-                              }}
+                          <div className="flex flex-row flex-3">
+                            <img
+                              className="h-[12px] self-center mr-2"
+                              src={Eth}
                             />
+                            <span className="text-sm">
+                              {item?.type == "conversion" || item?.type == "bid"
+                                ? item?.amount + " ETH"
+                                : "₹ " + item?.amount}
+                            </span>
                           </div>
-                        ) : item?.type == "bid" ? (
-                          <div className="flex flex-1 w-[150%] aspect-square">
-                            <GavelRoundedIcon
-                              style={{
-                                backgroundColor: "#e5e7eb",
-                                color: "black",
-                                borderRadius: 1000,
-                                padding: 4,
-                                height: "100%",
-                                width: "100%",
-                              }}
-                            />
-                          </div>
-                        ) : (
-                          <div className="flex flex-1 w-[150%] aspect-square">
-                            <GavelRoundedIcon
-                              style={{
-                                backgroundColor: "#e5e7eb",
-                                color: "black",
-                                borderRadius: 1000,
-                                padding: 4,
-                                height: "100%",
-                                width: "100%",
-                              }}
-                            />
-                          </div>
-                        )}
-                        <div className="flex flex-col flex-4 pl-4">
-                          <span className="text-sm font-urbanistBold">
-                            {item?.type == "conversion"
-                              ? "Exchange to ETH"
-                              : item?.type == "topup"
-                              ? "Wallet Topup"
-                              : item?.type == "bid"
-                              ? "Open Bid Successful"
-                              : ""}
-                          </span>
-                          <span className="text-xs opacity-40">
-                            {"Today at " + item?.time}
-                          </span>
                         </div>
-                        <div className="flex flex-row flex-3">
-                          <img
-                            className="h-[12px] self-center mr-2"
-                            src={Eth}
-                          />
-                          <span className="text-sm">
-                            {item?.amount + " ETH"}
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
               </div>
             </div>
@@ -330,8 +360,10 @@ export default function Wallet() {
                         {"Updated Wallet Balance: "}
                       </span>
                       <span className="flex flex-1 text-xl text-green-600">
-                        {Number(globalData?.generalData?.walletBalance) +
-                          Number((Number(amountToWallet) * 0.95).toFixed(2))}
+                        {(
+                          Number(globalData?.generalData?.walletBalance) +
+                          Number((Number(amountToWallet) * 0.95).toFixed(2))
+                        )?.toFixed(2)}
                       </span>
                     </div>
                   )}
@@ -366,7 +398,9 @@ export default function Wallet() {
                       {"Wallet Balance: "}
                     </span>
                     <span className="flex flex-1 text-xl text-yellow-200">
-                      {Number(globalData?.generalData?.walletBalance)}
+                      {Number(globalData?.generalData?.walletBalance).toFixed(
+                        2
+                      )}
                     </span>
                   </div>
                   <div className="flex flex-row items-center py-6">
@@ -425,7 +459,8 @@ export default function Wallet() {
               )}
               {loaderVisible && (
                 <div className="p-3">
-                  <BallTriangle
+                  <img src={EthereumGif} className="h-[100px] aspect-square" />
+                  {/* <BallTriangle
                     height={100}
                     width={100}
                     radius={5}
@@ -434,7 +469,7 @@ export default function Wallet() {
                     wrapperStyle={{}}
                     wrapperClass=""
                     visible={true}
-                  />
+                  /> */}
                 </div>
               )}
             </Dialog>

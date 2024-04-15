@@ -120,6 +120,8 @@ export default function OpenBid(props) {
                             activeData: globalitems?.activeData,
                             marketData: globalitems?.marketData,
                             trendingData: globalitems?.trendingData,
+                            collectionData: globalitems?.collectionData,
+                            walletData: globalitems?.walletData,
                             savedData: globalitems?.savedData?.filter(
                               (item) => item?.id != selectedObj?.id
                             ),
@@ -131,6 +133,8 @@ export default function OpenBid(props) {
                             activeData: globalitems?.activeData,
                             marketData: globalitems?.marketData,
                             trendingData: globalitems?.trendingData,
+                            collectionData: globalitems?.collectionData,
+                            walletData: globalitems?.walletData,
                             savedData: [...globalitems?.savedData, selectedObj],
                           },
                         });

@@ -6,7 +6,7 @@ export const walletData = [
   },
   {
     type: "topup",
-    amount: "1.32",
+    amount: "256.80",
     time: "15:23",
   },
   {
@@ -21,7 +21,7 @@ export const walletData = [
   },
   {
     type: "topup",
-    amount: "2.32",
+    amount: "4302.48",
     time: "03:12",
   },
 ];

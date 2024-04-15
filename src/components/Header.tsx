@@ -43,8 +43,8 @@ export default function Header(props: any) {
         <div className="flex flex-row items-center mx-8 w-[20%] justify-between">
           <Link to={`/wallet`}>
             <Button variant="outline" className="mr-1">
-              <img className="w-[30px] aspect-square" src={EthereumGif} />
-              <span className="text-sm">
+              <img className="w-[35px] aspect-square -ml-2" src={EthereumGif} />
+              <span className="">
                 {globalData?.generalData?.cardBalance + " ETH"}
               </span>
             </Button>
