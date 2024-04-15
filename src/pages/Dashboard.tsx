@@ -14,9 +14,12 @@ import email from "assets/icons/email.png";
 import web from "assets/icons/web.png";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "react-simple-snackbar";
+
 export default function Dashboard() {
   const cookies = new Cookies();
   const navigate = useNavigate();
+  const [openSnackbar, closeSnackbar] = useSnackbar();
 
   const { globalitems } = useUserContext();
   const [mainDialogVisible, setMainDialogVisible] = useState(
@@ -53,15 +56,26 @@ export default function Dashboard() {
   const [bio, setBio] = useState(cookies.get("bio") ? cookies.get("bio") : "");
 
   const saveInfo = () => {
-    cookies.set("firstname", firstname, { path: "/" });
-    cookies.set("lastname", lastname, { path: "/" });
-    cookies.set("email", emailid, { path: "/" });
-    cookies.set("username", username, { path: "/" });
-    cookies.set("website", website, { path: "/" });
-    cookies.set("bio", bio, { path: "/" });
-    cookies.set("loggedIn", true, { path: "/" });
-    setMainDialogVisible(false);
-    setSecondDialogVisible(true);
+    if (!emailid?.match(/^\S+@\S+\.\S+$/) && emailid?.length > 0) {
+      openSnackbar("Email ID invalid");
+    } else if (
+      !website?.match(
+        /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
+      ) &&
+      website?.length > 1
+    ) {
+      openSnackbar("Website URL invalid");
+    } else {
+      cookies.set("firstname", firstname, { path: "/" });
+      cookies.set("lastname", lastname, { path: "/" });
+      cookies.set("email", emailid, { path: "/" });
+      cookies.set("username", username, { path: "/" });
+      cookies.set("website", website, { path: "/" });
+      cookies.set("bio", bio, { path: "/" });
+      cookies.set("loggedIn", true, { path: "/" });
+      setMainDialogVisible(false);
+      setSecondDialogVisible(true);
+    }
   };
 
   return (
@@ -119,7 +133,14 @@ export default function Dashboard() {
               <div className="flex flex-1 flex-col w-full">
                 <div className="flex flex-row justify-between items-center px-2">
                   <span className="text-2xl">Trending Auction</span>
-                  <button onClick={() => {navigate("/market")}} className="text-sm opacity-60">View All</button>
+                  <button
+                    onClick={() => {
+                      navigate("/market");
+                    }}
+                    className="text-sm opacity-60"
+                  >
+                    View All
+                  </button>
                 </div>
                 <div className="flex flex-row items-start my-2 p-2 justify-between">
                   <div>
@@ -164,7 +185,9 @@ export default function Dashboard() {
                     className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                     placeholder=""
                     value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
+                    onChange={(e) =>
+                      setFirstname(e.target.value?.replace(/\d+/g, ""))
+                    }
                   />
                 </div>
                 <div className="flex flex-col flex-1 mx-4 py-2">
@@ -175,7 +198,9 @@ export default function Dashboard() {
                     className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 rounded-xl px-2"
                     placeholder=""
                     value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
+                    onChange={(e) =>
+                      setLastname(e.target.value?.replace(/\d+/g, ""))
+                    }
                   />
                 </div>
               </div>
@@ -184,16 +209,20 @@ export default function Dashboard() {
                   <span className="mb-2">Email</span>
                   <span className="ml-1 text-red-400 text-xl">{"*"}</span>
                 </div>
-                <img
-                  src={email}
-                  className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
-                />
-                <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
-                  placeholder=""
-                  value={emailid}
-                  onChange={(e) => setEmailid(e.target.value)}
-                />
+                <div className="flex flex-row relative">
+                  <img src={email} className="absolute h-[20px] left-2 top-2" />
+                  <input
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
+                    placeholder=""
+                    value={emailid}
+                    onChange={(e) => setEmailid(e.target.value)}
+                  />
+                  {!emailid?.match(/^\S+@\S+\.\S+$/) && emailid?.length > 5 && (
+                    <span className="text-red-400 absolute right-2 text-xs top-2">
+                      {"invalid e-mail address"}
+                    </span>
+                  )}
+                </div>
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
                 <div className="flex flex-row">
@@ -228,16 +257,23 @@ export default function Dashboard() {
                 <div className="flex flex-row">
                   <span className="mb-2">Website</span>
                 </div>
-                <img
-                  src={web}
-                  className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
-                />
-                <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
-                  placeholder=""
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                />
+                <div className="flex flex-row relative">
+                  <img src={web} className="absolute h-[20px] left-2 top-2" />
+                  <input
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
+                    placeholder=""
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                  {!website?.match(
+                    /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
+                  ) &&
+                    website?.length > 5 && (
+                      <span className="text-red-400 absolute right-2 text-xs top-2">
+                        {"invalid website URL"}
+                      </span>
+                    )}
+                </div>
               </div>
               {firstname != "" && emailid !== "" && username !== "" && (
                 <div className="flex flex-row flex-1 mx-4 py-2">

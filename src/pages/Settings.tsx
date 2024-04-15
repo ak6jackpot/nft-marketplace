@@ -37,13 +37,24 @@ export default function Settings() {
   const [picUploaded, setPicUploaded] = useState(false);
 
   const saveInfo = () => {
-    cookies.set("firstname", firstname, { path: "/" });
-    cookies.set("lastname", lastname, { path: "/" });
-    cookies.set("email", emailid, { path: "/" });
-    cookies.set("username", username, { path: "/" });
-    cookies.set("website", website, { path: "/" });
-    cookies.set("bio", bio, { path: "/" });
-    openSnackbar("Details Saved Succesfully");
+    if (!emailid?.match(/^\S+@\S+\.\S+$/) && emailid?.length > 0) {
+      openSnackbar("Email ID invalid");
+    } else if (
+      !website?.match(
+        /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
+      ) &&
+      website?.length > 1
+    ) {
+      openSnackbar("Website URL invalid");
+    } else {
+      cookies.set("firstname", firstname, { path: "/" });
+      cookies.set("lastname", lastname, { path: "/" });
+      cookies.set("email", emailid, { path: "/" });
+      cookies.set("username", username, { path: "/" });
+      cookies.set("website", website, { path: "/" });
+      cookies.set("bio", bio, { path: "/" });
+      openSnackbar("Details Saved Succesfully");
+    }
   };
 
   const handleUpload = () => {
@@ -138,7 +149,9 @@ export default function Settings() {
                     className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
                     placeholder=""
                     value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
+                    onChange={(e) =>
+                      setFirstname(e.target.value?.replace(/\d+/g, ""))
+                    }
                   />
                 </div>
                 <div className="flex flex-col flex-1 mx-4 py-2">
@@ -152,7 +165,9 @@ export default function Settings() {
                     className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 rounded-xl px-2"
                     placeholder=""
                     value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
+                    onChange={(e) =>
+                      setLastname(e.target.value?.replace(/\d+/g, ""))
+                    }
                   />
                 </div>
               </div>
@@ -163,16 +178,20 @@ export default function Settings() {
                     <span className="ml-1 text-red-400 text-xl">{"*"}</span>
                   )}
                 </div>
-                <img
-                  src={email}
-                  className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
-                />
-                <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
-                  placeholder=""
-                  value={emailid}
-                  onChange={(e) => setEmailid(e.target.value)}
-                />
+                <div className="flex flex-row relative">
+                  <img src={email} className="absolute h-[20px] left-2 top-2" />
+                  <input
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
+                    placeholder=""
+                    value={emailid}
+                    onChange={(e) => setEmailid(e.target.value)}
+                  />
+                  {!emailid?.match(/^\S+@\S+\.\S+$/) && emailid?.length > 5 && (
+                    <span className="text-red-400 absolute right-2 text-xs top-2">
+                      {"invalid e-mail address"}
+                    </span>
+                  )}
+                </div>
               </div>
               <div className="flex flex-col flex-1 mx-4 py-2">
                 <div className="flex flex-row">
@@ -215,16 +234,23 @@ export default function Settings() {
                     <span className="ml-1 text-red-400 text-xl">{"*"}</span>
                   )}
                 </div>
-                <img
-                  src={web}
-                  className="absolute h-[20px] aspect-square ml-2 mt-[35px]"
-                />
-                <input
-                  className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
-                  placeholder=""
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                />
+                <div className="flex flex-row relative">
+                  <img src={web} className="absolute h-[20px] left-2 top-2" />
+                  <input
+                    className="bg-white flex flex-2 border-gray-200 border-[1px] p-2 pl-8 rounded-xl px-2"
+                    placeholder=""
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                  {!website?.match(
+                    /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
+                  ) &&
+                    website?.length > 5 && (
+                      <span className="text-red-400 absolute right-2 text-xs top-2">
+                        {"invalid website URL"}
+                      </span>
+                    )}
+                </div>
               </div>
             </div>
             <div className="flex flex-col flex-3 h-[350px] mx-4 bg-white rounded-xl py-4 border-2">
