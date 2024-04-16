@@ -6,19 +6,29 @@ interface MessageCardProps {
   ProfilePic: string;
   lastMsgTime: string;
   lastMsg: string;
+  update: any;
 }
 
 export default function MessageCard(props: MessageCardProps) {
-  const { name = "", ProfilePic = "", lastMsgTime = "", lastMsg = "" } = props;
+  const {
+    name = "",
+    ProfilePic = "",
+    lastMsgTime = "",
+    lastMsg = "",
+    update = () => {},
+  } = props;
   const { messages, updateState } = useUserContext();
 
   return (
     <div
       className="items-center justify-center flex flex-col hover:bg-gray-200"
       onClick={() => {
+        update && update(name);
         updateState({
           messages: {
-            selectedMessageIndex: messages?.messagesData?.findIndex(item => item?.name === name),
+            selectedMessageIndex: messages?.messagesData?.findIndex(
+              (item) => item?.name === name
+            ),
             messagesData: messages?.messagesData,
           },
         });

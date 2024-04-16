@@ -17,6 +17,11 @@ export default function Message() {
   const [searched, setSearched] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const [name, setName] = useState(
+    messages?.messagesData[messages?.selectedMessageIndex]?.name
+  );
+
+
   const options = {
     includeScore: true,
     threshold: 0.5,
@@ -98,6 +103,7 @@ export default function Message() {
                       <div
                         className="items-center justify-center flex flex-col hover:bg-white rounded-2xl"
                         onClick={() => {
+                          setName(item?.conversationName);
                           updateState({
                             messages: {
                               selectedMessageIndex:
@@ -151,6 +157,7 @@ export default function Message() {
                           lastMsgTime={
                             item?.messages[item.messages.length - 1]?.time
                           }
+                          update={setName}
                         />
                       </div>
                     );
@@ -217,12 +224,16 @@ export default function Message() {
                   });
                   setMsgText("");
 
-                  // updateState({
-                  //   messages: {
-                  //     selectedMessageIndex: "", //ye karna hai
-                  //     messagesData: messages?.messagesData,
-                  //   },
-                  // });
+                  setTimeout(() => {
+                    updateState({
+                      messages: {
+                        messagesData: messages?.messagesData,
+                        selectedMessageIndex: messages?.messagesData?.findIndex(
+                          (x) => x?.name == name
+                        ),
+                      },
+                    });
+                  }, 10);
                 }}
               >
                 <img src={Send} />
