@@ -29,4 +29,5 @@ export const walletData = [
 export const generalData = {
   walletBalance: 85242.6,
   cardBalance: 3.421,
+  walletSpending: 34598.2,
 };

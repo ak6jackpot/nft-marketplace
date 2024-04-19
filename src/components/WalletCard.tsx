@@ -1,6 +1,7 @@
 import income from "assets/icons/income.png";
 import saving from "assets/icons/saving.png";
 import spending from "assets/icons/spending.png";
+import { useUserContext } from "context-provider";
 import React from "react";
 interface WalletCardProps {
   variant: string;
@@ -8,6 +9,7 @@ interface WalletCardProps {
 
 export default function WalletCard(props: WalletCardProps) {
   const { variant = "" } = props;
+  const { globalData } = useUserContext();
 
   return (
     <div className="flex flex-col w-[80%] aspect-square rounded-xl bg-white border-gray-100 border-[2px] p-4">
@@ -30,9 +32,8 @@ export default function WalletCard(props: WalletCardProps) {
       <div className="flex flex-2 flex-col justify-center w-full pb-2">
         <span className="opacity-40">{"Total " + variant}</span>
         <span className="text-lg">
-          {" "}
           {variant == "Spending"
-            ? "₹ 82,215.32"
+            ? "₹ " + globalData?.generalData?.walletSpending?.toFixed(2)
             : variant == "Income"
             ? "₹ 21,579.22"
             : variant == "Saving"

@@ -84,6 +84,9 @@ export default function Wallet() {
             walletBalance:
               Number(globalData?.generalData?.walletBalance) -
               Number(amountToCard),
+            walletSpending:
+              Number(globalData?.generalData?.walletSpending) +
+              Number(amountToCard),
           },
         },
       });
@@ -204,18 +207,9 @@ export default function Wallet() {
                 <div className="flex flex-row w-full mt-2">
                   <Button
                     onClick={() => setWalletDialogVisible(true)}
-                    className="bg-black text-white flex-1 flex mx-2 flex-4 py-2"
+                    className="bg-black text-white hover:bg-gray-300 hover:text-black flex-1 flex mx-8 flex-4 py-2"
                   >
                     Top up Your Wallet
-                  </Button>
-                  <Button className="bg-gray-300 text-white flex-1 flex mx-2">
-                    <ReplayCircleFilledIcon
-                      style={{
-                        backgroundColor: "black",
-                        color: "#d1d5db",
-                        borderRadius: 1000,
-                      }}
-                    />
                   </Button>
                 </div>
               </div>
