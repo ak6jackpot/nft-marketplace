@@ -7,6 +7,7 @@ import Market from "pages/Market";
 import Message from "pages/Message";
 import NotFound from "pages/NotFound";
 import OpenBid from "pages/OpenBid";
+import OtherProfile from "pages/OtherProfile";
 import Profile from "pages/Profile";
 import Saved from "pages/Saved";
 import Settings from "pages/Settings";
@@ -56,6 +57,10 @@ const ProjectRoutes = () => {
     {
       path: "profile",
       element: <Profile />,
+    },
+    {
+      path: "cameronTucker",
+      element: <OtherProfile />,
     },
     {
       path: "help",

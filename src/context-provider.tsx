@@ -3,6 +3,7 @@ import { messagesData } from "data/messagesData";
 import React from "react";
 import { collectionData, marketData } from "data/itemsData";
 import { generalData, walletData } from "data/walletData";
+import { activityData } from "data/ordersData";
 
 // Define the initial state
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
     trendingData: marketData?.filter((item) => item?.trending == true),
     collectionData: collectionData,
     walletData: walletData,
+    activityData: activityData,
   },
 
   globalData : {

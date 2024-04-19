@@ -13,19 +13,28 @@ import link from "assets/icons/link.png";
 import email from "assets/icons/email.png";
 import web from "assets/icons/web.png";
 import Cookies from "universal-cookie";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSnackbar } from "react-simple-snackbar";
+import Eth from "assets/icons/eth.png";
+import mountainArt from "assets/images/mountainArt.jpg";
+import Cam from "../assets/images/cam.jpeg";
 
 export default function Dashboard() {
   const cookies = new Cookies();
   const navigate = useNavigate();
   const [openSnackbar, closeSnackbar] = useSnackbar();
 
-  const { globalitems } = useUserContext();
+  const { globalitems, updateState } = useUserContext();
   const [mainDialogVisible, setMainDialogVisible] = useState(
     cookies.get("loggedIn") != true
   );
   const [secondDialogVisible, setSecondDialogVisible] = useState(false);
+
+  const arrayRotate = (arr, reverse) => {
+    if (reverse) arr.unshift(arr.pop());
+    else arr.push(arr.shift());
+    return arr;
+  };
 
   useEffect(() => {
     cookies.get("firstname")
@@ -36,6 +45,23 @@ export default function Dashboard() {
     cookies.get("username") ? null : cookies.set("username", "", { path: "/" });
     cookies.get("website") ? null : cookies.set("website", "", { path: "/" });
     cookies.get("bio") ? null : cookies.set("bio", "", { path: "/" });
+  }, []);
+
+  useEffect(() => {
+    console.log("aaya andar");
+    setInterval(() => {
+      updateState({
+        globalitems: {
+          activeData: globalitems?.activeData,
+          marketData: globalitems?.marketData,
+          trendingData: globalitems?.trendingData,
+          savedData: globalitems?.savedData,
+          collectionData: globalitems?.collectionData,
+          walletData: globalitems?.walletData,
+          activityData: arrayRotate(globalitems?.activityData, true),
+        },
+      });
+    }, 10000);
   }, []);
 
   const [firstname, setFirstname] = useState(
@@ -142,20 +168,87 @@ export default function Dashboard() {
                     View All
                   </button>
                 </div>
-                <div className="flex flex-row items-start my-2 p-2 justify-between">
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[0]} />
-                  </div>
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[1]} />
-                  </div>
-                  <div>
-                    <ArtworkCard details={globalitems?.trendingData[2]} />
-                  </div>
+                <div className="flex flex-row items-start my-2 p-2 justify-evenly">
+                  {globalitems?.activeData[0] && (
+                    <div>
+                      <ArtworkCard details={globalitems?.activeData[0]} />
+                    </div>
+                  )}
+                  {globalitems?.activeData[1] && (
+                    <div>
+                      <ArtworkCard details={globalitems?.activeData[1]} />
+                    </div>
+                  )}
+                  {globalitems?.activeData[2] && (
+                    <div>
+                      <ArtworkCard details={globalitems?.activeData[2]} />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center flex-1"></div>
+            <div className="flex flex-col p-2 flex-1">
+              <div className="mb-4">
+                <span className="text-lg ml-2">Featured Creator</span>
+                <div className="flex flex-col w-[95%] aspect-video bg-white m-2 p-2 rounded-xl">
+                  <img src={mountainArt} className="rounded-lg" />
+                  <img
+                    src={Cam}
+                    className="w-[80px] rounded-full border-[3px] border-white self-center -mt-10"
+                  />
+                  <div className="flex flex-row justify-between mr-2">
+                    <div className="flex flex-col">
+                      <span className="text ml-2">Cameron Tucker</span>
+                      <span className="text-sm opacity-50 ml-2">
+                        @camClown45
+                      </span>
+                    </div>
+                    <Link
+                      to="/cameronTucker"
+                      className="bg-black text-white text-xs rounded-full px-4 items-center flex justify-center"
+                    >
+                      <button>View Profile</button>
+                    </Link>
+                  </div>
+                  <span className="text-sm ml-2 pt-3 opacity-50 border-t-[1px] mt-2">
+                    Cameron Tucker is a modern generation artist from Missouri,
+                    USA specializing in abstract digital...
+                  </span>
+                </div>
+              </div>
+              <div>
+                <span className="text-lg ml-2">Recent Activity</span>
+                <div className="flex flex-col w-full">
+                  {globalitems?.activityData?.slice(0, 6)?.map((item) => {
+                    return (
+                      <div className="flex flex-row items-center py-3 ml-2 border-b-[1px]">
+                        <div className="flex flex-1">
+                          <img
+                            src={item?.artImage}
+                            className="rounded-full aspect-square"
+                          />
+                        </div>
+                        <div className="flex flex-col flex-4 pl-4">
+                          <span className="text-sm font-urbanistBold">
+                            {item?.artName}
+                          </span>
+                          <span className="text-xs opacity-40">
+                            {"From " + item?.artistName}
+                          </span>
+                        </div>
+                        <div className="flex flex-row flex-2 items-center">
+                          <img
+                            className="h-[16px] self-center mr-2"
+                            src={Eth}
+                          />
+                          <span className="text">{item?.bidAmount}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
 
           <Dialog

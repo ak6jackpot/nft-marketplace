@@ -47,6 +47,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
                     ),
                     collectionData: globalitems?.collectionData,
                     walletData: globalitems?.walletData,
+                    activityData: globalitems?.activityData,
                   },
                 });
               } else {
@@ -58,6 +59,7 @@ export default function ArtworkCard(props: ArtworkCardProps) {
                     savedData: [...globalitems?.savedData, details],
                     collectionData: globalitems?.collectionData,
                     walletData: globalitems?.walletData,
+                    activityData: globalitems?.activityData,
                   },
                 });
               }

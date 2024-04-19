@@ -125,6 +125,7 @@ export default function OpenBid(props) {
                             savedData: globalitems?.savedData?.filter(
                               (item) => item?.id != selectedObj?.id
                             ),
+                            activityData: globalitems?.activityData,
                           },
                         });
                       } else {
@@ -136,6 +137,7 @@ export default function OpenBid(props) {
                             collectionData: globalitems?.collectionData,
                             walletData: globalitems?.walletData,
                             savedData: [...globalitems?.savedData, selectedObj],
+                            activityData: globalitems?.activityData,
                           },
                         });
                       }
