@@ -5,6 +5,7 @@ import SidebarPlus from "components/SidebarPlus";
 import { useSnackbar } from "react-simple-snackbar";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { faqData } from "data/faqData";
 
 export default function Help() {
   const [textareaVisible, setTextareaVisible] = useState(false);
@@ -26,30 +27,11 @@ export default function Help() {
             <div className="flex flex-2 flex-col px-4 border-r-[2px] overflow-y-scroll border-gray-200">
               <span className="text-black text-3xl my-2">FAQs</span>
               <div className="flex flex-col my-2 pt-2 bg-white rounded-lg border-2">
-                <FaqItem
-                  question="What is an NFT?"
-                  answer="An NFT, or Non-Fungible Token, is a unique digital asset that represents ownership of a specific item or piece of content, such as art, music, video clips, and more, using blockchain technology. Unlike cryptocurrencies like Bitcoin, each NFT is one-of-a-kind and cannot be exchanged on a like-for-like basis."
-                />
-                <FaqItem
-                  question="How do I purchase an NFT on this platform?"
-                  answer="To purchase an NFT, you first need to create an account and connect a digital wallet that supports cryptocurrencies. Once set up, you can browse our collection of NFTs, select one you like, and click the 'Place a Bid' button. Follow the on-screen instructions to complete your purchase."
-                />
-                <FaqItem
-                  question="What payment methods are accepted here?"
-                  answer="Our platform accepts various cryptocurrencies such as Ethereum (ETH), Bitcoin (BTC), and others as payment methods. Please ensure your digital wallet is loaded with enough cryptocurrency to complete the purchase, including transaction fees."
-                />
-                <FaqItem
-                  question="Are there any fees for buying or selling NFTs on this platform?"
-                  answer="Yes, there are transaction fees associated with buying and selling NFTs on our platform. These fees cover the costs of processing transactions on the blockchain. Specific fee details are provided at the time of the transaction."
-                />
-                <FaqItem
-                  question="How do I ensure the authenticity of an NFT before purchasing?"
-                  answer="Each NFT on our platform is verified for authenticity by our team. Details about the creator, previous ownership, and the originality of the content are available on the NFT's detail page. Always review this information before making a purchase."
-                />
-                <FaqItem
-                  question="What should I do if I encounter a problem with a transaction?"
-                  answer="If you experience any issues with a transaction, please contact our support team immediately. Provide all relevant details about the transaction and the issue you're facing. Our team is here to help resolve any problems as quickly as possible."
-                />
+                {faqData?.map((item) => {
+                  return (
+                    <FaqItem question={item?.question} answer={item?.answer} />
+                  );
+                })}
               </div>
             </div>
             <div className="items-center h-full flex flex-col flex-1">
