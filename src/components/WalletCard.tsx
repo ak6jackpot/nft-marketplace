@@ -11,6 +11,26 @@ export default function WalletCard(props: WalletCardProps) {
   const { variant = "" } = props;
   const { globalData } = useUserContext();
 
+  const formatAmount = (amount: any) => {
+    const k = String(amount).includes(".")
+      ? "." + (String(amount).split(".")[1] + "00").substring(0, 2)
+      : "";
+
+    return (
+      (String(amount).includes(".")
+        ? parseInt(String(amount).split(".")[0]) > 0
+          ? String(amount)
+              .split(".")[0]
+              .replace(/\D/g, "")
+              .replace(/\b0+/g, "")
+              .replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,")
+          : "0"
+        : String(amount)
+            .replace(/\D/g, "")
+            .replace(/\b0+/g, "")
+            .replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,")) + k
+    );
+  };
   return (
     <div className="flex flex-col w-[80%] aspect-square rounded-xl bg-white border-gray-100 border-[2px] p-4">
       <div className="flex flex-1 py-2">
@@ -33,7 +53,7 @@ export default function WalletCard(props: WalletCardProps) {
         <span className="opacity-40">{"Total " + variant}</span>
         <span className="text-lg">
           {variant == "Spending"
-            ? "₹ " + globalData?.generalData?.walletSpending?.toFixed(2)
+            ? "₹ " + formatAmount(globalData?.generalData?.walletSpending)
             : variant == "Income"
             ? "₹ 21,579.22"
             : variant == "Saving"

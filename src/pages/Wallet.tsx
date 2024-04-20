@@ -110,6 +110,27 @@ export default function Wallet() {
     }, 2000);
   };
 
+  const formatAmount = (amount: any) => {
+    const k = String(amount).includes(".")
+      ? "." + (String(amount).split(".")[1] + "00").substring(0, 2)
+      : "";
+
+    return (
+      (String(amount).includes(".")
+        ? parseInt(String(amount).split(".")[0]) > 0
+          ? String(amount)
+              .split(".")[0]
+              .replace(/\D/g, "")
+              .replace(/\b0+/g, "")
+              .replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,")
+          : "0"
+        : String(amount)
+            .replace(/\D/g, "")
+            .replace(/\b0+/g, "")
+            .replace(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/g, "$1,")) + k
+    );
+  };
+
   return (
     <>
       <Helmet>
@@ -202,7 +223,7 @@ export default function Wallet() {
               <div className="flex flex-col items-center border-b-[2px] border-gray-200 w-[90%] py-2">
                 <span className="text-lg opacity-50">Your Balance</span>
                 <span className="text-2xl">
-                  {"₹ " + globalData?.generalData?.walletBalance?.toFixed(2)}
+                  {"₹ " + formatAmount(globalData?.generalData?.walletBalance)}
                 </span>
                 <div className="flex flex-row w-full mt-2">
                   <Button
@@ -298,7 +319,7 @@ export default function Wallet() {
                             <span className="text-sm">
                               {item?.type == "conversion" || item?.type == "bid"
                                 ? item?.amount + " ETH"
-                                : "₹ " + item?.amount}
+                                : "₹ " + formatAmount(item?.amount)}
                             </span>
                           </div>
                         </div>
@@ -337,7 +358,7 @@ export default function Wallet() {
                     {Number(amountToWallet) > 0 && (
                       <div className="flex-3 text-[50px] items-center justify-center flex">
                         <span className="">
-                          {(Number(amountToWallet) * 0.95).toFixed(2)}
+                          {formatAmount(Number(amountToWallet) * 0.95)}
                         </span>
                       </div>
                     )}
@@ -354,10 +375,10 @@ export default function Wallet() {
                         {"Updated Wallet Balance: "}
                       </span>
                       <span className="flex flex-1 text-xl text-green-600">
-                        {(
+                        {formatAmount(
                           Number(globalData?.generalData?.walletBalance) +
                           Number((Number(amountToWallet) * 0.95).toFixed(2))
-                        )?.toFixed(2)}
+                        )}
                       </span>
                     </div>
                   )}
@@ -392,9 +413,7 @@ export default function Wallet() {
                       {"Wallet Balance: "}
                     </span>
                     <span className="flex flex-1 text-xl text-yellow-200">
-                      {Number(globalData?.generalData?.walletBalance).toFixed(
-                        2
-                      )}
+                      {formatAmount(Number(globalData?.generalData?.walletBalance))}
                     </span>
                   </div>
                   <div className="flex flex-row items-center py-6">

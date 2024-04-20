@@ -108,7 +108,9 @@ export default function Dashboard() {
           <SidebarPlus />
         </div>
         <div className="flex flex-col flex-4">
-          <Header />
+          <div className="z-40">
+            <Header />
+          </div>
           <div className="w-full flex flex-row  pt-[80px] h-screen">
             <div className="flex flex-col items-center flex-2 border-r-[2px] p-4 border-gray-200">
               <div className="relative w-full flex p-2 mb-10">
@@ -193,7 +195,7 @@ export default function Dashboard() {
                     <div className="flex flex-col">
                       <span className="text ml-2">Cameron Tucker</span>
                       <span className="text-sm opacity-50 ml-2">
-                        @camClown45
+                        @FizboTheClown
                       </span>
                     </div>
                     <Link

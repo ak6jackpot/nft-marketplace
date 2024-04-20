@@ -21,7 +21,7 @@ export default function MessageCard(props: MessageCardProps) {
 
   return (
     <div
-      className="items-center justify-center flex flex-col hover:bg-gray-200"
+      className="items-center justify-center flex flex-col hover:bg-gray-200 cursor-pointer"
       onClick={() => {
         update && update(name);
         updateState({

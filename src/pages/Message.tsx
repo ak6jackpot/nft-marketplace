@@ -21,7 +21,6 @@ export default function Message() {
     messages?.messagesData[messages?.selectedMessageIndex]?.name
   );
 
-
   const options = {
     includeScore: true,
     threshold: 0.5,
@@ -97,7 +96,7 @@ export default function Message() {
             </div>
             {searched?.length > 0 && (
               <div className="absolute mt-[5%] w-[30%] bg-gray-200 rounded-2xl mx-4 z-30">
-                <div className="grid grid-cols-1 gap-2 p-2">
+                <div className="grid grid-cols-1 gap-2 p-1">
                   {searched?.slice(0, 10)?.map((item) => {
                     return (
                       <div
