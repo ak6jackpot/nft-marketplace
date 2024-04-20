@@ -20,9 +20,9 @@ export default function OpenBid(props) {
   const cookies = new Cookies();
 
   const selectedObj = marketData?.find((item) => item?.id === params?.artId);
-  const { globalitems, updateState } = useUserContext();
+  const { globalSavedData, globalitems, updateState } = useUserContext();
 
-  const isSaved = globalitems?.savedData?.find(
+  const isSaved = globalSavedData?.savedData?.find(
     (item) => item?.id == params?.artId
   );
   const [savedNow, setsavedNow] = useState(isSaved ? true : false);
@@ -116,28 +116,19 @@ export default function OpenBid(props) {
                       setsavedNow(!savedNow);
                       if (isSaved) {
                         updateState({
-                          globalitems: {
-                            activeData: globalitems?.activeData,
-                            marketData: globalitems?.marketData,
-                            trendingData: globalitems?.trendingData,
-                            collectionData: globalitems?.collectionData,
-                            walletData: globalitems?.walletData,
-                            savedData: globalitems?.savedData?.filter(
+                          globalSavedData: {
+                            savedData: globalSavedData?.savedData?.filter(
                               (item) => item?.id != selectedObj?.id
                             ),
-                            activityData: globalitems?.activityData,
                           },
                         });
                       } else {
                         updateState({
-                          globalitems: {
-                            activeData: globalitems?.activeData,
-                            marketData: globalitems?.marketData,
-                            trendingData: globalitems?.trendingData,
-                            collectionData: globalitems?.collectionData,
-                            walletData: globalitems?.walletData,
-                            savedData: [...globalitems?.savedData, selectedObj],
-                            activityData: globalitems?.activityData,
+                          globalSavedData: {
+                            savedData: [
+                              ...globalSavedData?.savedData,
+                              selectedObj,
+                            ],
                           },
                         });
                       }

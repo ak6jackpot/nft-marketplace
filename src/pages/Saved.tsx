@@ -7,7 +7,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 export default function Saved() {
-  const { globalitems } = useUserContext();
+  const { globalSavedData } = useUserContext();
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Saved() {
               </Button>
             </div>
             <div className="grid grid-cols-4 gap-4 p-2 my-2">
-              {globalitems?.savedData?.map((item) => {
+              {globalSavedData?.savedData?.map((item) => {
                 return (
                   <div className="flex">
                     <ArtworkCard details={item} />

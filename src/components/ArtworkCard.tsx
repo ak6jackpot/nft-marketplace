@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 import { useUserContext } from "context-provider";
 import Countdown from "react-countdown";
 import { CounterSmall } from "./Counter";
+
 interface ArtworkCardProps {
   details: object;
 }
 
 export default function ArtworkCard(props: ArtworkCardProps) {
   const { details = {} } = props;
-  const { globalitems, updateState } = useUserContext();
-  const isSaved = globalitems?.savedData?.find(
+  const { updateState, globalSavedData } = useUserContext();
+  const isSaved = globalSavedData?.savedData?.find(
     (item) => item?.id == details?.id
   );
   const [savedNow, setsavedNow] = useState(isSaved ? true : false);
@@ -38,28 +39,16 @@ export default function ArtworkCard(props: ArtworkCardProps) {
               setsavedNow(!savedNow);
               if (isSaved) {
                 updateState({
-                  globalitems: {
-                    activeData: globalitems?.activeData,
-                    marketData: globalitems?.marketData,
-                    trendingData: globalitems?.trendingData,
-                    savedData: globalitems?.savedData?.filter(
+                  globalSavedData: {
+                    savedData: globalSavedData?.savedData?.filter(
                       (item) => item?.id != details?.id
                     ),
-                    collectionData: globalitems?.collectionData,
-                    walletData: globalitems?.walletData,
-                    activityData: globalitems?.activityData,
                   },
                 });
               } else {
                 updateState({
-                  globalitems: {
-                    activeData: globalitems?.activeData,
-                    marketData: globalitems?.marketData,
-                    trendingData: globalitems?.trendingData,
-                    savedData: [...globalitems?.savedData, details],
-                    collectionData: globalitems?.collectionData,
-                    walletData: globalitems?.walletData,
-                    activityData: globalitems?.activityData,
+                  globalSavedData: {
+                    savedData: [...globalSavedData?.savedData, details],
                   },
                 });
               }

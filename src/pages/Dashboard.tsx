@@ -16,7 +16,7 @@ import Cookies from "universal-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { useSnackbar } from "react-simple-snackbar";
 import Eth from "assets/icons/eth.png";
-import mountainArt from "assets/images/mountainArt.jpg";
+import camDesign from "assets/images/camDesign.jpg";
 import Cam from "../assets/images/cam.jpeg";
 
 export default function Dashboard() {
@@ -24,7 +24,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [openSnackbar, closeSnackbar] = useSnackbar();
 
-  const { globalitems, updateState } = useUserContext();
+  const { globalitems, updateState, globalActivityData } = useUserContext();
   const [mainDialogVisible, setMainDialogVisible] = useState(
     cookies.get("loggedIn") != true
   );
@@ -48,17 +48,10 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    console.log("aaya andar");
     setInterval(() => {
       updateState({
-        globalitems: {
-          activeData: globalitems?.activeData,
-          marketData: globalitems?.marketData,
-          trendingData: globalitems?.trendingData,
-          savedData: globalitems?.savedData,
-          collectionData: globalitems?.collectionData,
-          walletData: globalitems?.walletData,
-          activityData: arrayRotate(globalitems?.activityData, true),
+        globalActivityData: {
+          activityData: arrayRotate(globalActivityData?.activityData, true),
         },
       });
     }, 10000);
@@ -118,7 +111,7 @@ export default function Dashboard() {
           <Header />
           <div className="w-full flex flex-row  pt-[80px] h-screen">
             <div className="flex flex-col items-center flex-2 border-r-[2px] p-4 border-gray-200">
-              <div className="relative w-full flex p-2 mb-2">
+              <div className="relative w-full flex p-2 mb-10">
                 <div className="rounded-3xl overflow-hidden relative w-full h-[300px]">
                   <div className="absolute inset-0 bg-gradient-to-r from-dashboard via-transparent to-transparent z-10"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-dashboard to-transparent z-10"></div>
@@ -187,11 +180,11 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col p-2 flex-1">
+            <div className="flex flex-col max-h-screen overflow-y-scroll p-2 flex-1">
               <div className="mb-4">
                 <span className="text-lg ml-2">Featured Creator</span>
                 <div className="flex flex-col w-[95%] aspect-video bg-white m-2 p-2 rounded-xl">
-                  <img src={mountainArt} className="rounded-lg" />
+                  <img src={camDesign} className="rounded-lg" />
                   <img
                     src={Cam}
                     className="w-[80px] rounded-full border-[3px] border-white self-center -mt-10"
@@ -219,33 +212,35 @@ export default function Dashboard() {
               <div>
                 <span className="text-lg ml-2">Recent Activity</span>
                 <div className="flex flex-col w-full">
-                  {globalitems?.activityData?.slice(0, 6)?.map((item) => {
-                    return (
-                      <div className="flex flex-row items-center py-3 ml-2 border-b-[1px]">
-                        <div className="flex flex-1">
-                          <img
-                            src={item?.artImage}
-                            className="rounded-full aspect-square"
-                          />
+                  {globalActivityData?.activityData
+                    ?.slice(0, 6)
+                    ?.map((item) => {
+                      return (
+                        <div className="flex flex-row items-center py-3 ml-2 border-b-[1px]">
+                          <div className="flex flex-1">
+                            <img
+                              src={item?.artImage}
+                              className="rounded-full aspect-square"
+                            />
+                          </div>
+                          <div className="flex flex-col flex-4 pl-4">
+                            <span className="text-sm font-urbanistBold">
+                              {item?.artName}
+                            </span>
+                            <span className="text-xs opacity-40">
+                              {"From " + item?.artistName}
+                            </span>
+                          </div>
+                          <div className="flex flex-row flex-2 items-center">
+                            <img
+                              className="h-[16px] self-center mr-2"
+                              src={Eth}
+                            />
+                            <span className="text">{item?.bidAmount}</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col flex-4 pl-4">
-                          <span className="text-sm font-urbanistBold">
-                            {item?.artName}
-                          </span>
-                          <span className="text-xs opacity-40">
-                            {"From " + item?.artistName}
-                          </span>
-                        </div>
-                        <div className="flex flex-row flex-2 items-center">
-                          <img
-                            className="h-[16px] self-center mr-2"
-                            src={Eth}
-                          />
-                          <span className="text">{item?.bidAmount}</span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
                 </div>
               </div>
             </div>

@@ -5,31 +5,34 @@ import { collectionData, marketData } from "data/itemsData";
 import { generalData, walletData } from "data/walletData";
 import { activityData } from "data/ordersData";
 
-// Define the initial state
 const initialState = {
   messages: {
     messagesData: messagesData,
     selectedMessageIndex: 0,
   },
   globalitems: {
-    savedData: marketData?.filter((item) => item?.saved == true),
     activeData: marketData?.filter((item) => Date.now() < item?.timeLeft),
     marketData: marketData,
     trendingData: marketData?.filter((item) => item?.trending == true),
     collectionData: collectionData,
     walletData: walletData,
+  },
+
+  globalSavedData: {
+    savedData: marketData?.filter((item) => item?.saved == true),
+  },
+
+  globalActivityData: {
     activityData: activityData,
   },
 
-  globalData : {
-    generalData: generalData
-  }
+  globalData: {
+    generalData: generalData,
+  },
 };
 
-// Define action types
 const UPDATE_STATE = "UPDATE_STATE";
 
-// Define reducer function
 function reducer(state, action) {
   switch (action.type) {
     case UPDATE_STATE:
@@ -39,19 +42,15 @@ function reducer(state, action) {
   }
 }
 
-// Create context
 const UserContext = createContext(null);
 
-// Custom hook for using the context
 export function useUserContext() {
   return useContext(UserContext);
 }
 
-// Context provider component
 export function UserContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Define the updateState function
   const updateState = (newState) => {
     dispatch({ type: UPDATE_STATE, payload: newState });
   };
