@@ -2,12 +2,12 @@ export const walletData = [
   {
     type: "conversion",
     amount: "2.22",
-    time: "16:13",
+    time: "04:36",
   },
   {
     type: "topup",
     amount: "256.80",
-    time: "15:23",
+    time: "01:23",
   },
   {
     type: "bid",
@@ -17,7 +17,7 @@ export const walletData = [
   {
     type: "bid",
     amount: "2.21",
-    time: "04:36",
+    time: "02:13",
   },
   {
     type: "topup",

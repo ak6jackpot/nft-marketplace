@@ -45,7 +45,7 @@ export default function Wallet() {
             ...globalData?.generalData,
             walletBalance:
               Number(globalData?.generalData?.walletBalance) +
-              Number((Number(amountToWallet) * 0.95).toFixed(2)),
+              Number((Number(amountToWallet) * 0.99).toFixed(2)),
           },
         },
       });
@@ -56,17 +56,17 @@ export default function Wallet() {
 
       globalitems?.walletData?.push({
         type: "topup",
-        amount: (Number(amountToWallet) * 0.95).toFixed(2),
+        amount: (Number(amountToWallet) * 0.99).toFixed(2),
         time: `${new Date().getHours()}:${new Date().getMinutes()}`,
       });
-    }, 1500);
+    }, 4500);
 
     setAmountToWallet("");
     setTimeout(() => {
       setLoaderVisible(false);
       setWalletDialogVisible(false);
       openSnackbar("Your wallet balance has been updated!");
-    }, 2000);
+    }, 5000);
   };
 
   const walletToCard = () => {
@@ -334,9 +334,14 @@ export default function Wallet() {
             >
               {!loaderVisible && (
                 <div className="flex flex-col font-urbanistNormal bg-white justify-center flex-1 px-4 py-4">
-                  <span className="mb-2 text-lg">
-                    Enter the amount you want to add to wallet
-                  </span>
+                  <div className="flex flex-row items-center">
+                    <span className="mb-2 text-lg flex flex-2">
+                      Enter the amount you want to add to wallet
+                    </span>
+                    <span className="text-sm flex flex-1 justify-end">
+                      {"Wallet Topup Charges: 1%"}
+                    </span>
+                  </div>
                   <div className="flex flex-row items-center py-6">
                     <div className="flex-3 text-[50px] items-center justify-center flex">
                       <input
@@ -358,7 +363,7 @@ export default function Wallet() {
                     {Number(amountToWallet) > 0 && (
                       <div className="flex-3 text-[50px] items-center justify-center flex">
                         <span className="">
-                          {formatAmount(Number(amountToWallet) * 0.95)}
+                          {formatAmount(Number(amountToWallet) * 0.99)}
                         </span>
                       </div>
                     )}
@@ -377,7 +382,7 @@ export default function Wallet() {
                       <span className="flex flex-1 text-xl text-green-600">
                         {formatAmount(
                           Number(globalData?.generalData?.walletBalance) +
-                          Number((Number(amountToWallet) * 0.95).toFixed(2))
+                            Number((Number(amountToWallet) * 0.99).toFixed(2))
                         )}
                       </span>
                     </div>
@@ -385,7 +390,7 @@ export default function Wallet() {
                 </div>
               )}
               {loaderVisible && (
-                <div className="p-3">
+                <div className="p-3 flex font-urbanistNormal flex-col items-center">
                   <BallTriangle
                     height={100}
                     width={100}
@@ -396,6 +401,11 @@ export default function Wallet() {
                     wrapperClass=""
                     visible={true}
                   />
+                  <span>{"This is a prototype website."}</span>
+                  <span>
+                    {"It does not have a Payment Gateway itegration."}
+                  </span>
+                  <span>{"However, you can still try all the features!"}</span>
                 </div>
               )}
             </Dialog>
@@ -413,7 +423,9 @@ export default function Wallet() {
                       {"Wallet Balance: "}
                     </span>
                     <span className="flex flex-1 text-xl text-yellow-200">
-                      {formatAmount(Number(globalData?.generalData?.walletBalance))}
+                      {formatAmount(
+                        Number(globalData?.generalData?.walletBalance)
+                      )}
                     </span>
                   </div>
                   <div className="flex flex-row items-center py-6">
@@ -473,16 +485,6 @@ export default function Wallet() {
               {loaderVisible && (
                 <div className="p-3">
                   <img src={EthereumGif} className="h-[100px] aspect-square" />
-                  {/* <BallTriangle
-                    height={100}
-                    width={100}
-                    radius={5}
-                    color="#4fa94d"
-                    ariaLabel="ball-triangle-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    visible={true}
-                  /> */}
                 </div>
               )}
             </Dialog>
