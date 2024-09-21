@@ -13,6 +13,7 @@ const variants = {
     lime_800: "bg-lime-800 shadow-lg",
     red_400_01: "bg-red-400_01",
     green_600: "bg-green-600 shadow-3xl text-white-A700",
+    disabled: "bg-gray-300 text-black-900",
   },
   outline: {
     black_900: "border-black-900 border-[1px] border-solid text-black-900",

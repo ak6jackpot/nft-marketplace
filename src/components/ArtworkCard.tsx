@@ -93,8 +93,9 @@ export default function ArtworkCard(props: ArtworkCardProps) {
           </div>
         </div>
         <Link to={`/open/${details?.id}`}>
-          <button className="bg-black text-white items-center text-xs justify-center p-[8px] flex-2 rounded-lg self-center">
+          <button className="bg-black text-white items-center text-xs justify-center p-[8px] flex-2 rounded-lg self-center relative overflow-hidden">
             {Date.now() < details?.timeLeft ? "Place a bid" : "View Details"}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50 transform -translate-full animate-shine"></span>
           </button>
         </Link>
       </div>

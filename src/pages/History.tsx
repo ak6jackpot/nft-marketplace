@@ -23,17 +23,6 @@ export default function History() {
             <div className="items-start my-2">
               <span className="text-black text-3xl">History</span>
             </div>
-            <div className="flex flex-row my-2">
-              <Button variant="outline" className="mr-2">
-                All
-              </Button>
-              <Button variant="outline" className="mr-2">
-                Collection
-              </Button>
-              <Button variant="outline" className="mr-2">
-                Price Range
-              </Button>
-            </div>
             <div className="flex flex-col my-2 bg-white rounded-lg pt-4 border-2">
               {ordersData.map((item) => {
                 return (

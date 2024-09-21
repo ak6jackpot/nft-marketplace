@@ -25,17 +25,6 @@ export default function Saved() {
             <div className="items-start my-2">
               <span className="text-black text-3xl">Saved</span>
             </div>
-            <div className="flex flex-row my-2">
-              <Button variant="outline" className="mr-2">
-                Category
-              </Button>
-              <Button variant="outline" className="mr-2">
-                Collection
-              </Button>
-              <Button variant="outline" className="mr-2">
-                Price Range
-              </Button>
-            </div>
             <div className="grid grid-cols-4 gap-4 p-2 my-2">
               {globalSavedData?.savedData?.map((item) => {
                 return (

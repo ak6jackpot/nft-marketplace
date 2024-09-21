@@ -42,6 +42,15 @@ module.exports = {
         8: "8 8 0%",
         9: "9 9 0%",
       },
+      keyframes: {
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        shine: "shine 5s ease-in-out infinite",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

@@ -14,6 +14,7 @@ import { CounterBig } from "components/Counter";
 import Cookies from "universal-cookie";
 import Dialog from "@mui/material/Dialog";
 import { Button } from "components/Button";
+import { useSnackbar } from "react-simple-snackbar";
 
 export default function OpenBid(props) {
   const params = useParams();
@@ -30,6 +31,8 @@ export default function OpenBid(props) {
     (item) => item?.id == params?.artId
   );
   const [dialogVisible, setDialogVisible] = useState(false);
+  const [newBid, setNewBid] = useState(String(selectedObj?.bidPrice));
+  const [openSnackbar, closeSnackbar] = useSnackbar();
 
   return (
     <>
@@ -141,9 +144,10 @@ export default function OpenBid(props) {
                   {Date.now() < selectedObj?.timeLeft && (
                     <button
                       onClick={() => setDialogVisible(true)}
-                      className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center"
+                      className="bg-black text-white items-center text-lg justify-center p-[6px] flex-2 rounded-lg self-center relative overflow-hidden"
                     >
                       Place a bid
+                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50 transform -translate-full animate-shine"></span>
                     </button>
                   )}
                 </div>
@@ -152,17 +156,53 @@ export default function OpenBid(props) {
           </div>
           <Dialog onClose={() => setDialogVisible(false)} open={dialogVisible}>
             <div className="flex flex-col font-urbanistNormal items-center bg-white justify-center flex-1 px-4 py-2">
-              <span className="mb-2">
-                Your Details have been saved succesfully!
-              </span>
-              <span className="mb-2 text-sm">
-                You can update them in the Settings tab later.
-              </span>
+              <div className="flex flex-row">
+                <span className="mb-2 mx-4">
+                  {"Current Bid: " + selectedObj?.bidPrice}
+                </span>
+                <div className="flex flex-row mb-2 mx-4">
+                  <span className="mx-4">{"Your Bid: "}</span>
+                  <input
+                    value={newBid}
+                    autoFocus={true}
+                    className="text-lg bg-gray-300 w-[25%] px-4"
+                    onChange={(e) => setNewBid(e.target.value)}
+                  />
+                  <Button
+                    className="bg-gray-200 text-black flex-1 flex mx-2 p-1"
+                    onClick={() => setNewBid(String(Number(newBid) + 0.1))}
+                  >
+                    + 0.1
+                  </Button>
+                  <Button
+                    className="bg-gray-200 text-black flex-1 flex mx-2 p-1"
+                    onClick={() => setNewBid(String(Number(newBid) + 1))}
+                  >
+                    + 1
+                  </Button>
+                  <Button
+                    className="bg-gray-200 text-black flex-1 flex mx-2 p-1"
+                    onClick={() => setNewBid(String(Number(newBid) + 10))}
+                  >
+                    + 10
+                  </Button>
+                </div>
+              </div>
               <Button
-                className="bg-black text-white flex-1 flex mx-4 w-[25%] py-2"
-                onClick={() => setDialogVisible(false)}
+                className="bg-black text-white flex-1 flex mx-4 w-full py-2"
+                onClick={() => {
+                  setDialogVisible(false);
+                  openSnackbar("Bid Placed Succesfully");
+                }}
+                disabled={Number(newBid) < selectedObj?.bidPrice}
+                variant={"fill"}
+                color={
+                  Number(newBid) < selectedObj?.bidPrice
+                    ? "disabled"
+                    : "black_900"
+                }
               >
-                OK
+                Confirm & Place Bid
               </Button>
             </div>
           </Dialog>
