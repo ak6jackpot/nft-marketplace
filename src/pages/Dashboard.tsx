@@ -389,6 +389,12 @@ export default function Dashboard() {
               <span className="mb-2 text-sm">
                 You can update them in the Settings tab later.
               </span>
+              <div className="bg-violet-500 text-white rounded-md p-2 my-4">
+                Please Note: This is a prototype website. While it may look and
+                function like a real marketplace, no actual transactions can
+                take place. Items listed on the site are for demonstration
+                purposes only, and you cannot buy or sell anything at this time.
+              </div>
               <Button
                 className="bg-black text-white flex-1 flex mx-4 w-[25%] py-2"
                 onClick={() => setSecondDialogVisible(false)}

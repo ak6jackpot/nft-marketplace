@@ -1,24 +1,48 @@
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import defaultProfile from "assets/icons/defaultProfile.png";
-import EthereumGif from "assets/images/eth_gif.gif";
-import search from "assets/icons/search.png";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "./Button";
-import Fuse from "fuse.js";
-import { useUserContext } from "context-provider";
-import ArtworkCard from "./ArtworkCard";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import search from "assets/icons/search.png";
+import EthereumGif from "assets/images/eth_gif.gif";
+import { useUserContext } from "context-provider";
+import Fuse from "fuse.js";
+import useOutsideClick from "hooks/useOutsideClick";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
+import ArtworkCard from "./ArtworkCard";
+import { Button } from "./Button";
+import Dropdown from "./Dropdown";
 
 export default function Header(props: any) {
-  const pic = localStorage.getItem("profilePic");
   const navigate = useNavigate();
+  const cookies = new Cookies();
 
   const { globalitems, globalData, messages, updateState } = useUserContext();
   const [searchText, setSearchText] = useState("");
   const [searchedItems, setSearchedItems] = useState([]);
   const [searchedMessages, setSearchedMessages] = useState([]);
+
+  const searchRef = useRef<HTMLDivElement>(null);
+  useOutsideClick({
+    ref: searchRef,
+    handler: () => setSearchText(""),
+  });
+
+  const handleSelect = (id: string) => {
+    if (id === 1) {
+      navigate("/profile");
+    } else if (id == 2) {
+      localStorage?.clear();
+      cookies?.remove("firstname");
+      cookies?.remove("lastname");
+      cookies?.remove("email");
+      cookies?.remove("username");
+      cookies?.remove("website");
+      cookies?.remove("bio");
+      cookies?.remove("loggedIn");
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+    }
+  };
 
   const optionsItems = {
     includeScore: true,
@@ -96,24 +120,29 @@ export default function Header(props: any) {
               </span>
             </Button>
           </Link>
-          {/* <Button variant="outline" shape="circle" className="mr-1">
-            <img className="w-[20px]" src={Bell}></img>
-            <NotificationsNoneOutlinedIcon color="action" />
-          </Button> */}
-          <Link to={`/profile`}>
-            <button className="flex flex-row justify-start items-center">
-              <img
-                className="w-[50px] rounded-full mr-2 aspect-square"
-                src={pic ? pic : defaultProfile}
-              />
-              {/* <img className="w-[15px]" src={ArrowDown} />{" "} */}
-              <KeyboardArrowDownOutlinedIcon />
-            </button>
-          </Link>
+          <Dropdown
+            id="person"
+            data={[
+              {
+                id: 1,
+                name: "My Profile",
+              },
+              {
+                id: 2,
+                name: "Logout",
+              },
+            ]}
+            style=""
+            selectedId="3"
+            onSelect={handleSelect}
+          />
         </div>
       </div>
       {(searchedItems?.length > 0 || searchedMessages?.length > 0) && (
-        <div className="absolute mt-[5%] w-[40%] bg-white rounded-2xl mx-4 z-30">
+        <div
+          className="absolute mt-[5%] w-[50%] bg-white rounded-2xl mx-4 z-30"
+          ref={searchRef}
+        >
           <div className="grid grid-cols-2 gap-2 p-2">
             {searchedItems?.slice(0, 2)?.map((item) => {
               return (
